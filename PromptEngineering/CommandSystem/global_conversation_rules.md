@@ -31,7 +31,7 @@
 
 ## 5. Command System
 Command format: `command_name option1:value1 option2:value2`
-Current scope name: `global`
+SCOPE: global
 
 ### 5.1. Global Options (available for all commands in all scopes)
 - `force_tag_key:value` - Sets specific topic for tag
