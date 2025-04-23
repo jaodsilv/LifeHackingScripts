@@ -1,0 +1,1 @@
+Help me uncover hidden job opportunities. Create a list of strategies I can use like optimizing LinkedIn searches, connecting with recruiters, leveraging alumni networks, and targeting companies that align with my skills in my cv and my H-1B visa needs. Include tips for sending personalized messages to potential connections, recruiters or hiring managers.
