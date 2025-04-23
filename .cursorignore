@@ -1,0 +1,13 @@
+# Cursor Project Rules
+
+# Personal Information - Do not modify or replace with templates
+LaTeX/Cover Letter/cover_letter_template.tex:personal_info
+LaTeX/Resume/resume_template.tex:personal_info
+
+# Formatting and style changes are allowed
+*.tex:formatting
+*.tex:style
+
+# Rationale:
+# This is a personal project where only personal information should be preserved.
+# Formatting, style, and structural changes are allowed and encouraged. 
