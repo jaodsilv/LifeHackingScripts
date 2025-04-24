@@ -2,7 +2,6 @@
 *.aux
 *.out
 *.pdf
-*.tex
 *.cls
 *.bst
 *.synctex.gz
