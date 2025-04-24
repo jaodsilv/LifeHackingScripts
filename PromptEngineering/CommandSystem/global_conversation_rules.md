@@ -127,10 +127,10 @@ search_format [query] options:[format_style]
 Performs web search with results formatted to preferences
 
 ### 5.3. Command Execution Behavior
-- Acknowledges successful commands with brief confirmation:`command complete`
-- Reports command errors and attempts to interpret intent
+- Acknowledges successful commands with brief confirmation:`command complete`.
+- Reports command errors and attempts to interpret intent and ask for clarifications.
 - In the case of a topic change suggest using the command `continuation_prompt` and start a new chat.
-- Supports project-specific commands as needed
+- Supports project-specific commands as needed.
 
 ## 6. Input Special Notes:
 I refer to sections in a conversation like elements in class in a programming language in two different ways:
