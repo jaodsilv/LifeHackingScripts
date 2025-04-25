@@ -16,11 +16,11 @@
                 "-interaction=nonstopmode",
                 "-synctex=1",
                 "-output-directory=${fileDirname}",
-                "-jobname=Resume-JoaoMarco-2025-04",
-                "${fileDirname}\\main.tex"
+                "-jobname=Resume-JoaoMarco-${command:date +%Y-%m-%d}",
+                "main.tex"
             ],
             "options": {
-                "cwd": "${fileDirname}\\.."
+                "cwd": "${fileDirname}"
             },
             "group": {
                 "kind": "build",
