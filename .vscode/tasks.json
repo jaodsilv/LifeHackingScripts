@@ -31,7 +31,7 @@
                 "panel": "shared"
             },
             "problemMatcher": [
-                "$xelatex"
+                "$tsc"
             ]
         }
     ]
