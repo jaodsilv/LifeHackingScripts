@@ -16,7 +16,7 @@
                 "-interaction=nonstopmode",
                 "-synctex=1",
                 "-output-directory=${fileDirname}",
-                "-jobname=Resume-JoaoMarco-${command:date +%Y-%m-%d}",
+                "-jobname=Resume-JoaoMarco-Disney-$(date +%Y-%m-%d)",
                 "main.tex"
             ],
             "options": {
