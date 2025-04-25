@@ -16,7 +16,7 @@
                 "-interaction=nonstopmode",
                 "-synctex=1",
                 "-output-directory=${fileDirname}",
-                "-jobname=Resume-JoaoMarco-Disney-$(date +%Y-%m-%d)",
+                "-jobname=Resume-JoaoMarco-Disney-${input:getDate}",
                 "main.tex"
             ],
             "options": {
@@ -33,6 +33,17 @@
             "problemMatcher": [
                 "$tsc"
             ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "getDate",
+            "type": "command",
+            "command": "shellCommand.execute",
+            "args": {
+                "command": "powershell -Command \"Get-Date -Format 'yyyy-MM-dd'\"",
+                "useSingleResult": true
+            }
         }
     ]
 }
