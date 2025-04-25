@@ -16,7 +16,7 @@
                 "-interaction=nonstopmode",
                 "-synctex=1",
                 "-output-directory=${fileDirname}",
-                "-jobname=Resume-JoaoMarco-${command:date +%Y-%m-%d}",
+                "-jobname=Resume-JoaoMarco-${input:brachName}-${input:getDate}",
                 "main.tex"
             ],
             "options": {
@@ -33,6 +33,26 @@
             "problemMatcher": [
                 "$tsc"
             ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "getDate",
+            "type": "command",
+            "command": "shellCommand.execute",
+            "args": {
+                "command": "powershell -Command \"Get-Date -Format 'yyyy-MM-dd'\"",
+                "useSingleResult": true
+            }
+        },
+        {
+            "id": "brachName",
+            "type": "command",
+            "command": "shellCommand.execute",
+            "args": {
+                "command": "powershell -Command \"git branch --show-current | ForEach-Object { $_.Split('/')[-1] }\"",
+                "useSingleResult": true
+            }
         }
     ]
 }
