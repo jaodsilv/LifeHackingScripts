@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Encoding Details</title>
+    <script src="js/utils.js"></script>
+    <script src="js/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const header = Header.createBrowserHeader();
+          header.render('headerContainer');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #1565c0;
+            --primary-light: #e3f2fd;
+            --secondary-color: #f50057;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+            --tag-bg: #e1f5fe;
+            --tag-color: #0277bd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #f5f5f5;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+
+        .loader::after {
+            content: "";
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--primary-light);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .section-title {
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .detail-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .info-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            color: #757575;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--tag-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        .chart-container.half-height {
+            height: 200px;
+        }
+
+        .metric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .metric-table th, .metric-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .metric-table th {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+        }
+
+        .metric-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .jd-section {
+            background-color: #f2f7ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .jd-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .company-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 12px;
+        }
+
+        .jd-company {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .jd-position {
+            color: #757575;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        .progress-container {
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            height: 24px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            text-align: center;
+            line-height: 24px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            transition: width 0.5s ease;
+        }
+
+        .progress-bar.good {
+            background-color: var(--success-color);
+        }
+
+        .progress-bar.medium {
+            background-color: var(--warning-color);
+        }
+
+        .progress-bar.poor {
+            background-color: var(--danger-color);
+        }
+
+        .skill-match {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .skill-missing {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .action-bar {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .action-btn {
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            background-color: #0d47a1;
+        }
+
+        .action-btn.secondary {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .action-btn.secondary:hover {
+            background-color: var(--primary-light);
+        }
+
+        .file-input-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .file-input-label {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .file-input-label:hover {
+            background-color: #0d47a1;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-input-help {
+            display: block;
+            margin-top: 10px;
+            color: #757575;
+            font-size: 14px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #757575;
+        }
+
+        .empty-state h3 {
+            margin-top: 10px;
+        }
+
+        .empty-state p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #757575;
+            font-size: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Encoding Details</h1>
+            <div class="header-actions">
+                <a href="encoding_browser.html" class="btn btn-primary">Back to Browser</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" id="mainContainer">
+        <div class="file-input-container" id="fileInputContainer">
+            <label for="encodingFile" class="file-input-label">
+                Load Encoding File
+            </label>
+            <input type="file" id="encodingFile" class="file-input" accept=".json">
+            <span class="file-input-help">Select the encoding file to view details</span>
+        </div>
+
+        <div id="loadingIndicator" class="loader" style="display: none;"></div>
+
+        <div id="detailContent" style="display: none;">
+            <div class="action-bar">
+                <a href="#" id="compareLink" class="action-btn secondary">Compare with Another Encoding</a>
+                <a href="#" id="viewReportLink" class="action-btn">View HTML Report</a>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-value" id="weightedScore">--</div>
+                    <div class="info-label">Weighted Score</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-value" id="jdAlignment">--</div>
+                    <div class="info-label">JD Alignment</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-value" id="lastUpdated">--</div>
+                    <div class="info-label">Last Updated</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-value" id="focusTagCount">--</div>
+                    <div class="info-label">Focus Tags</div>
+                </div>
+            </div>
+
+            <div id="jdAlignmentSection" class="jd-section" style="display: none;">
+                <h2>Job Description Alignment</h2>
+                <div id="jdContent">
+                    <!-- Will be populated with JD data -->
+                </div>
+            </div>
+
+            <h2 class="section-title">Focus Tags</h2>
+            <div class="detail-card">
+                <div class="tag-container" id="tagContainer">
+                    <!-- Will be populated with tags -->
+                </div>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <h3>Content Coverage</h3>
+                    <div class="chart-container">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <h3>Technical Skills</h3>
+                    <div class="chart-container">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Section Metrics</h2>
+            <div class="detail-card">
+                <table class="metric-table" id="sectionsTable">
+                    <thead>
+                        <tr>
+                            <th>Section</th>
+                            <th>Coverage</th>
+                            <th>Weight</th>
+                            <th>Density</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Will be populated with section metrics -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="keywordSection" style="display: none;">
+                <h2 class="section-title">Keyword Emphasis</h2>
+                <div class="detail-card">
+                    <div class="chart-container half-height">
+                        <canvas id="keywordsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cvAdditionsSection" style="display: none;">
+                <h2 class="section-title">Potential CV Additions</h2>
+                <div id="cvAdditionsContainer">
+                    <!-- Will be populated with CV additions -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Resume Management System • Encoding Detail View</p>
+    </footer>
+
+    <script>
+        // State
+        const state = {
+            encodingData: null,
+            branchId: null
+        };
+
+        // DOM Elements
+        const fileInput = document.getElementById('encodingFile');
+        const fileInputContainer = document.getElementById('fileInputContainer');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const detailContent = document.getElementById('detailContent');
+        const compareLink = document.getElementById('compareLink');
+        const viewReportLink = document.getElementById('viewReportLink');
+
+        // Charts
+        let radarChart, skillsChart, keywordsChart;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const encodingId = urlParams.get('id');
+            
+            if (encodingId) {
+                state.branchId = encodingId;
+                promptForEncodingFile(encodingId);
+            }
+            
+            // Add event listener for file input
+            fileInput.addEventListener('change', handleFileSelect);
+        });
+
+        // File handling
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            showLoading();
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    loadEncodingData(data);
+                } catch (error) {
+                    hideLoading();
+                    alert('Error parsing JSON file: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Prompt for encoding file
+        function promptForEncodingFile(encodingId) {
+            fileInputContainer.innerHTML = `
+                <h3>Load Encoding for: ${encodingId}</h3>
+                <label for="encodingFile" class="file-input-label">
+                    Select Encoding File
+                </label>
+                <input type="file" id="encodingFile" class="file-input" accept=".json">
+                <span class="file-input-help">Please select the JSON file for this encoding</span>
+            `;
+        }
+
+        // Show loading indicator
+        function showLoading() {
+            fileInputContainer.style.display = 'none';
+            loadingIndicator.style.display = 'flex';
+        }
+
+        // Hide loading indicator
+        function hideLoading() {
+            loadingIndicator.style.display = 'none';
+        }
+
+        // Load encoding data
+        function loadEncodingData(data) {
+            state.encodingData = data;
+            
+            // If branch ID wasn't set from URL, get it from the data
+            if (!state.branchId && data.branch_name) {
+                state.branchId = data.branch_name;
+            }
+            
+            // Setup report link
+            const cleanBranchName = state.branchId.replace(/[\/\\]/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+            viewReportLink.href = `../reports/comparisons/main_vs_${cleanBranchName}.html`;
+            
+            // Setup compare link
+            compareLink.href = `encoding_compare.html?id1=${encodeURIComponent(state.branchId)}`;
+            
+            // Hide loading and show content
+            hideLoading();
+            detailContent.style.display = 'block';
+            
+            // Render all sections
+            renderInfoMetrics();
+            renderFocusTags();
+            renderJdAlignment();
+            renderContentCoverage();
+            renderTechnicalSkills();
+            renderSectionMetrics();
+            renderKeywordEmphasis();
+            renderCvAdditions();
+        }
+
+        // Render info metrics
+        function renderInfoMetrics() {
+            // Weighted score
+            const weightedScoreEl = document.getElementById('weightedScore');
+            if (state.encodingData.composite_scores && state.encodingData.composite_scores.weighted_average) {
+                weightedScoreEl.textContent = `${state.encodingData.composite_scores.weighted_average}%`;
+            } else {
+                weightedScoreEl.textContent = 'N/A';
+            }
+            
+            // JD alignment
+            const jdAlignmentEl = document.getElementById('jdAlignment');
+            if (state.encodingData.job_descriptions && state.encodingData.job_descriptions.length > 0) {
+                const primaryJd = state.encodingData.job_descriptions.find(jd => jd.is_primary);
+                if (primaryJd) {
+                    jdAlignmentEl.textContent = `${primaryJd.alignment_score}%`;
+                } else {
+                    jdAlignmentEl.textContent = 'N/A';
+                }
+            } else {
+                jdAlignmentEl.textContent = 'N/A';
+            }
+            
+            // Last updated
+            const lastUpdatedEl = document.getElementById('lastUpdated');
+            if (state.encodingData.timestamp) {
+                const date = new Date(state.encodingData.timestamp);
+                lastUpdatedEl.textContent = date.toLocaleDateString();
+            } else {
+                lastUpdatedEl.textContent = 'N/A';
+            }
+            
+            // Focus tag count
+            const focusTagCountEl = document.getElementById('focusTagCount');
+            if (state.encodingData.focus_tags) {
+                focusTagCountEl.textContent = state.encodingData.focus_tags.length;
+            } else {
+                focusTagCountEl.textContent = '0';
+            }
+        }
+
+        // Render focus tags
+        function renderFocusTags() {
+            const tagContainer = document.getElementById('tagContainer');
+            tagContainer.innerHTML = '';
+            
+            if (state.encodingData.focus_tags && state.encodingData.focus_tags.length > 0) {
+                state.encodingData.focus_tags.forEach(tag => {
+                    const tagEl = document.createElement('span');
+                    tagEl.className = 'tag';
+                    tagEl.textContent = tag;
+                    tagContainer.appendChild(tagEl);
+                });
+            } else {
+                tagContainer.innerHTML = '<p>No focus tags defined for this encoding.</p>';
+            }
+        }
+
+        // Render JD alignment
+        function renderJdAlignment() {
+            const jdSection = document.getElementById('jdAlignmentSection');
+            const jdContent = document.getElementById('jdContent');
+            
+            if (state.encodingData.job_descriptions && state.encodingData.job_descriptions.length > 0) {
+                jdSection.style.display = 'block';
+                jdContent.innerHTML = '';
+                
+                // Find primary JD
+                const primaryJd = state.encodingData.job_descriptions.find(jd => jd.is_primary);
+                
+                if (primaryJd) {
+                    const jdId = primaryJd.jd_id;
+                    const alignmentScore = primaryJd.alignment_score;
+                    const matchedSkills = primaryJd.matched_skills || [];
+                    const missingSkills = primaryJd.missing_skills || [];
+                    
+                    // Create company logo
+                    const companyInitial = jdId.split('_')[0].charAt(0).toUpperCase();
+                    
+                    // Determine alignment class
+                    const alignmentClass = alignmentScore >= 80 ? 'good' : 
+                                          alignmentScore >= 60 ? 'medium' : 'poor';
+                    
+                    // Parse company and position from JD ID
+                    const jdParts = jdId.split('_');
+                    const company = jdParts[0].charAt(0).toUpperCase() + jdParts[0].slice(1);
+                    const position = jdParts[1].charAt(0).toUpperCase() + jdParts[1].slice(1);
+                    
+                    // Build HTML
+                    let html = `
+                        <div class="jd-header">
+                            <div class="company-logo">${companyInitial}</div>
+                            <div class="jd-company">${company}</div>
+                            <div class="jd-position">${position}</div>
+                        </div>
+                        <p>Job Description ID: ${jdId}</p>
+                        <div class="progress-container">
+                            <div class="progress-bar ${alignmentClass}" style="width: ${alignmentScore}%">${alignmentScore}%</div>
+                        </div>
+                    `;
+                    
+                    // Matched skills
+                    html += '<h3>Matched Skills</h3>';
+                    if (matchedSkills.length > 0) {
+                        matchedSkills.forEach(skill => {
+                            html += `<span class="skill-match">${skill}</span>`;
+                        });
+                    } else {
+                        html += '<p>No matched skills found.</p>';
+                    }
+                    
+                    // Missing skills
+                    html += '<h3>Missing Skills</h3>';
+                    if (missingSkills.length > 0) {
+                        missingSkills.forEach(skill => {
+                            html += `<span class="skill-missing">${skill}</span>`;
+                        });
+                    } else {
+                        html += '<p>No missing skills! This resume covers all required skills.</p>';
+                    }
+                    
+                    jdContent.innerHTML = html;
+                } else {
+                    // No primary JD found
+                    jdContent.innerHTML = `
+                        <p>This encoding has ${state.encodingData.job_descriptions.length} associated job description(s), but none is marked as primary.</p>
+                    `;
+                }
+            } else {
+                jdSection.style.display = 'none';
+            }
+        }
+
+        // Render content coverage
+        function renderContentCoverage() {
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            
+            // Prepare data
+            let labels = [];
+            let values = [];
+            
+            if (state.encodingData.composite_scores) {
+                const scores = state.encodingData.composite_scores;
+                
+                // Get all sections except weighted average
+                Object.keys(scores).forEach(key => {
+                    if (key !== 'weighted_average') {
+                        // Format section name
+                        const label = key.split('_')
+                            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                            .join(' ');
+                            
+                        labels.push(label);
+                        values.push(scores[key]);
+                    }
+                });
+            }
+            
+            // If we have data from visualization property, use that instead
+            if (state.encodingData.visualization && state.encodingData.visualization.radar_chart_data) {
+                labels = state.encodingData.visualization.radar_chart_data.labels;
+                values = state.encodingData.visualization.radar_chart_data.values;
+            }
+            
+            // Create chart
+            radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Content Coverage',
+                        data: values,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgb(54, 162, 235)',
+                        borderWidth: 1,
+                        pointBackgroundColor: 'rgb(54, 162, 235)',
+                        pointHoverBackgroundColor: '#fff'
+                    }]
+                },
+                options: {
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // Render technical skills
+        function renderTechnicalSkills() {
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            
+            // Prepare data
+            let labels = [];
+            let values = [];
+            
+            if (state.encodingData.detailed_scores && state.encodingData.detailed_scores.technical_skills) {
+                const skills = state.encodingData.detailed_scores.technical_skills;
+                
+                Object.keys(skills).forEach(key => {
+                    // Format skill name
+                    const label = key.split('_')
+                        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                        .join(' ');
+                        
+                    labels.push(label);
+                    values.push(skills[key]);
+                });
+            }
+            
+            // Create chart
+            skillsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Skill Coverage',
+                        data: values,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgb(75, 192, 192)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // Render section metrics
+        function renderSectionMetrics() {
+            const table = document.getElementById('sectionsTable').getElementsByTagName('tbody')[0];
+            table.innerHTML = '';
+            
+            if (state.encodingData.composite_scores && state.encodingData.section_weights) {
+                const scores = state.encodingData.composite_scores;
+                const weights = state.encodingData.section_weights;
+                const densities = state.encodingData.content_density || {};
+                
+                // Get all sections except weighted average
+                Object.keys(scores)
+                    .filter(key => key !== 'weighted_average')
+                    .forEach(key => {
+                        const row = table.insertRow();
+                        
+                        // Format section name
+                        const nameCell = row.insertCell();
+                        nameCell.textContent = key.split('_')
+                            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                            .join(' ');
+                        
+                        // Coverage
+                        const coverageCell = row.insertCell();
+                        coverageCell.textContent = `${scores[key]}%`;
+                        
+                        // Weight
+                        const weightCell = row.insertCell();
+                        weightCell.textContent = weights[key] || 'N/A';
+                        
+                        // Density
+                        const densityCell = row.insertCell();
+                        densityCell.textContent = densities[key] || 'N/A';
+                    });
+                
+                // Add weighted average row
+                const avgRow = table.insertRow();
+                avgRow.style.fontWeight = 'bold';
+                
+                const avgNameCell = avgRow.insertCell();
+                avgNameCell.textContent = 'Weighted Average';
+                
+                const avgValueCell = avgRow.insertCell();
+                avgValueCell.textContent = `${scores.weighted_average}%`;
+                
+                const avgWeightCell = avgRow.insertCell();
+                avgWeightCell.textContent = '—';
+                
+                const avgDensityCell = avgRow.insertCell();
+                avgDensityCell.textContent = '—';
+            } else {
+                const row = table.insertRow();
+                const cell = row.insertCell();
+                cell.colSpan = 4;
+                cell.textContent = 'No section metrics available for this encoding.';
+                cell.style.textAlign = 'center';
+            }
+        }
+
+        // Render keyword emphasis
+        function renderKeywordEmphasis() {
+            const keywordSection = document.getElementById('keywordSection');
+            
+            if (state.encodingData.keyword_emphasis) {
+                keywordSection.style.display = 'block';
+                
+                const ctx = document.getElementById('keywordsChart').getContext('2d');
+                
+                // Prepare data
+                const keywords = state.encodingData.keyword_emphasis;
+                const labels = [];
+                const values = [];
+                
+                Object.keys(keywords).forEach(key => {
+                    labels.push(key);
+                    values.push(keywords[key]);
+                });
+                
+                // Create chart
+                keywordsChart = new Chart(ctx, {
+                    type: 'horizontalBar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Emphasis Score',
+                            data: values,
+                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                            borderColor: 'rgb(153, 102, 255)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        scales: {
+                            x: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            } else {
+                keywordSection.style.display = 'none';
+            }
+        }
+
+        // Render CV additions
+        function renderCvAdditions() {
+            const cvAdditionsSection = document.getElementById('cvAdditionsSection');
+            const cvAdditionsContainer = document.getElementById('cvAdditionsContainer');
+            
+            if (state.encodingData.cv_augmentation && 
+                state.encodingData.cv_augmentation.new_content &&
+                state.encodingData.cv_augmentation.new_content.length > 0) {
+                
+                cvAdditionsSection.style.display = 'block';
+                cvAdditionsContainer.innerHTML = '';
+                
+                state.encodingData.cv_augmentation.new_content.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'detail-card';
+                    
+                    // Format section name
+                    const sectionName = item.section.split('_')
+                        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                        .join(' ');
+                    
+                    card.innerHTML = `
+                        <h3>${sectionName}</h3>
+                        <p><strong>Target File:</strong> ${item.target_cv_file}</p>
+                        <p>${item.content}</p>
+                    `;
+                    
+                    cvAdditionsContainer.appendChild(card);
+                });
+            } else {
+                cvAdditionsSection.style.display = 'none';
+            }
+        }
+
+        // Sample data for testing
+        function loadSampleData() {
+            const sampleData = {
+                "branch_name": "resume/data_engineer_2023q4",
+                "timestamp": "2023-10-15 14:30:22",
+                "focus_tags": ["data-engineering", "cloud-infrastructure", "backend-services"],
+                "job_descriptions": [
+                    {
+                        "jd_id": "examplecorp_seniordata_20231001",
+                        "alignment_score": 85,
+                        "matched_skills": ["data-engineering", "python", "azure"],
+                        "missing_skills": ["spark", "kafka"],
+                        "is_primary": true
+                    }
+                ],
+                "section_weights": {
+                    "main": 1.0,
+                    "professional_summary": 1.0,
+                    "microsoft_experience": 1.0,
+                    "google_experience": 1.0,
+                    "education": 1.0,
+                    "technical_skills": 1.0,
+                    "professional_interests": 0.5
+                },
+                "composite_scores": {
+                    "main": 75,
+                    "professional_summary": 80,
+                    "microsoft_experience": 90,
+                    "google_experience": 40,
+                    "education": 70,
+                    "technical_skills": 75,
+                    "professional_interests": 60,
+                    "weighted_average": 78
+                },
+                "detailed_scores": {
+                    "main": {
+                        "aliases": 70,
+                        "configurations": 80
+                    },
+                    "microsoft_experience": {
+                        "team_a_project": 100,
+                        "team_b_project": 80,
+                        "team_c_project": 0
+                    },
+                    "technical_skills": {
+                        "cloud_distributed_systems": 90,
+                        "data_engineering": 100,
+                        "api_web_technologies": 60,
+                        "programming_languages": 75,
+                        "ai_ml": 40,
+                        "cs_fundamentals": 70,
+                        "professional_skills": 80
+                    }
+                },
+                "keyword_emphasis": {
+                    "azure": 9,
+                    "data-pipelines": 7,
+                    "python": 5,
+                    "distributed-systems": 8
+                },
+                "content_density": {
+                    "main": "standard",
+                    "professional_summary": "standard",
+                    "microsoft_experience": "detailed",
+                    "google_experience": "condensed",
+                    "education": "standard",
+                    "technical_skills": "detailed",
+                    "professional_interests": "standard"
+                },
+                "cv_augmentation": {
+                    "new_content": [
+                        {
+                            "section": "microsoft_experience",
+                            "content": "Led migration of legacy data pipeline to Azure Data Factory, reducing processing time by 40%",
+                            "target_cv_file": "2.1.Microsoft.tex"
+                        }
+                    ]
+                },
+                "visualization": {
+                    "radar_chart_data": {
+                        "labels": ["Main", "Summary", "Microsoft", "Google", "Education", "Skills", "Interests"],
+                        "values": [75, 80, 90, 40, 70, 75, 60]
+                    }
+                }
+            };
+            
+            loadEncodingData(sampleData);
+        }
+
+        // Load sample data for demo purposes
+        // Comment out this line when using the file input in production
+        loadSampleData();
+    </script>
+</body>
+</html>

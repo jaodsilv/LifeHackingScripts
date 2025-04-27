@@ -1,0 +1,115 @@
+{
+  "branch_name": "resume/Quadrant",
+  "timestamp": "2023-10-01T12:00:00Z",
+  "focus_tags": ["data-engineering", "cloud-infrastructure", "distributed-systems", "backend-services", "ai-ml"],
+  "section_weights": {
+    "professional_summary": 1.0,
+    "microsoft_experience": 1.0,
+    "google_experience": 1.0,
+    "education": 1.0,
+    "technical_skills": 1.0,
+    "professional_interests": 0.5
+  },
+  "composite_scores": {
+    "professional_summary": 95,
+    "microsoft_experience": 40,
+    "google_experience": 57,
+    "education": 100,
+    "technical_skills": 85,
+    "professional_interests": 80,
+    "weighted_average": 72
+  },
+  "detailed_scores": {
+    "microsoft_experience": {
+      "team_description": 100,
+      "distributed_storage": 100,
+      "pipeline_migration": 95,
+      "data_freshness": 100,
+      "pipeline_management": 100,
+      "goroutine_parallelization": 100,
+      "microservice_architecture": 90,
+      "monitoring_systems": 100,
+      "bi_dashboards": 100,
+      "sponsored_stories": 100,
+      "knowledge_cards": 100,
+      "financial_tracking": 100,
+      "test_automation": 0,
+      "multilingual_support": 0,
+      "performance_optimization": 0,
+      "catchup_solution": 0,
+      "complex_pipeline_migrations": 0,
+      "advanced_distribution_patterns": 0,
+      "integration_external_systems": 0,
+      "refund_api": 0,
+      "repository_infrastructure": 0,
+      "logging_infrastructure": 0,
+      "ux_enhancements": 0,
+      "international_deployment": 0,
+      "bug_resolution": 0,
+      "knowledge_transfer": 0,
+      "incident_response": 0,
+      "neurodiversity_initiatives": 100
+    },
+    "google_experience": {
+      "streaming_pipeline": 100,
+      "survey_infrastructure": 100,
+      "test_automation": 100,
+      "distributed_storage": 100,
+      "backend_systems": 0,
+      "streaming_services": 0,
+      "cross_functional_collaboration": 0
+    },
+    "technical_skills": {
+      "cloud_distributed_systems": 90,
+      "data_engineering": 85,
+      "api_web_technologies": 0,
+      "programming_languages": 95,
+      "ai_ml": 100,
+      "cs_fundamentals": 80,
+      "observability_reliability": 0,
+      "professional_skills": 95,
+      "languages": 100
+    }
+  },
+  "keyword_emphasis": {
+    "distributed-systems": 7,
+    "microservices": 3,
+    "azure": 12,
+    "data-pipelines": 9,
+    "apache-spark": 4,
+    "cloud-native": 5,
+    "kubernetes": 3,
+    "hdfs": 4,
+    "high-performance": 6,
+    "fault-tolerant": 5,
+    "ai": 7,
+    "data-processing": 5
+  },
+  "content_density": {
+    "microsoft_experience": "condensed",
+    "google_experience": "condensed",
+    "education": "standard",
+    "technical_skills": "condensed",
+    "professional_interests": "expanded"
+  },
+  "cv_augmentation": {
+    "new_content": [
+      {
+        "section": "microsoft_experience",
+        "content": "orchestrating Go and Java components via Kubernetes while integrating with Azure Service Bus and Kafka for event-driven message processing",
+        "target_cv_file": "2.1.Microsoft.tex"
+      },
+      {
+        "section": "professional_interests",
+        "content": "AI For Productivity Enhancement, Prompt Engineering",
+        "target_cv_file": "7.Interests.tex"
+      }
+    ]
+  },
+  "visualization": {
+    "radar_chart_data": {
+      "labels": ["Summary", "Microsoft", "Google", "Education", "Skills", "Interests"],
+      "values": [95, 40, 57, 100, 85, 80]
+    }
+  }
+} 

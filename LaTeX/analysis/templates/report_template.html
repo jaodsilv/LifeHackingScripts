@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Comparison Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #1565c0;
+            --secondary-color: #f50057;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+            --tag-bg: #e1f5fe;
+            --tag-color: #0277bd;
+            --common-tag-bg: #e8f5e9;
+            --common-tag-color: #2e7d32;
+            --unique-tag-bg: #ffebee;
+            --unique-tag-color: #c62828;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--background-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .timestamp {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 5px;
+        }
+
+        .branch-info {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .branch-divider {
+            margin: 0 10px;
+            font-size: 1.5em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .branch-name {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .branch1 {
+            background-color: rgba(54, 162, 235, 0.7);
+        }
+
+        .branch2 {
+            background-color: rgba(255, 99, 132, 0.7);
+        }
+
+        .comparison-section {
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--tag-bg);
+            color: var(--tag-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .tag.common {
+            background-color: var(--common-tag-bg);
+            color: var(--common-tag-color);
+        }
+
+        .tag.unique {
+            background-color: var(--unique-tag-bg);
+            color: var(--unique-tag-color);
+        }
+
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .metrics-table th, .metrics-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .metrics-table th {
+            background-color: rgba(0,0,0,0.03);
+            font-weight: 600;
+        }
+
+        .metrics-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .metrics-table tr:hover {
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .chart-box {
+            flex: 1;
+            min-width: 450px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .positive {
+            color: var(--success-color);
+        }
+
+        .negative {
+            color: var(--danger-color);
+        }
+
+        .neutral {
+            color: #757575;
+        }
+
+        .jd-section {
+            background-color: #f2f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .jd-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .jd-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .company-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 12px;
+        }
+
+        .jd-company {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .jd-position {
+            color: #757575;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        .progress-container {
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            height: 24px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            text-align: center;
+            line-height: 24px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            transition: width 0.5s ease;
+        }
+
+        .progress-bar.good {
+            background-color: var(--success-color);
+        }
+
+        .progress-bar.medium {
+            background-color: var(--warning-color);
+        }
+
+        .progress-bar.poor {
+            background-color: var(--danger-color);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .skill-match {
+            background-color: var(--common-tag-bg);
+            color: var(--common-tag-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .skill-missing {
+            background-color: var(--unique-tag-bg);
+            color: var(--unique-tag-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .alignment-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .alignment-badge.good {
+            background-color: var(--success-color);
+        }
+
+        .alignment-badge.medium {
+            background-color: var(--warning-color);
+        }
+
+        .alignment-badge.poor {
+            background-color: var(--danger-color);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .nav-button {
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .nav-button:hover {
+            background-color: #0d47a1;
+        }
+
+        .change-indicator {
+            margin-left: 10px;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .change-positive {
+            background-color: rgba(76, 175, 80, 0.2);
+            color: var(--success-color);
+        }
+
+        .change-negative {
+            background-color: rgba(244, 67, 54, 0.2);
+            color: var(--danger-color);
+        }
+
+        .generated-info {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #757575;
+        }
+
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div>
+                <h1>Resume Comparison Report</h1>
+                <p class="timestamp">Generated on {{timestamp}}</p>
+            </div>
+            <div class="nav-buttons">
+                <a href="../index.html" class="nav-button">All Reports</a>
+            </div>
+        </div>
+        <div class="branch-info">
+            <span class="branch-name branch1">{{branch1_name}}</span>
+            <span class="branch-divider">vs</span>
+            <span class="branch-name branch2">{{branch2_name}}</span>
+        </div>
+    </div>
+
+    <!-- Significant Changes Alert -->
+    <div id="significantChanges" class="comparison-section" style="display:none; border-left: 4px solid #f44336;">
+        <h2><span style="color: #f44336;">⚠</span> Significant Changes Detected</h2>
+        <div id="changesContent">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- JD Alignment Section -->
+    <div class="comparison-section jd-section" id="jdSection" style="display:none;">
+        <h2>Job Description Alignment</h2>
+        <div id="jdContent">
+            <!-- Will be populated based on JD data -->
+        </div>
+    </div>
+
+    <div class="comparison-section">
+        <h2>Focus Tags</h2>
+        <div>
+            <h3>{{branch1_name}} <span class="neutral">({{branch1_score}}%)</span></h3>
+            <div>
+                {{#branch1_tags}}
+                <span class="tag">{{.}}</span>
+                {{/branch1_tags}}
+            </div>
+            
+            <h3>{{branch2_name}} <span class="neutral">({{branch2_score}}%)</span></h3>
+            <div>
+                {{#branch2_tags}}
+                <span class="tag">{{.}}</span>
+                {{/branch2_tags}}
+            </div>
+        </div>
+        
+        <div>
+            <h3>Common Tags</h3>
+            <div>
+                {{#common_tags}}
+                <span class="tag common">{{.}}</span>
+                {{/common_tags}}
+                {{^common_tags}}
+                <p>No common tags found.</p>
+                {{/common_tags}}
+            </div>
+            
+            <h3>Unique to {{branch1_name}}</h3>
+            <div>
+                {{#unique_tags1}}
+                <span class="tag unique">{{.}}</span>
+                {{/unique_tags1}}
+                {{^unique_tags1}}
+                <p>No unique tags found.</p>
+                {{/unique_tags1}}
+            </div>
+            
+            <h3>Unique to {{branch2_name}}</h3>
+            <div>
+                {{#unique_tags2}}
+                <span class="tag unique">{{.}}</span>
+                {{/unique_tags2}}
+                {{^unique_tags2}}
+                <p>No unique tags found.</p>
+                {{/unique_tags2}}
+            </div>
+        </div>
+    </div>
+    
+    <div class="comparison-section">
+        <h2>Content Coverage</h2>
+        <table class="metrics-table">
+            <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>{{branch1_name}}</th>
+                    <th>{{branch2_name}}</th>
+                    <th>Difference</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#sections}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{score1}}%</td>
+                    <td>{{score2}}%</td>
+                    <td class="{{diff_class}}">{{diff_sign}}{{diff_abs}}%</td>
+                </tr>
+                {{/sections}}
+                <tr style="font-weight: bold;">
+                    <td>Weighted Average</td>
+                    <td>{{branch1_score}}%</td>
+                    <td>{{branch2_score}}%</td>
+                    <td class="{{avg_diff_class}}">{{avg_diff_sign}}{{avg_diff_abs}}%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="comparison-section chart-container">
+        <div class="chart-box">
+            <h2>Content Coverage Comparison</h2>
+            <canvas id="radarChart"></canvas>
+        </div>
+        
+        <div class="chart-box">
+            <h2>Technical Skills Comparison</h2>
+            <canvas id="skillsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-button">Back to Index</a>
+    </div>
+
+    <div class="generated-info">
+        Generated by Resume Management System • {{timestamp}}
+    </div>
+    
+    <script>
+        // Radar Chart Data
+        const radarData = {{radar_data_json}};
+        
+        // Skills Chart Data
+        const skillsData = {{skills_data_json}};
+        
+        // JD Data
+        const jdData = {{jd_data_json}};
+
+        // Significant Changes Data
+        const changesData = {{changes_data_json}};
+        
+        // Initialize Charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show significant changes if any
+            if (changesData && changesData.significant) {
+                const changesSection = document.getElementById('significantChanges');
+                const changesContent = document.getElementById('changesContent');
+                changesSection.style.display = 'block';
+                
+                let changesHtml = '<ul>';
+                
+                if (changesData.score_diff) {
+                    const scoreClass = changesData.score_diff > 0 ? 'change-positive' : 'change-negative';
+                    const scoreSign = changesData.score_diff > 0 ? '+' : '';
+                    changesHtml += `<li>Overall score changed by <span class="${scoreClass}">${scoreSign}${changesData.score_diff}%</span></li>`;
+                }
+                
+                if (changesData.jd_alignment_diff) {
+                    const alignClass = changesData.jd_alignment_diff > 0 ? 'change-positive' : 'change-negative';
+                    const alignSign = changesData.jd_alignment_diff > 0 ? '+' : '';
+                    changesHtml += `<li>Job description alignment changed by <span class="${alignClass}">${alignSign}${changesData.jd_alignment_diff}%</span></li>`;
+                }
+                
+                if (changesData.tags_added && changesData.tags_added.length > 0) {
+                    changesHtml += `<li>Added tags: <span class="change-positive">${changesData.tags_added.join(', ')}</span></li>`;
+                }
+                
+                if (changesData.tags_removed && changesData.tags_removed.length > 0) {
+                    changesHtml += `<li>Removed tags: <span class="change-negative">${changesData.tags_removed.join(', ')}</span></li>`;
+                }
+                
+                changesHtml += '</ul>';
+                changesContent.innerHTML = changesHtml;
+            }
+            
+            // Radar Chart
+            const radarCtx = document.getElementById('radarChart').getContext('2d');
+            new Chart(radarCtx, {
+                type: 'radar',
+                data: radarData,
+                options: {
+                    scales: {
+                        r: {
+                            min: 0,
+                            max: 100,
+                            ticks: {
+                                stepSize: 20
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            });
+            
+            // Skills Chart
+            const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+            new Chart(skillsCtx, {
+                type: 'bar',
+                data: skillsData,
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            min: 0,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            });
+            
+            // Populate JD section if data exists
+            if (jdData && (jdData.branch1.primary_jd || jdData.branch2.primary_jd)) {
+                document.getElementById('jdSection').style.display = 'block';
+                const jdContent = document.getElementById('jdContent');
+                let jdHtml = '';
+                
+                // Branch 2 JD (more recent/important)
+                if (jdData.branch2.primary_jd) {
+                    jdHtml += '<div class="jd-card">';
+                    
+                    // JD Header
+                    jdHtml += '<div class="jd-header">';
+                    
+                    if (jdData.branch2.jd_details) {
+                        const companyInitial = jdData.branch2.jd_details.company.charAt(0).toUpperCase();
+                        jdHtml += '<div class="company-logo">' + companyInitial + '</div>';
+                        jdHtml += '<div class="jd-company">' + jdData.branch2.jd_details.company + '</div>';
+                        jdHtml += '<div class="jd-position">' + jdData.branch2.jd_details.position + '</div>';
+                        
+                        // Add alignment badge
+                        const badgeClass = jdData.branch2.jd_alignment >= 80 ? 'good' : 
+                                         (jdData.branch2.jd_alignment >= 60 ? 'medium' : 'poor');
+                        jdHtml += '<div class="alignment-badge ' + badgeClass + '">' + 
+                                  jdData.branch2.jd_alignment + '%</div>';
+                    } else {
+                        jdHtml += '<div class="jd-company">Primary JD: ' + jdData.branch2.primary_jd + '</div>';
+                    }
+                    
+                    jdHtml += '</div>'; // end header
+                    
+                    // Progress bar
+                    jdHtml += '<div class="progress-container">';
+                    const barClass = jdData.branch2.jd_alignment >= 80 ? 'good' : 
+                                    (jdData.branch2.jd_alignment >= 60 ? 'medium' : 'poor');
+                    jdHtml += '<div class="progress-bar ' + barClass + '" style="width: ' + 
+                              jdData.branch2.jd_alignment + '%">' + jdData.branch2.jd_alignment + '%</div>';
+                    jdHtml += '</div>';
+                    
+                    // Skills
+                    if (jdData.branch2.jd_details && jdData.branch2.jd_details.matched_skills) {
+                        jdHtml += '<div><strong>Matched Skills:</strong></div>';
+                        jdHtml += '<div class="skill-list">';
+                        jdData.branch2.jd_details.matched_skills.forEach(skill => {
+                            jdHtml += '<span class="skill-match">' + skill + '</span>';
+                        });
+                        jdHtml += '</div>';
+                        
+                        jdHtml += '<div><strong>Missing Skills:</strong></div>';
+                        jdHtml += '<div class="skill-list">';
+                        if (jdData.branch2.jd_details.missing_skills && jdData.branch2.jd_details.missing_skills.length > 0) {
+                            jdData.branch2.jd_details.missing_skills.forEach(skill => {
+                                jdHtml += '<span class="skill-missing">' + skill + '</span>';
+                            });
+                        } else {
+                            jdHtml += '<em>No missing skills!</em>';
+                        }
+                        jdHtml += '</div>';
+                    }
+                    
+                    // Alignment diff
+                    if (jdData.jd_alignment_diff) {
+                        const diffClass = jdData.jd_alignment_diff > 0 ? 'positive' : 'negative';
+                        const diffSign = jdData.jd_alignment_diff > 0 ? '+' : '';
+                        jdHtml += '<div style="margin-top: 15px;">';
+                        jdHtml += 'Alignment change: <span class="' + diffClass + '">' + 
+                                  diffSign + jdData.jd_alignment_diff + '%</span>';
+                        jdHtml += '</div>';
+                    }
+                    
+                    jdHtml += '</div>'; // end jd-card
+                }
+                
+                // Branch 1 JD (if different from branch 2)
+                if (jdData.branch1.primary_jd && jdData.branch1.primary_jd !== jdData.branch2.primary_jd) {
+                    jdHtml += '<div style="margin-top: 20px;">';
+                    jdHtml += '<h3>' + jdData.branch1.name + ' JD Alignment:</h3>';
+                    
+                    jdHtml += '<div class="jd-card">';
+                    jdHtml += '<div class="jd-header">';
+                    
+                    if (jdData.branch1.jd_details) {
+                        const companyInitial = jdData.branch1.jd_details.company.charAt(0).toUpperCase();
+                        jdHtml += '<div class="company-logo">' + companyInitial + '</div>';
+                        jdHtml += '<div class="jd-company">' + jdData.branch1.jd_details.company + '</div>';
+                        jdHtml += '<div class="jd-position">' + jdData.branch1.jd_details.position + '</div>';
+                        
+                        // Add alignment badge
+                        const badgeClass = jdData.branch1.jd_alignment >= 80 ? 'good' : 
+                                         (jdData.branch1.jd_alignment >= 60 ? 'medium' : 'poor');
+                        jdHtml += '<div class="alignment-badge ' + badgeClass + '">' + 
+                                  jdData.branch1.jd_alignment + '%</div>';
+                    } else {
+                        jdHtml += '<div class="jd-company">Primary JD: ' + jdData.branch1.primary_jd + '</div>';
+                    }
+                    
+                    jdHtml += '</div>'; // end header
+                    
+                    // Progress bar
+                    jdHtml += '<div class="progress-container">';
+                    const barClass = jdData.branch1.jd_alignment >= 80 ? 'good' : 
+                                    (jdData.branch1.jd_alignment >= 60 ? 'medium' : 'poor');
+                    jdHtml += '<div class="progress-bar ' + barClass + '" style="width: ' + 
+                              jdData.branch1.jd_alignment + '%">' + jdData.branch1.jd_alignment + '%</div>';
+                    jdHtml += '</div>';
+                    
+                    jdHtml += '</div>'; // end jd-card
+                    jdHtml += '</div>';
+                }
+                
+                jdContent.innerHTML = jdHtml;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Comparison Visualization</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .chart-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .chart-box {
+      flex: 1;
+      min-width: 300px;
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    .resume-selection {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+    select, button {
+      padding: 8px 12px;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: white;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .metrics {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+    .metrics table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .metrics th, .metrics td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .metrics th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Comparison Visualization</h1>
+    
+    <div class="resume-selection">
+      <h2>Select Resumes to Compare</h2>
+      <div>
+        <select id="resume1">
+          <option value="">Select Resume 1</option>
+          <option value="resume1">Resume_DE_Cloud_MS_2023Q4</option>
+          <option value="resume2">Resume_Backend_API_Google_2022Q4</option>
+          <option value="resume3">Resume_Cloud_Azure_2023Q3</option>
+        </select>
+        
+        <select id="resume2">
+          <option value="">Select Resume 2</option>
+          <option value="resume1">Resume_DE_Cloud_MS_2023Q4</option>
+          <option value="resume2">Resume_Backend_API_Google_2022Q4</option>
+          <option value="resume3">Resume_Cloud_Azure_2023Q3</option>
+        </select>
+        
+        <select id="resume3">
+          <option value="">Select Resume 3 (Optional)</option>
+          <option value="resume1">Resume_DE_Cloud_MS_2023Q4</option>
+          <option value="resume2">Resume_Backend_API_Google_2022Q4</option>
+          <option value="resume3">Resume_Cloud_Azure_2023Q3</option>
+        </select>
+        
+        <button id="compareBtn">Compare Resumes</button>
+      </div>
+    </div>
+    
+    <div class="chart-container">
+      <div class="chart-box">
+        <h2>Content Coverage</h2>
+        <canvas id="radarChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <h2>Technical Skills Distribution</h2>
+        <canvas id="barChart"></canvas>
+      </div>
+    </div>
+    
+    <div class="metrics">
+      <h2>Detailed Metrics</h2>
+      <table id="metricsTable">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Resume 1</th>
+            <th>Resume 2</th>
+            <th>Resume 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Focus Tags</td>
+            <td id="tags1">-</td>
+            <td id="tags2">-</td>
+            <td id="tags3">-</td>
+          </tr>
+          <tr>
+            <td>Last Modified</td>
+            <td id="date1">-</td>
+            <td id="date2">-</td>
+            <td id="date3">-</td>
+          </tr>
+          <tr>
+            <td>Overall Match Score</td>
+            <td id="score1">-</td>
+            <td id="score2">-</td>
+            <td id="score3">-</td>
+          </tr>
+          <tr>
+            <td>Top Keywords</td>
+            <td id="keywords1">-</td>
+            <td id="keywords2">-</td>
+            <td id="keywords3">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Sample resume data (would be loaded from ResumeEncodings.json)
+    const resumeData = {
+      "resume1": {
+        "resume_id": "Resume_DE_Cloud_MS_2023Q4",
+        "modified_date": "2023-11-02",
+        "focus_tags": ["data-engineering", "cloud-infrastructure", "backend-services"],
+        "composite_scores": {
+          "professional_summary": 80,
+          "microsoft_experience": 90,
+          "google_experience": 40,
+          "education": 70,
+          "technical_skills": 75,
+          "professional_interests": 60
+        },
+        "detailed_scores": {
+          "technical_skills": {
+            "cloud_distributed_systems": 90,
+            "data_engineering": 100,
+            "api_web_technologies": 60,
+            "programming_languages": 75,
+            "ai_ml": 40,
+            "cs_fundamentals": 70,
+            "professional_skills": 80
+          }
+        },
+        "keyword_emphasis": {
+          "azure": 9,
+          "data-pipelines": 7,
+          "python": 5,
+          "distributed-systems": 8
+        }
+      },
+      "resume2": {
+        "resume_id": "Resume_Backend_API_Google_2022Q4",
+        "modified_date": "2022-11-15",
+        "focus_tags": ["backend-development", "api-design", "microservices"],
+        "composite_scores": {
+          "professional_summary": 75,
+          "microsoft_experience": 50,
+          "google_experience": 95,
+          "education": 80,
+          "technical_skills": 70,
+          "professional_interests": 65
+        },
+        "detailed_scores": {
+          "technical_skills": {
+            "cloud_distributed_systems": 65,
+            "data_engineering": 40,
+            "api_web_technologies": 95,
+            "programming_languages": 85,
+            "ai_ml": 30,
+            "cs_fundamentals": 90,
+            "professional_skills": 75
+          }
+        },
+        "keyword_emphasis": {
+          "java": 10,
+          "rest-api": 12,
+          "microservices": 9,
+          "spring-boot": 7
+        }
+      },
+      "resume3": {
+        "resume_id": "Resume_Cloud_Azure_2023Q3",
+        "modified_date": "2023-08-10",
+        "focus_tags": ["cloud-architecture", "devops", "infrastructure"],
+        "composite_scores": {
+          "professional_summary": 85,
+          "microsoft_experience": 95,
+          "google_experience": 20,
+          "education": 60,
+          "technical_skills": 80,
+          "professional_interests": 50
+        },
+        "detailed_scores": {
+          "technical_skills": {
+            "cloud_distributed_systems": 100,
+            "data_engineering": 60,
+            "api_web_technologies": 45,
+            "programming_languages": 65,
+            "ai_ml": 25,
+            "cs_fundamentals": 70,
+            "professional_skills": 85
+          }
+        },
+        "keyword_emphasis": {
+          "azure": 14,
+          "kubernetes": 9,
+          "terraform": 8,
+          "devops": 11
+        }
+      }
+    };
+    
+    // Initialize charts
+    let radarChart, barChart;
+    
+    // Function to initialize the radar chart
+    function initRadarChart() {
+      const ctx = document.getElementById('radarChart').getContext('2d');
+      radarChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['Summary', 'Microsoft', 'Google', 'Education', 'Skills', 'Interests'],
+          datasets: []
+        },
+        options: {
+          scales: {
+            r: {
+              min: 0,
+              max: 100,
+              ticks: {
+                stepSize: 20
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
+    }
+    
+    // Function to initialize the bar chart
+    function initBarChart() {
+      const ctx = document.getElementById('barChart').getContext('2d');
+      barChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Cloud/Dist', 'Data Eng', 'API/Web', 'Lang', 'AI/ML', 'CS Fund', 'Prof Skills'],
+          datasets: []
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
+    }
+    
+    // Function to update charts with selected resumes
+    function updateCharts() {
+      const resume1Id = document.getElementById('resume1').value;
+      const resume2Id = document.getElementById('resume2').value;
+      const resume3Id = document.getElementById('resume3').value;
+      
+      // Clear existing datasets
+      radarChart.data.datasets = [];
+      barChart.data.datasets = [];
+      
+      // Colors for the charts
+      const colors = [
+        { border: 'rgb(54, 162, 235)', background: 'rgba(54, 162, 235, 0.2)' },
+        { border: 'rgb(255, 99, 132)', background: 'rgba(255, 99, 132, 0.2)' },
+        { border: 'rgb(75, 192, 192)', background: 'rgba(75, 192, 192, 0.2)' }
+      ];
+      
+      // Add data for selected resumes
+      const selectedResumes = [resume1Id, resume2Id, resume3Id].filter(id => id !== "");
+      
+      selectedResumes.forEach((resumeId, index) => {
+        const resume = resumeData[resumeId];
+        
+        // Update radar chart
+        radarChart.data.datasets.push({
+          label: resume.resume_id,
+          data: [
+            resume.composite_scores.professional_summary,
+            resume.composite_scores.microsoft_experience,
+            resume.composite_scores.google_experience,
+            resume.composite_scores.education,
+            resume.composite_scores.technical_skills,
+            resume.composite_scores.professional_interests
+          ],
+          borderColor: colors[index].border,
+          backgroundColor: colors[index].background
+        });
+        
+        // Update bar chart
+        barChart.data.datasets.push({
+          label: resume.resume_id,
+          data: [
+            resume.detailed_scores.technical_skills.cloud_distributed_systems,
+            resume.detailed_scores.technical_skills.data_engineering,
+            resume.detailed_scores.technical_skills.api_web_technologies,
+            resume.detailed_scores.technical_skills.programming_languages,
+            resume.detailed_scores.technical_skills.ai_ml,
+            resume.detailed_scores.technical_skills.cs_fundamentals,
+            resume.detailed_scores.technical_skills.professional_skills
+          ],
+          backgroundColor: colors[index].background,
+          borderColor: colors[index].border,
+          borderWidth: 1
+        });
+        
+        // Update metrics table
+        const tagCell = document.getElementById(`tags${index+1}`);
+        const dateCell = document.getElementById(`date${index+1}`);
+        const scoreCell = document.getElementById(`score${index+1}`);
+        const keywordsCell = document.getElementById(`keywords${index+1}`);
+        
+        tagCell.textContent = resume.focus_tags.join(", ");
+        dateCell.textContent = resume.modified_date;
+        
+        // Calculate overall score (example)
+        const avgScore = Object.values(resume.composite_scores).reduce((sum, val) => sum + val, 0) / 
+                        Object.values(resume.composite_scores).length;
+        scoreCell.textContent = avgScore.toFixed(1) + '%';
+        
+        // Get top keywords
+        const keywords = Object.entries(resume.keyword_emphasis)
+                            .sort((a, b) => b[1] - a[1])
+                            .slice(0, 3)
+                            .map(([word, count]) => `${word} (${count})`)
+                            .join(", ");
+        keywordsCell.textContent = keywords;
+      });
+      
+      // Update charts
+      radarChart.update();
+      barChart.update();
+    }
+    
+    // Initialize charts on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      initRadarChart();
+      initBarChart();
+      
+      // Set up compare button event listener
+      document.getElementById('compareBtn').addEventListener('click', updateCharts);
+    });
+  </script>
+</body>
+</html>

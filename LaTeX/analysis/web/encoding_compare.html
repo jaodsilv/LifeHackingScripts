@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encoding Comparison</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/utils.js"></script>
+    <script src="js/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const header = Header.createBrowserHeader();
+          header.render('headerContainer');
+        });
+    </script>
+    <style>
+        :root {
+            --primary-color: #1565c0;
+            --primary-light: #e3f2fd;
+            --secondary-color: #f50057;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+            --tag-bg: #e1f5fe;
+            --tag-color: #0277bd;
+            --common-tag-bg: #e8f5e9;
+            --common-tag-color: #2e7d32;
+            --unique-tag-bg: #ffebee;
+            --unique-tag-color: #c62828;
+            --encoding1-color: rgba(54, 162, 235, 0.7);
+            --encoding2-color: rgba(255, 99, 132, 0.7);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .encoding-labels {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .encoding-label {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .encoding1 {
+            background-color: var(--encoding1-color);
+        }
+
+        .encoding2 {
+            background-color: var(--encoding2-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #f5f5f5;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+
+        .loader::after {
+            content: "";
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--primary-light);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .section-title {
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .metric-box {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .metric-value.encoding1 {
+            color: rgb(54, 162, 235);
+        }
+
+        .metric-value.encoding2 {
+            color: rgb(255, 99, 132);
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: #757575;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--tag-bg);
+            color: var(--tag-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .tag.common {
+            background-color: var(--common-tag-bg);
+            color: var(--common-tag-color);
+        }
+
+        .tag.unique {
+            background-color: var(--unique-tag-bg);
+            color: var(--unique-tag-color);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .diff-positive {
+            color: var(--success-color);
+        }
+
+        .comparison-table .diff-negative {
+            color: var(--danger-color);
+        }
+
+        .jd-section {
+            background-color: #f2f7ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .jd-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .company-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 12px;
+        }
+
+        .jd-company {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .jd-position {
+            color: #757575;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        .progress-container {
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            height: 24px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            text-align: center;
+            line-height: 24px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            transition: width 0.5s ease;
+        }
+
+        .progress-bar.good {
+            background-color: var(--success-color);
+        }
+
+        .progress-bar.medium {
+            background-color: var(--warning-color);
+        }
+
+        .progress-bar.poor {
+            background-color: var(--danger-color);
+        }
+
+        .skill-match {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .skill-missing {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .action-bar {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .action-btn {
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            background-color: #0d47a1;
+        }
+
+        .action-btn.secondary {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .action-btn.secondary:hover {
+            background-color: var(--primary-light);
+        }
+
+        .file-input-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .file-selector {
+            margin-bottom: 25px;
+        }
+
+        .file-selector h3 {
+            margin-bottom: 10px;
+        }
+
+        .file-input-label {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .file-input-label:hover {
+            background-color: #0d47a1;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-input-help {
+            display: block;
+            margin-top: 10px;
+            color: #757575;
+            font-size: 14px;
+        }
+
+        .diff-indicator {
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .diff-positive {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: var(--success-color);
+        }
+
+        .diff-negative {
+            background-color: rgba(244, 67, 54, 0.1);
+            color: var(--danger-color);
+        }
+
+        .diff-arrow {
+            margin-left: 5px;
+        }
+
+        .diff-neutral {
+            background-color: rgba(158, 158, 158, 0.1);
+            color: #757575;
+        }
+
+        .significant-changes {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .significant-title {
+            font-weight: 600;
+            color: #f57c00;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .change-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .change-bullet {
+            color: #f57c00;
+            margin-right: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #757575;
+            font-size: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 20px;
+            color: #757575;
+            font-style: italic;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .action-bar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .encoding-labels {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Encoding Comparison</h1>
+            <div class="encoding-labels" id="encodingLabels">
+                <!-- Will be populated with encoding information -->
+            </div>
+            <div class="header-actions">
+                <a href="encoding_browser.html" class="btn btn-primary">Back to Browser</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" id="mainContainer">
+        <div class="file-input-container" id="fileInputContainer">
+            <div class="file-selector" id="file1Selector">
+                <h3>Encoding 1</h3>
+                <label for="encoding1File" class="file-input-label">
+                    Select First Encoding File
+                </label>
+                <input type="file" id="encoding1File" class="file-input" accept=".json">
+                <span class="file-input-help">Select the first encoding JSON file to compare</span>
+            </div>
+            <div class="file-selector" id="file2Selector">
+                <h3>Encoding 2</h3>
+                <label for="encoding2File" class="file-input-label">
+                    Select Second Encoding File
+                </label>
+                <input type="file" id="encoding2File" class="file-input" accept=".json">
+                <span class="file-input-help">Select the second encoding JSON file to compare</span>
+            </div>
+            <div id="compareButtonContainer" style="display: none; margin-top: 20px;">
+                <button id="compareButton" class="action-btn">Compare Encodings</button>
+            </div>
+        </div>
+
+        <div id="loadingIndicator" class="loader" style="display: none;"></div>
+
+        <div id="comparisonContent" style="display: none;">
+            <div id="significantChanges" class="significant-changes" style="display: none;">
+                <h3 class="significant-title">Significant Changes Detected</h3>
+                <div id="changesContent">
+                    <!-- Will be populated with changes -->
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <div>
+                    <span id="comparisonDate"></span>
+                </div>
+                <div>
+                    <a href="#" id="generateReportLink" class="action-btn">Generate HTML Report</a>
+                    <a href="#" id="viewReportLink" class="action-btn secondary" style="display: none;">View Report</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">Summary Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-label">Overall Score</div>
+                    <div class="metric-value encoding1" id="score1">--</div>
+                    <div class="metric-value encoding2" id="score2">--</div>
+                    <div id="scoreDiff" class="diff-indicator"></div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">JD Alignment</div>
+                    <div class="metric-value encoding1" id="jdAlign1">--</div>
+                    <div class="metric-value encoding2" id="jdAlign2">--</div>
+                    <div id="jdAlignDiff" class="diff-indicator"></div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Focus Tags</div>
+                    <div class="metric-value encoding1" id="tagCount1">--</div>
+                    <div class="metric-value encoding2" id="tagCount2">--</div>
+                    <div id="tagCountDiff" class="diff-indicator"></div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Last Updated</div>
+                    <div id="lastUpdated1">--</div>
+                    <div id="lastUpdated2">--</div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Focus Tags</h2>
+            <div class="card">
+                <div class="two-column">
+                    <div>
+                        <h3 id="encoding1Name" class="card-title" style="color: rgb(54, 162, 235);">Encoding 1</h3>
+                        <div id="tags1Container">
+                            <!-- Will be populated with tags -->
+                        </div>
+                    </div>
+                    <div>
+                        <h3 id="encoding2Name" class="card-title" style="color: rgb(255, 99, 132);">Encoding 2</h3>
+                        <div id="tags2Container">
+                            <!-- Will be populated with tags -->
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <h3 class="card-title">Tag Comparison</h3>
+                    <div>
+                        <h4>Common Tags</h4>
+                        <div id="commonTagsContainer">
+                            <!-- Will be populated with common tags -->
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <h4>Unique to <span id="uniqueTagsTitle1">Encoding 1</span></h4>
+                        <div id="uniqueTags1Container">
+                            <!-- Will be populated with unique tags -->
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <h4>Unique to <span id="uniqueTagsTitle2">Encoding 2</span></h4>
+                        <div id="uniqueTags2Container">
+                            <!-- Will be populated with unique tags -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Content Coverage</h2>
+            <div class="card">
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+                <div style="margin-top: 20px;">
+                    <table class="comparison-table" id="sectionsTable">
+                        <thead>
+                            <tr>
+                                <th>Section</th>
+                                <th id="sectionsTable1Header">Encoding 1</th>
+                                <th id="sectionsTable2Header">Encoding 2</th>
+                                <th>Difference</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Will be populated with section comparisons -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="card">
+                <div class="chart-container">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+            </div>
+
+            <div id="jdAlignmentSection" style="display: none;">
+                <h2 class="section-title">Job Description Alignment</h2>
+                <div id="jdContent" class="card">
+                    <!-- Will be populated with JD comparison -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Resume Management System • Encoding Comparison</p>
+    </footer>
+
+    <script>
+        // Global state
+        const state = {
+            encoding1: null,
+            encoding2: null,
+            encoding1Id: null,
+            encoding2Id: null,
+            reportGenerated: false,
+            reportPath: null
+        };
+
+        // DOM Elements
+        const encoding1File = document.getElementById('encoding1File');
+        const encoding2File = document.getElementById('encoding2File');
+        const fileInputContainer = document.getElementById('fileInputContainer');
+        const compareButtonContainer = document.getElementById('compareButtonContainer');
+        const compareButton = document.getElementById('compareButton');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const comparisonContent = document.getElementById('comparisonContent');
+        const significantChanges = document.getElementById('significantChanges');
+        const generateReportLink = document.getElementById('generateReportLink');
+        const viewReportLink = document.getElementById('viewReportLink');
+        const encodingLabels = document.getElementById('encodingLabels');
+
+        // Charts
+        let radarChart, skillsChart;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const id1 = urlParams.get('id1');
+            const id2 = urlParams.get('id2');
+            
+            if (id1 && id2) {
+                state.encoding1Id = id1;
+                state.encoding2Id = id2;
+                promptForEncodingFiles(id1, id2);
+            }
+            
+            // Add event listeners for file inputs
+            encoding1File.addEventListener('change', handleFile1Change);
+            encoding2File.addEventListener('change', handleFile2Change);
+            compareButton.addEventListener('click', startComparison);
+            generateReportLink.addEventListener('click', generateReport);
+        });
+
+        // File handlers
+        function handleFile1Change(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    state.encoding1 = JSON.parse(e.target.result);
+                    document.getElementById('file1Selector').innerHTML = `
+                        <h3>Encoding 1</h3>
+                        <div style="color: green;">✓ Loaded: ${state.encoding1.branch_name || file.name}</div>
+                    `;
+                    checkFilesLoaded();
+                } catch (error) {
+                    alert('Error parsing JSON file: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function handleFile2Change(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    state.encoding2 = JSON.parse(e.target.result);
+                    document.getElementById('file2Selector').innerHTML = `
+                        <h3>Encoding 2</h3>
+                        <div style="color: green;">✓ Loaded: ${state.encoding2.branch_name || file.name}</div>
+                    `;
+                    checkFilesLoaded();
+                } catch (error) {
+                    alert('Error parsing JSON file: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Check if both files are loaded
+        function checkFilesLoaded() {
+            if (state.encoding1 && state.encoding2) {
+                compareButtonContainer.style.display = 'block';
+            }
+        }
+
+        // Prompt for encoding files
+        function promptForEncodingFiles(id1, id2) {
+            document.getElementById('file1Selector').innerHTML = `
+                <h3>Encoding 1: ${id1}</h3>
+                <label for="encoding1File" class="file-input-label">
+                    Select Encoding File for ${id1}
+                </label>
+                <input type="file" id="encoding1File" class="file-input" accept=".json">
+            `;
+            
+            document.getElementById('file2Selector').innerHTML = `
+                <h3>Encoding 2: ${id2}</h3>
+                <label for="encoding2File" class="file-input-label">
+                    Select Encoding File for ${id2}
+                </label>
+                <input type="file" id="encoding2File" class="file-input" accept=".json">
+            `;
+        }
+
+        // Start comparison
+        function startComparison() {
+            if (!state.encoding1 || !state.encoding2) {
+                alert('Please select both encoding files to compare.');
+                return;
+            }
+            
+            // Show loading indicator
+            fileInputContainer.style.display = 'none';
+            loadingIndicator.style.display = 'flex';
+            
+            // Process comparison (with a slight delay to show the loading indicator)
+            setTimeout(() => {
+                compareEncodings();
+                loadingIndicator.style.display = 'none';
+                comparisonContent.style.display = 'block';
+                
+                // Update encoding labels
+                updateEncodingLabels();
+            }, 500);
+        }
+
+        // Update encoding labels in header
+        function updateEncodingLabels() {
+            const name1 = state.encoding1.branch_name || 'Encoding 1';
+            const name2 = state.encoding2.branch_name || 'Encoding 2';
+            
+            encodingLabels.innerHTML = `
+                <div class="encoding-label encoding1">${name1}</div>
+                <div class="encoding-label encoding2">${name2}</div>
+            `;
+        }
+
+        // Compare encodings
+        function compareEncodings() {
+            // Set comparison date
+            document.getElementById('comparisonDate').textContent = `Comparison generated: ${new Date().toLocaleDateString()}`;
+            
+            // Update encoding names
+            document.getElementById('encoding1Name').textContent = state.encoding1.branch_name || 'Encoding 1';
+            document.getElementById('encoding2Name').textContent = state.encoding2.branch_name || 'Encoding 2';
+            document.getElementById('uniqueTagsTitle1').textContent = state.encoding1.branch_name || 'Encoding 1';
+            document.getElementById('uniqueTagsTitle2').textContent = state.encoding2.branch_name || 'Encoding 2';
+            document.getElementById('sectionsTable1Header').textContent = state.encoding1.branch_name || 'Encoding 1';
+            document.getElementById('sectionsTable2Header').textContent = state.encoding2.branch_name || 'Encoding 2';
+            
+            // Compare metrics
+            compareMetrics();
+            
+            // Compare tags
+            compareTags();
+            
+            // Compare sections
+            compareSections();
+            
+            // Compare skills
+            compareSkills();
+            
+            // Compare JD alignment
+            compareJdAlignment();
+            
+            // Check for significant changes
+            checkSignificantChanges();
+            
+            // Setup report links
+            setupReportLinks();
+        }
+
+        // Compare metrics
+        function compareMetrics() {
+            // Scores
+            const score1 = state.encoding1.composite_scores?.weighted_average || 0;
+            const score2 = state.encoding2.composite_scores?.weighted_average || 0;
+            const scoreDiff = score2 - score1;
+            
+            document.getElementById('score1').textContent = `${score1}%`;
+            document.getElementById('score2').textContent = `${score2}%`;
+            
+            const scoreDiffEl = document.getElementById('scoreDiff');
+            if (scoreDiff > 0) {
+                scoreDiffEl.textContent = `+${scoreDiff}%`;
+                scoreDiffEl.className = 'diff-indicator diff-positive';
+                scoreDiffEl.innerHTML += '<span class="diff-arrow">↑</span>';
+            } else if (scoreDiff < 0) {
+                scoreDiffEl.textContent = `${scoreDiff}%`;
+                scoreDiffEl.className = 'diff-indicator diff-negative';
+                scoreDiffEl.innerHTML += '<span class="diff-arrow">↓</span>';
+            } else {
+                scoreDiffEl.textContent = 'No change';
+                scoreDiffEl.className = 'diff-indicator diff-neutral';
+            }
+            
+            // JD Alignment
+            let jdAlign1 = 'N/A';
+            let jdAlign2 = 'N/A';
+            let jdAlignDiff = null;
+            
+            // Find primary JD for first encoding
+            if (state.encoding1.job_descriptions && state.encoding1.job_descriptions.length > 0) {
+                const primaryJd = state.encoding1.job_descriptions.find(jd => jd.is_primary);
+                if (primaryJd) {
+                    jdAlign1 = `${primaryJd.alignment_score}%`;
+                }
+            }
+            
+            // Find primary JD for second encoding
+            if (state.encoding2.job_descriptions && state.encoding2.job_descriptions.length > 0) {
+                const primaryJd = state.encoding2.job_descriptions.find(jd => jd.is_primary);
+                if (primaryJd) {
+                    jdAlign2 = `${primaryJd.alignment_score}%`;
+                }
+            }
+            
+            // Calculate difference if both have numeric values
+            if (jdAlign1 !== 'N/A' && jdAlign2 !== 'N/A') {
+                const align1 = parseInt(jdAlign1);
+                const align2 = parseInt(jdAlign2);
+                jdAlignDiff = align2 - align1;
+            }
+            
+            document.getElementById('jdAlign1').textContent = jdAlign1;
+            document.getElementById('jdAlign2').textContent = jdAlign2;
+            
+            const jdAlignDiffEl = document.getElementById('jdAlignDiff');
+            if (jdAlignDiff !== null) {
+                if (jdAlignDiff > 0) {
+                    jdAlignDiffEl.textContent = `+${jdAlignDiff}%`;
+                    jdAlignDiffEl.className = 'diff-indicator diff-positive';
+                    jdAlignDiffEl.innerHTML += '<span class="diff-arrow">↑</span>';
+                } else if (jdAlignDiff < 0) {
+                    jdAlignDiffEl.textContent = `${jdAlignDiff}%`;
+                    jdAlignDiffEl.className = 'diff-indicator diff-negative';
+                    jdAlignDiffEl.innerHTML += '<span class="diff-arrow">↓</span>';
+                } else {
+                    jdAlignDiffEl.textContent = 'No change';
+                    jdAlignDiffEl.className = 'diff-indicator diff-neutral';
+                }
+            } else {
+                jdAlignDiffEl.textContent = 'N/A';
+                jdAlignDiffEl.className = 'diff-indicator diff-neutral';
+            }
+            
+            // Tag Counts
+            const tags1 = state.encoding1.focus_tags || [];
+            const tags2 = state.encoding2.focus_tags || [];
+            const tagDiff = tags2.length - tags1.length;
+            
+            document.getElementById('tagCount1').textContent = tags1.length;
+            document.getElementById('tagCount2').textContent = tags2.length;
+            
+            const tagDiffEl = document.getElementById('tagCountDiff');
+            if (tagDiff > 0) {
+                tagDiffEl.textContent = `+${tagDiff}`;
+                tagDiffEl.className = 'diff-indicator diff-positive';
+                tagDiffEl.innerHTML += '<span class="diff-arrow">↑</span>';
+            } else if (tagDiff < 0) {
+                tagDiffEl.textContent = `${tagDiff}`;
+                tagDiffEl.className = 'diff-indicator diff-negative';
+                tagDiffEl.innerHTML += '<span class="diff-arrow">↓</span>';
+            } else {
+                tagDiffEl.textContent = 'No change';
+                tagDiffEl.className = 'diff-indicator diff-neutral';
+            }
+            
+            // Last Updated
+            const date1 = state.encoding1.timestamp ? new Date(state.encoding1.timestamp).toLocaleDateString() : 'N/A';
+            const date2 = state.encoding2.timestamp ? new Date(state.encoding2.timestamp).toLocaleDateString() : 'N/A';
+            
+            document.getElementById('lastUpdated1').textContent = date1;
+            document.getElementById('lastUpdated2').textContent = date2;
+        }
+
+        // Compare tags
+        function compareTags() {
+            const tags1 = state.encoding1.focus_tags || [];
+            const tags2 = state.encoding2.focus_tags || [];
+            
+            // Render tags for each encoding
+            const tags1Container = document.getElementById('tags1Container');
+            const tags2Container = document.getElementById('tags2Container');
+            
+            tags1Container.innerHTML = tags1.length > 0 
+                ? tags1.map(tag => `<span class="tag">${tag}</span>`).join('')
+                : '<p class="no-data">No tags defined</p>';
+                
+            tags2Container.innerHTML = tags2.length > 0
+                ? tags2.map(tag => `<span class="tag">${tag}</span>`).join('')
+                : '<p class="no-data">No tags defined</p>';
+            
+            // Find common and unique tags
+            const commonTags = tags1.filter(tag => tags2.includes(tag));
+            const uniqueTags1 = tags1.filter(tag => !tags2.includes(tag));
+            const uniqueTags2 = tags2.filter(tag => !tags1.includes(tag));
+            
+            // Render comparisons
+            const commonTagsContainer = document.getElementById('commonTagsContainer');
+            const uniqueTags1Container = document.getElementById('uniqueTags1Container');
+            const uniqueTags2Container = document.getElementById('uniqueTags2Container');
+            
+            commonTagsContainer.innerHTML = commonTags.length > 0
+                ? commonTags.map(tag => `<span class="tag common">${tag}</span>`).join('')
+                : '<p class="no-data">No common tags</p>';
+                
+            uniqueTags1Container.innerHTML = uniqueTags1.length > 0
+                ? uniqueTags1.map(tag => `<span class="tag unique">${tag}</span>`).join('')
+                : '<p class="no-data">No unique tags</p>';
+                
+            uniqueTags2Container.innerHTML = uniqueTags2.length > 0
+                ? uniqueTags2.map(tag => `<span class="tag unique">${tag}</span>`).join('')
+                : '<p class="no-data">No unique tags</p>';
+        }
+
+        // Compare sections
+        function compareSections() {
+            // Get sections from both encodings
+            const sections1 = state.encoding1.composite_scores || {};
+            const sections2 = state.encoding2.composite_scores || {};
+            
+            // Get all unique section names (excluding weighted_average)
+            const allSections = [...new Set([
+                ...Object.keys(sections1),
+                ...Object.keys(sections2)
+            ])].filter(key => key !== 'weighted_average');
+            
+            // Prepare data for radar chart
+            const radarLabels = [];
+            const radar1Values = [];
+            const radar2Values = [];
+            
+            // Prepare data for table
+            const tableBody = document.getElementById('sectionsTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';
+            
+            allSections.forEach(section => {
+                // Format section name
+                const sectionName = section.split('_')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+                
+                // Get values (default to 0 if not present)
+                const value1 = sections1[section] || 0;
+                const value2 = sections2[section] || 0;
+                const diff = value2 - value1;
+                
+                // Add to radar data
+                radarLabels.push(sectionName);
+                radar1Values.push(value1);
+                radar2Values.push(value2);
+                
+                // Add row to table
+                const row = tableBody.insertRow();
+                
+                // Section name
+                const nameCell = row.insertCell();
+                nameCell.textContent = sectionName;
+                
+                // Encoding 1 value
+                const value1Cell = row.insertCell();
+                value1Cell.textContent = `${value1}%`;
+                
+                // Encoding 2 value
+                const value2Cell = row.insertCell();
+                value2Cell.textContent = `${value2}%`;
+                
+                // Difference
+                const diffCell = row.insertCell();
+                if (diff > 0) {
+                    diffCell.textContent = `+${diff}%`;
+                    diffCell.className = 'diff-positive';
+                } else if (diff < 0) {
+                    diffCell.textContent = `${diff}%`;
+                    diffCell.className = 'diff-negative';
+                } else {
+                    diffCell.textContent = '0%';
+                }
+            });
+            
+            // Add weighted average row
+            const avgRow = tableBody.insertRow();
+            avgRow.style.fontWeight = 'bold';
+            
+            const avgNameCell = avgRow.insertCell();
+            avgNameCell.textContent = 'Weighted Average';
+            
+            const avg1 = sections1.weighted_average || 0;
+            const avg2 = sections2.weighted_average || 0;
+            const avgDiff = avg2 - avg1;
+            
+            const avg1Cell = avgRow.insertCell();
+            avg1Cell.textContent = `${avg1}%`;
+            
+            const avg2Cell = avgRow.insertCell();
+            avg2Cell.textContent = `${avg2}%`;
+            
+            const avgDiffCell = avgRow.insertCell();
+            if (avgDiff > 0) {
+                avgDiffCell.textContent = `+${avgDiff}%`;
+                avgDiffCell.className = 'diff-positive';
+            } else if (avgDiff < 0) {
+                avgDiffCell.textContent = `${avgDiff}%`;
+                avgDiffCell.className = 'diff-negative';
+            } else {
+                avgDiffCell.textContent = '0%';
+            }
+            
+            // Create radar chart
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: radarLabels,
+                    datasets: [
+                        {
+                            label: state.encoding1.branch_name || 'Encoding 1',
+                            data: radar1Values,
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgb(54, 162, 235)',
+                            pointBackgroundColor: 'rgb(54, 162, 235)',
+                            pointHoverBackgroundColor: '#fff'
+                        },
+                        {
+                            label: state.encoding2.branch_name || 'Encoding 2',
+                            data: radar2Values,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            pointBackgroundColor: 'rgb(255, 99, 132)',
+                            pointHoverBackgroundColor: '#fff'
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // Compare skills
+        function compareSkills() {
+            // Get skills from both encodings
+            const skills1 = state.encoding1.detailed_scores?.technical_skills || {};
+            const skills2 = state.encoding2.detailed_scores?.technical_skills || {};
+            
+            // Get all unique skill names
+            const allSkills = [...new Set([
+                ...Object.keys(skills1),
+                ...Object.keys(skills2)
+            ])];
+            
+            // If no skills data available
+            if (allSkills.length === 0) {
+                const skillsContainer = document.getElementById('skillsChart').parentNode;
+                skillsContainer.innerHTML = '<p class="no-data">No technical skills data available for comparison.</p>';
+                return;
+            }
+            
+            // Prepare data for chart
+            const skillLabels = [];
+            const skill1Values = [];
+            const skill2Values = [];
+            
+            allSkills.forEach(skill => {
+                // Format skill name
+                const skillName = skill.split('_')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+                
+                // Get values (default to 0 if not present)
+                const value1 = skills1[skill] || 0;
+                const value2 = skills2[skill] || 0;
+                
+                // Add to chart data
+                skillLabels.push(skillName);
+                skill1Values.push(value1);
+                skill2Values.push(value2);
+            });
+            
+            // Create bar chart
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            skillsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: skillLabels,
+                    datasets: [
+                        {
+                            label: state.encoding1.branch_name || 'Encoding 1',
+                            data: skill1Values,
+                            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                            borderColor: 'rgb(54, 162, 235)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: state.encoding2.branch_name || 'Encoding 2',
+                            data: skill2Values,
+                            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // Compare JD alignment
+        function compareJdAlignment() {
+            const jdSection = document.getElementById('jdAlignmentSection');
+            const jdContent = document.getElementById('jdContent');
+            
+            // If neither encoding has JD data, don't show section
+            if ((!state.encoding1.job_descriptions || state.encoding1.job_descriptions.length === 0) &&
+                (!state.encoding2.job_descriptions || state.encoding2.job_descriptions.length === 0)) {
+                jdSection.style.display = 'none';
+                return;
+            }
+            
+            jdSection.style.display = 'block';
+            
+            // Get primary JDs
+            const primaryJd1 = state.encoding1.job_descriptions?.find(jd => jd.is_primary);
+            const primaryJd2 = state.encoding2.job_descriptions?.find(jd => jd.is_primary);
+            
+            // Check if both have the same primary JD
+            const samePrimaryJd = primaryJd1 && primaryJd2 && primaryJd1.jd_id === primaryJd2.jd_id;
+            
+            let html = '';
+            
+            // If both have the same primary JD, show direct comparison
+            if (samePrimaryJd) {
+                const jdId = primaryJd1.jd_id;
+                const align1 = primaryJd1.alignment_score;
+                const align2 = primaryJd2.alignment_score;
+                const alignDiff = align2 - align1;
+                
+                // Create company logo and parse company/position
+                const companyInitial = jdId.split('_')[0].charAt(0).toUpperCase();
+                const jdParts = jdId.split('_');
+                const company = jdParts[0].charAt(0).toUpperCase() + jdParts[0].slice(1);
+                const position = jdParts[1].charAt(0).toUpperCase() + jdParts[1].slice(1);
+                
+                html += `
+                    <div class="jd-header">
+                        <div class="company-logo">${companyInitial}</div>
+                        <div class="jd-company">${company}</div>
+                        <div class="jd-position">${position}</div>
+                    </div>
+                    <p>Job Description ID: ${jdId}</p>
+                    
+                    <div class="two-column" style="margin-top: 15px;">
+                        <div>
+                            <h3 style="color: rgb(54, 162, 235);">${state.encoding1.branch_name || 'Encoding 1'}</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar ${align1 >= 80 ? 'good' : align1 >= 60 ? 'medium' : 'poor'}" 
+                                    style="width: ${align1}%">${align1}%</div>
+                            </div>
+                            <div>
+                                <h4>Matched Skills</h4>
+                                ${primaryJd1.matched_skills?.map(skill => `<span class="skill-match">${skill}</span>`).join('') || '<p>None</p>'}
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <h4>Missing Skills</h4>
+                                ${primaryJd1.missing_skills?.map(skill => `<span class="skill-missing">${skill}</span>`).join('') || '<p>None</p>'}
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="color: rgb(255, 99, 132);">${state.encoding2.branch_name || 'Encoding 2'}</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar ${align2 >= 80 ? 'good' : align2 >= 60 ? 'medium' : 'poor'}"
+                                    style="width: ${align2}%">${align2}%</div>
+                            </div>
+                            <div>
+                                <h4>Matched Skills</h4>
+                                ${primaryJd2.matched_skills?.map(skill => `<span class="skill-match">${skill}</span>`).join('') || '<p>None</p>'}
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <h4>Missing Skills</h4>
+                                ${primaryJd2.missing_skills?.map(skill => `<span class="skill-missing">${skill}</span>`).join('') || '<p>None</p>'}
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <h3>Alignment Difference</h3>
+                        <div class="diff-indicator ${alignDiff > 0 ? 'diff-positive' : alignDiff < 0 ? 'diff-negative' : 'diff-neutral'}" 
+                             style="font-size: 16px; padding: 10px;">
+                            ${alignDiff > 0 ? '+' : ''}${alignDiff}% ${alignDiff > 0 ? '↑' : alignDiff < 0 ? '↓' : ''}
+                        </div>
+                    </div>
+                `;
+            } else {
+                // Different primary JDs, show them separately
+                html += '<div class="two-column">';
+                
+                // Encoding 1 JD
+                html += '<div>';
+                if (primaryJd1) {
+                    const jdId = primaryJd1.jd_id;
+                    const companyInitial = jdId.split('_')[0].charAt(0).toUpperCase();
+                    const jdParts = jdId.split('_');
+                    const company = jdParts[0].charAt(0).toUpperCase() + jdParts[0].slice(1);
+                    const position = jdParts[1].charAt(0).toUpperCase() + jdParts[1].slice(1);
+                    
+                    html += `
+                        <h3 style="color: rgb(54, 162, 235);">${state.encoding1.branch_name || 'Encoding 1'}</h3>
+                        <div class="jd-header">
+                            <div class="company-logo">${companyInitial}</div>
+                            <div class="jd-company">${company}</div>
+                            <div class="jd-position">${position}</div>
+                        </div>
+                        <p>Job Description ID: ${jdId}</p>
+                        <div class="progress-container">
+                            <div class="progress-bar ${primaryJd1.alignment_score >= 80 ? 'good' : primaryJd1.alignment_score >= 60 ? 'medium' : 'poor'}" 
+                                style="width: ${primaryJd1.alignment_score}%">${primaryJd1.alignment_score}%</div>
+                        </div>
+                    `;
+                } else {
+                    html += `
+                        <h3 style="color: rgb(54, 162, 235);">${state.encoding1.branch_name || 'Encoding 1'}</h3>
+                        <p class="no-data">No primary job description associated</p>
+                    `;
+                }
+                html += '</div>';
+                
+                // Encoding 2 JD
+                html += '<div>';
+                if (primaryJd2) {
+                    const jdId = primaryJd2.jd_id;
+                    const companyInitial = jdId.split('_')[0].charAt(0).toUpperCase();
+                    const jdParts = jdId.split('_');
+                    const company = jdParts[0].charAt(0).toUpperCase() + jdParts[0].slice(1);
+                    const position = jdParts[1].charAt(0).toUpperCase() + jdParts[1].slice(1);
+                    
+                    html += `
+                        <h3 style="color: rgb(255, 99, 132);">${state.encoding2.branch_name || 'Encoding 2'}</h3>
+                        <div class="jd-header">
+                            <div class="company-logo">${companyInitial}</div>
+                            <div class="jd-company">${company}</div>
+                            <div class="jd-position">${position}</div>
+                        </div>
+                        <p>Job Description ID: ${jdId}</p>
+                        <div class="progress-container">
+                            <div class="progress-bar ${primaryJd2.alignment_score >= 80 ? 'good' : primaryJd2.alignment_score >= 60 ? 'medium' : 'poor'}" 
+                                style="width: ${primaryJd2.alignment_score}%">${primaryJd2.alignment_score}%</div>
+                        </div>
+                    `;
+                } else {
+                    html += `
+                        <h3 style="color: rgb(255, 99, 132);">${state.encoding2.branch_name || 'Encoding 2'}</h3>
+                        <p class="no-data">No primary job description associated</p>
+                    `;
+                }
+                html += '</div>';
+                
+                html += '</div>';
+                
+                html += `
+                    <div style="margin-top: 15px; text-align: center;">
+                        <p><em>Different job descriptions are associated with each encoding.</em></p>
+                    </div>
+                `;
+            }
+            
+            jdContent.innerHTML = html;
+        }
+
+        // Check for significant changes
+        function checkSignificantChanges() {
+            // Define thresholds for significant changes
+            const SCORE_THRESHOLD = 5;  // 5% difference in weighted score
+            const JD_THRESHOLD = 10;    // 10% difference in JD alignment
+            const TAG_THRESHOLD = 2;    // 2 or more tags added/removed
+            
+            // Calculate differences
+            const scoreDiff = (state.encoding2.composite_scores?.weighted_average || 0) - 
+                              (state.encoding1.composite_scores?.weighted_average || 0);
+                              
+            const tags1 = state.encoding1.focus_tags || [];
+            const tags2 = state.encoding2.focus_tags || [];
+            const uniqueTags1 = tags1.filter(tag => !tags2.includes(tag));
+            const uniqueTags2 = tags2.filter(tag => !tags1.includes(tag));
+            
+            // JD alignment diff
+            let jdAlignDiff = null;
+            const primaryJd1 = state.encoding1.job_descriptions?.find(jd => jd.is_primary);
+            const primaryJd2 = state.encoding2.job_descriptions?.find(jd => jd.is_primary);
+            
+            if (primaryJd1 && primaryJd2 && primaryJd1.jd_id === primaryJd2.jd_id) {
+                jdAlignDiff = primaryJd2.alignment_score - primaryJd1.alignment_score;
+            }
+            
+            // Check if any threshold is exceeded
+            const isScoreSignificant = Math.abs(scoreDiff) >= SCORE_THRESHOLD;
+            const isJdSignificant = jdAlignDiff !== null && Math.abs(jdAlignDiff) >= JD_THRESHOLD;
+            const isTagsSignificant = uniqueTags1.length >= TAG_THRESHOLD || uniqueTags2.length >= TAG_THRESHOLD;
+            
+            // If any change is significant, show the section
+            if (isScoreSignificant || isJdSignificant || isTagsSignificant) {
+                significantChanges.style.display = 'block';
+                
+                // Build content
+                let html = '<ul style="padding-left: 20px;">';
+                
+                if (isScoreSignificant) {
+                    const direction = scoreDiff > 0 ? 'increased' : 'decreased';
+                    html += `<li><span class="change-bullet">⚠</span> Overall score has <strong>${direction} by ${Math.abs(scoreDiff)}%</strong></li>`;
+                }
+                
+                if (isJdSignificant) {
+                    const direction = jdAlignDiff > 0 ? 'improved' : 'decreased';
+                    html += `<li><span class="change-bullet">⚠</span> Job description alignment has <strong>${direction} by ${Math.abs(jdAlignDiff)}%</strong></li>`;
+                }
+                
+                if (uniqueTags2.length >= TAG_THRESHOLD) {
+                    html += `<li><span class="change-bullet">⚠</span> <strong>${uniqueTags2.length} new tags added</strong>: ${uniqueTags2.join(', ')}</li>`;
+                }
+                
+                if (uniqueTags1.length >= TAG_THRESHOLD) {
+                    html += `<li><span class="change-bullet">⚠</span> <strong>${uniqueTags1.length} tags removed</strong>: ${uniqueTags1.join(', ')}</li>`;
+                }
+                
+                html += '</ul>';
+                
+                document.getElementById('changesContent').innerHTML = html;
+            } else {
+                significantChanges.style.display = 'none';
+            }
+        }
+
+        // Setup report links
+        function setupReportLinks() {
+            // Build report path
+            const cleanName1 = state.encoding1.branch_name?.replace(/[\/\\]/g, '_').replace(/[^a-zA-Z0-9_]/g, '') || 'encoding1';
+            const cleanName2 = state.encoding2.branch_name?.replace(/[\/\\]/g, '_').replace(/[^a-zA-Z0-9_]/g, '') || 'encoding2';
+            
+            state.reportPath = `../reports/comparisons/${cleanName1}_vs_${cleanName2}.html`;
+            
+            // Set generate report link
+            generateReportLink.onclick = function(e) {
+                e.preventDefault();
+                
+                // Here you would normally trigger the report generation
+                // For demonstration, we'll just simulate success
+                
+                setTimeout(() => {
+                    alert('HTML report generated successfully!');
+                    state.reportGenerated = true;
+                    viewReportLink.style.display = 'inline-block';
+                    viewReportLink.href = state.reportPath;
+                }, 500);
+                
+                return false;
+            };
+            
+            // Check if report already exists (in a real implementation, you'd check the file)
+            // For demonstration, we'll just set it false initially
+            if (state.reportGenerated) {
+                viewReportLink.style.display = 'inline-block';
+                viewReportLink.href = state.reportPath;
+            } else {
+                viewReportLink.style.display = 'none';
+            }
+        }
+
+        // Generate HTML report
+        function generateReport(e) {
+            e.preventDefault();
+            
+            // In a real implementation, this would trigger the PowerShell script
+            alert('This would trigger the HTML report generation script.');
+            
+            return false;
+        }
+
+        // Sample data for testing
+        function loadSampleData() {
+            state.encoding1 = {
+                "branch_name": "resume/data_engineer_2023q3",
+                "timestamp": "2023-07-15 10:30:22",
+                "focus_tags": ["data-engineering", "cloud-infrastructure", "python"],
+                "job_descriptions": [
+                    {
+                        "jd_id": "examplecorp_seniordata_20230701",
+                        "alignment_score": 78,
+                        "matched_skills": ["data-engineering", "python"],
+                        "missing_skills": ["spark", "kafka", "azure"],
+                        "is_primary": true
+                    }
+                ],
+                "composite_scores": {
+                    "main": 70,
+                    "professional_summary": 75,
+                    "microsoft_experience": 85,
+                    "google_experience": 35,
+                    "education": 70,
+                    "technical_skills": 72,
+                    "professional_interests": 60,
+                    "weighted_average": 72
+                },
+                "detailed_scores": {
+                    "technical_skills": {
+                        "cloud_distributed_systems": 80,
+                        "data_engineering": 90,
+                        "api_web_technologies": 55,
+                        "programming_languages": 70,
+                        "ai_ml": 35,
+                        "cs_fundamentals": 65,
+                        "professional_skills": 75
+                    }
+                }
+            };
+            
+            state.encoding2 = {
+                "branch_name": "resume/data_engineer_2023q4",
+                "timestamp": "2023-10-15 14:30:22",
+                "focus_tags": ["data-engineering", "cloud-infrastructure", "backend-services", "azure", "data-pipelines"],
+                "job_descriptions": [
+                    {
+                        "jd_id": "examplecorp_seniordata_20230701",
+                        "alignment_score": 85,
+                        "matched_skills": ["data-engineering", "python", "azure"],
+                        "missing_skills": ["spark", "kafka"],
+                        "is_primary": true
+                    }
+                ],
+                "composite_scores": {
+                    "main": 75,
+                    "professional_summary": 80,
+                    "microsoft_experience": 90,
+                    "google_experience": 40,
+                    "education": 70,
+                    "technical_skills": 75,
+                    "professional_interests": 60,
+                    "weighted_average": 78
+                },
+                "detailed_scores": {
+                    "technical_skills": {
+                        "cloud_distributed_systems": 90,
+                        "data_engineering": 100,
+                        "api_web_technologies": 60,
+                        "programming_languages": 75,
+                        "ai_ml": 40,
+                        "cs_fundamentals": 70,
+                        "professional_skills": 80
+                    }
+                }
+            };
+            
+            // Set IDs
+            state.encoding1Id = state.encoding1.branch_name;
+            state.encoding2Id = state.encoding2.branch_name;
+            
+            // Start comparison
+            compareButtonContainer.style.display = 'block';
+        }
+
+        // Load sample data for demo purposes
+        // Comment out this line when using the file input in production
+        loadSampleData();
+    </script>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Reports Index</title>
+    <style>
+        :root {
+            --primary-color: #1565c0;
+            --secondary-color: #f50057;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--background-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .timestamp {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 5px;
+        }
+
+        .content-section {
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .filter-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .search-box {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            flex-grow: 1;
+            min-width: 200px;
+        }
+
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .report-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .report-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .report-header {
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .report-title {
+            font-weight: 600;
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .report-date {
+            font-size: 12px;
+            color: #757575;
+            margin-top: 5px;
+        }
+
+        .report-content {
+            padding: 15px;
+        }
+
+        .branches {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .branch {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .branch-1 {
+            background-color: rgba(54, 162, 235, 0.2);
+            color: #1976d2;
+        }
+
+        .branch-2 {
+            background-color: rgba(255, 99, 132, 0.2);
+            color: #e91e63;
+        }
+
+        .branch-divider {
+            margin: 0 8px;
+            color: #757575;
+        }
+
+        .report-stats {
+            display: flex;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .stat {
+            flex: 1;
+            padding: 5px;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .stat-label {
+            color: #757575;
+            font-size: 12px;
+        }
+
+        .positive {
+            color: var(--success-color);
+        }
+
+        .negative {
+            color: var(--danger-color);
+        }
+
+        .neutral {
+            color: #757575;
+        }
+
+        .significant-badge {
+            display: inline-block;
+            background-color: rgba(244, 67, 54, 0.1);
+            color: var(--danger-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .report-actions {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .action-btn {
+            padding: 6px 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            background-color: #0d47a1;
+        }
+
+        .action-btn.secondary {
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .action-btn.secondary:hover {
+            background-color: #e0e0e0;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .page-btn {
+            padding: 6px 12px;
+            margin: 0 5px;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .page-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .significant-changes-section {
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .significant-changes-title {
+            color: var(--danger-color);
+        }
+
+        .change-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .change-item {
+            padding: 8px 12px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .load-more {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .load-more-btn {
+            padding: 10px 20px;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .load-more-btn:hover {
+            background-color: #f5f5f5;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #757575;
+        }
+
+        .empty-state p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #757575;
+        }
+
+        @media (max-width: 768px) {
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div>
+                <h1>Resume Reports Index</h1>
+                <p class="timestamp">Last updated: <span id="lastUpdated"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="filter-bar">
+            <input type="text" class="search-box" id="searchBox" placeholder="Search reports...">
+            <button class="filter-btn active" data-filter="all">All Reports</button>
+            <button class="filter-btn" data-filter="significant">Significant Changes</button>
+            <button class="filter-btn" data-filter="recent">Recent</button>
+        </div>
+
+        <div id="reportsGrid" class="reports-grid">
+            <!-- Will be populated by JavaScript -->
+        </div>
+
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <h3>No reports found</h3>
+            <p>Try adjusting your filters or search terms</p>
+        </div>
+    </div>
+
+    <div class="content-section significant-changes-section">
+        <h2 class="significant-changes-title">Significant Changes</h2>
+        <p>Important changes detected in recent reports:</p>
+        <ul class="change-list" id="significantChangesList">
+            <!-- Will be populated by JavaScript -->
+        </ul>
+    </div>
+
+    <div class="footer">
+        Generated by Resume Management System • <span id="generationDate"></span>
+    </div>
+
+    <script>
+        // Will be replaced with actual data by PowerShell script
+        const reportsData = {{reports_data}};
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set dates
+            document.getElementById('lastUpdated').textContent = reportsData.last_updated;
+            document.getElementById('generationDate').textContent = new Date().toISOString().split('T')[0];
+            
+            // Setup filter buttons
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Apply filter
+                    filterReports(button.dataset.filter);
+                });
+            });
+            
+            // Setup search
+            const searchBox = document.getElementById('searchBox');
+            searchBox.addEventListener('input', () => {
+                const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+                filterReports(activeFilter);
+            });
+            
+            // Initial load
+            populateReports();
+            populateSignificantChanges();
+        });
+        
+        function populateReports() {
+            filterReports('all');
+        }
+        
+        function filterReports(filter) {
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const reportsGrid = document.getElementById('reportsGrid');
+            const emptyState = document.getElementById('emptyState');
+            
+            // Filter reports
+            let filteredReports = reportsData.reports;
+            
+            if (filter === 'significant') {
+                filteredReports = filteredReports.filter(report => report.significant_changes);
+            } else if (filter === 'recent') {
+                // Get reports from last 7 days
+                const sevenDaysAgo = new Date();
+                sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+                
+                filteredReports = filteredReports.filter(report => {
+                    const reportDate = new Date(report.timestamp);
+                    return reportDate >= sevenDaysAgo;
+                });
+            }
+            
+            // Apply search
+            if (searchTerm) {
+                filteredReports = filteredReports.filter(report => {
+                    return report.branch1.toLowerCase().includes(searchTerm) || 
+                           report.branch2.toLowerCase().includes(searchTerm) ||
+                           report.id.toLowerCase().includes(searchTerm);
+                });
+            }
+            
+            // Sort by date (newest first)
+            filteredReports.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            
+            // Show empty state if no results
+            if (filteredReports.length === 0) {
+                reportsGrid.innerHTML = '';
+                emptyState.style.display = 'block';
+                return;
+            }
+            
+            emptyState.style.display = 'none';
+            
+            // Build the grid
+            let gridHtml = '';
+            
+            filteredReports.forEach(report => {
+                const scoreDiff = report.score_diff || 0;
+                const scoreDiffClass = scoreDiff > 0 ? 'positive' : (scoreDiff < 0 ? 'negative' : 'neutral');
+                const scoreDiffSign = scoreDiff > 0 ? '+' : '';
+                
+                const jdAlignmentDiff = report.jd_alignment_diff || 0;
+                const jdDiffClass = jdAlignmentDiff > 0 ? 'positive' : (jdAlignmentDiff < 0 ? 'negative' : 'neutral');
+                const jdDiffSign = jdAlignmentDiff > 0 ? '+' : '';
+                
+                const dateFormatted = new Date(report.timestamp).toLocaleDateString();
+                
+                gridHtml += `
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3 class="report-title">
+                            Comparison Report ${report.significant_changes ? '<span class="significant-badge">Significant</span>' : ''}
+                        </h3>
+                        <div class="report-date">${dateFormatted}</div>
+                    </div>
+                    <div class="report-content">
+                        <div class="branches">
+                            <span class="branch branch-1">${report.branch1}</span>
+                            <span class="branch-divider">vs</span>
+                            <span class="branch branch-2">${report.branch2}</span>
+                        </div>
+                        
+                        <div class="report-stats">
+                            <div class="stat">
+                                <div class="stat-label">Score Diff</div>
+                                <div class="stat-value ${scoreDiffClass}">${scoreDiffSign}${scoreDiff}%</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">JD Alignment</div>
+                                <div class="stat-value ${jdDiffClass}">${jdDiffSign}${jdAlignmentDiff}%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="report-actions">
+                        <a href="${report.report_file}" class="action-btn">View Report</a>
+                    </div>
+                </div>
+                `;
+            });
+            
+            reportsGrid.innerHTML = gridHtml;
+        }
+        
+        function populateSignificantChanges() {
+            const changesList = document.getElementById('significantChangesList');
+            const significantReports = reportsData.reports.filter(report => report.significant_changes)
+                                                 .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+                                                 .slice(0, 5); // Get 5 most recent
+            
+            if (significantReports.length === 0) {
+                changesList.innerHTML = '<li class="change-item">No significant changes detected</li>';
+                return;
+            }
+            
+            let changesHtml = '';
+            
+            significantReports.forEach(report => {
+                const dateFormatted = new Date(report.timestamp).toLocaleDateString();
+                
+                let changeDetails = '';
+                
+                if (report.score_diff) {
+                    const scoreClass = report.score_diff > 0 ? 'positive' : 'negative';
+                    const scoreSign = report.score_diff > 0 ? '+' : '';
+                    changeDetails += `<span class="${scoreClass}">${scoreSign}${report.score_diff}% overall score</span> • `;
+                }
+                
+                if (report.jd_alignment_diff) {
+                    const alignClass = report.jd_alignment_diff > 0 ? 'positive' : 'negative';
+                    const alignSign = report.jd_alignment_diff > 0 ? '+' : '';
+                    changeDetails += `<span class="${alignClass}">${alignSign}${report.jd_alignment_diff}% JD alignment</span> • `;
+                }
+                
+                // Remove trailing separator
+                changeDetails = changeDetails.replace(/ • $/, '');
+                
+                changesHtml += `
+                <li class="change-item">
+                    <strong>${report.branch1} vs ${report.branch2}</strong> (${dateFormatted})
+                    <div>${changeDetails}</div>
+                    <div style="margin-top: 5px;">
+                        <a href="${report.report_file}" style="font-size: 12px; color: var(--primary-color);">View Report</a>
+                    </div>
+                </li>
+                `;
+            });
+            
+            changesList.innerHTML = changesHtml;
+        }
+    </script>
+</body>
+</html>
