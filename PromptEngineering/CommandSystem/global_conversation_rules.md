@@ -39,92 +39,206 @@ SCOPE: global
 - `force_knowledge` - Uses only built-in knowledge
 - `force_artifact` - Forces outputs to artifacts
 - `new_options:dict` - options not initially predicted by this documentation. You should expect either a single key-value pair or a dict of key-value pairs. Additionally, if value is an unamed tuple with two elements, consider the first element the actual value and the second element an intent explanation of what this option should do. At the end of the response you should add a snippet with the command and described below added this new option. On this snippet You can change the key name for a better and more meaningful name.
+- `notes:value` - Similar to new_options, but more freestyle.
 
 ### 5.2. Available Commands
-#### 5.2.1. Meta commands
-```
-commands [scope] [detail_options:$options_list]
-```
-Lists all available commands. Scope can be `global`, `project` or `local`. Detail options can be `level:detail_level`, `options: [all|main]` and `options_details: detail_level`. `detail_level` can be either `detailed`, `short`, `no_description`.
+#### 5.2.1. Meta Commands
+##### The `commands` Command
+Lists all available commands. Scope can be `global`, `project` or `local`. Detail options can be `level:detail_level`, `options: [all|main]` and `options_details: detail_level`. `detail_level` can be either `detailed`, `short`,
+`no_description`.
 
+###### Syntax
 ```
-command [command_name]
-help [command_name]
-man [command_name]
+commands [parameters]
 ```
+
+###### Parameters
+| Parameter      | Description                                      | Required | Example Values                                     | Default                 |
+|----------------|--------------------------------------------------|----------|----------------------------------------------------|-------------------------|
+| `scope`        | Limit the list for commands in a specific scope. | No       | `global`, `project`, `this_chat`.                  | `None`                  |
+| `detail_level` | How much detail to write about each command.     | No       | `detailed`, `titles_only`, `titles_and_parameters` | `titles_and_parameters` |
+
+##### The `help` Command
 Explains specific command and its options
 
+###### Syntax
 ```
-create_command [command_name] [options] 
+command [parameters]
+help [parameters]
+man [parameters]
 ```
-Creates a new command compatible with this command system.
-Available options are:
-- `required_options:list` - Minimum list of options that should be valid in this new command.
-- `suggest_improvements:bool` - If true, you should ask clarification questions and  suggest improvements to this command.
-- `scope:(global|project|local)` - Whether the scope of this command should be global, project or local. For project you should follow the standard used within the project to describe the commmand.
-- `result_type:(snippet|artifact|both)` - Whether the output should be a small snippet, like in this document, an artifact with a fully explained documentation of the command or generate both for me to choose.
-- `intent_description:description` - A more detailed description of my intent with this command.
 
+###### Parameters
+| Parameter      | Description                                       | Required | Example Values                         | Default     |
+|----------------|---------------------------------------------------|----------|----------------------------------------|-------------|
+| `scope`        | Scope of the command. Needed in case of conflict. | No       | `global`, `project`, `this_chat`       | `this_chat` |
+| `command`      | Name of the command to seek help.                 | Yes      | `create_command`, `set_alias`          | `None`      |
+| `detail_level` | How detailed should be the help.                  | No       | `detailed`, `shallow`, `examples_only` | `detailed`  |
+
+##### The `create_command` Command
+Creates a new command compatible with this command system and written in the same format.
+
+###### Syntax
+```
+create_command [command_name] [options]
+```
+
+###### Parameters
+| Parameter              | Description                                                                                                                                      | Required | Example Values                | Default   |
+|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------------------|-----------|
+| `params`               | Accepted Parameters for the new command.                                                                                                         | No       | [(`scope`,"Scope of the command",[`global`]),(`command`, "Name of the Command", Required)] | `[]` |
+| `result_type`          | Whether the output should be a small snippet, an artifact with a fully explained documentation of the command or generate both for me to choose. | No       | `snippet`, `artifact`, `both` | `snippet` |
+| `intent_description`   | A more detailed description of my intent with this command.                                                                                      | Yes      | "Create a new Command"        | `None`    |
+| `suggest_improvements` | If true, you should ask clarification questions and suggest improvements to this command.                                                        | No       | `true`, `false`               | `true`    |
+| `alternate_names`      | A list of alternate names for the same command, like in the `help` command.                                                                      | No       | [`man`, `help`]               | `[]`      |
+
+##### The `fill_status` Command
+Restores previous conversation state
+
+###### Syntax
 ```
 fill_status [status_info]
 ```
-Restores previous conversation state
 
+###### Parameters
+| Parameter | Description | Required | Example Values | Default |
+|-----------|-------------|----------|----------------|---------|
+
+##### The `set_alias` Command
+Sets an alias to be used in the form `$new_alias_key`
+
+###### Syntax
 ```
 set_alias [new_alias_key] [new_alias_value]
 set_macro [new_alias_key] [new_alias_value]
 ```
-Sets an alias to be used in the form `$new_alias_key`
 
+###### Parameters
+| Parameter | Description | Required | Example Values | Default |
+|-----------|-------------|----------|----------------|---------|
+
+##### The `load_knowledge` Command
+Load conversation preferences, rules, commands, context or anything else from a file
+
+###### Syntax
 ```
 load_knowledge [file]
 ```
-Load conversation preferences, rules, commands, context or anything else from a file
+
+###### Parameters
+| Parameter | Description        | Required | Example Values                    | Default                 |
+|-----------|--------------------|----------|-----------------------------------|-------------------------|
+| source    | Source of the file | No       | `attachment`, `project`, `pasted` | `Infer` or `project`
 
 #### 5.2.2. Prompt generation Commands
+##### The `continuation_prompt` Command
+Creates continuation document for extended conversations
+
+###### Syntax
 ```
 continuation_prompt
 ```
-Creates continuation document for extended conversations
+
+###### Parameters
+| Parameter | Description | Required | Example Values | Default |
+|-----------|-------------|----------|----------------|---------|
+
 
 #### 5.2.3. Result Manipulation Commands
+##### The `continue` Command
+Resumes truncated responses
+
+###### Syntax
 ```
 continue
 ```
-Resumes truncated responses
 
+###### Parameters
+| Parameter | Description | Required | Example Values | Default |
+|-----------|-------------|----------|----------------|---------|
+
+##### The `set_topic` Command
+Changes current conversation topic
+
+###### Syntax
 ```
 set_topic [new_topic]
 ```
-Changes current conversation topic
 
-```
-print_plan
-```
+###### Parameters
+| Parameter | Description | Required | Example Values | Default |
+|-----------|-------------|----------|----------------|---------|
+
+##### The `print_plan` Command
 Outlines execution plan for approval
 
+###### Syntax
 ```
-accept_plan [tag]
+print_plan [command]
 ```
+
+###### Parameters
+| Parameter | Description | Required | Example Values | Default |
+|-----------|-------------|----------|----------------|---------|
+
+##### The `accept_plan` Command
 Approves previously printed plan
 
+###### Syntax
+```
+accept_plan
+```
+
+###### Parameters
+| Parameter | Description                            | Required | Example Values | Default |
+|-----------|----------------------------------------|----------|----------------|---------|
+| `tag`     | Tag of the plan, if not easy to infer. | No       | `003`          | `Infer` |
+
+##### The `suggest_iterative` Command
+Suggests improvement a iterative process to other commands or previous responses. In this case DO NOT perform the command, instead only print the iterative plan.
+
+###### Syntax
 ```
 suggest_iterative [options]
 ```
-Suggests improvement a iterative process to other commands or previous responses.
-Available options are:
-- `command:$command` - the command to be split in steps. In this case DO NOT perform the command $command right away, instead only print the iterative plan.
-- `tag:number|tag:topic.p` - Suggest an iterative process for a specific prompt previously shared.
 
-```
-summarize [tag:range]
-```
+###### Parameters
+| Parameter | Description                                             | Required | Example Values          | Default |
+|-----------|---------------------------------------------------------|----------|-------------------------|---------|
+| `command` | The command to be split in steps.                       | Yes*     | `load_knowledge abc.md` | `Infer` |
+| `tag`     | Tag `number` or `topic.p` with the command to be split. | No*      | `003`, `003.p`          | `Infer` |
+
+* If current tag number is 001, then either `command` must be present, otherwise `Infer` from current tag number-1.
+
+##### The `summarize` Command
 Provides recap of specified conversation sections
 
+###### Syntax
 ```
-search_format [query] options:[format_style]
+summarize
 ```
+
+###### Parameters
+| Parameter       | Description                               | Required | Example Values | Default      |
+|-----------------|-------------------------------------------|----------|----------------|--------------|
+| tag             | Range of Tags with the text to summarize. | No*      | `003:009`      | `None`       |
+| document_name   | Name of the document to summarize.        | No*      | `abc.pdf`      | `None`       |
+| document_source | Source of the document to summarize.      | No       | `attachment`   | `Attachment` |
+
+* If neither tag or document_name is provided, summarize all attachments of the current message, if there is no attachment, summarize the entire chat window.
+
+##### The `search_format` Command
 Performs web search with results formatted to preferences
+
+###### Syntax
+```
+search_format [query]
+```
+
+###### Parameters
+| Parameter     | Description                         | Required | Example Values             | Default |
+|---------------|-------------------------------------|----------|----------------------------|---------|
+| `constraints` | Constraints of this search request. | No       | `Exclude Facebook results` | `None`  |
 
 ### 5.3. Command Execution Behavior
 - Acknowledges successful commands with brief confirmation:`command complete`.
