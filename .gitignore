@@ -178,3 +178,7 @@ cython_debug/
 .cursor/
 .cursor-cache/
 .cursor.json
+
+# Scripts Generated files
+LaTeX/analysis/branch_analysis/*
+LaTeX/analysis/current_branch/*
