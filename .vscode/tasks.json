@@ -16,7 +16,7 @@
                 "-interaction=nonstopmode",
                 "-synctex=1",
                 "-output-directory=${fileDirname}",
-                "-jobname=Resume-JoaoMarco-${input:brachName}-${input:getDate}",
+                "-jobname=CoverLetter-JoaoMarco-${input:positionName}-${input:brachName}-${input:getDate}",
                 "main.tex"
             ],
             "options": {
@@ -51,6 +51,15 @@
             "command": "shellCommand.execute",
             "args": {
                 "command": "powershell -Command \"git branch --show-current | ForEach-Object { $_.Split('/')[-1] }\"",
+                "useSingleResult": true
+            }
+        },
+        {
+            "id": "positionName",
+            "type": "command",
+            "command": "shellCommand.execute",
+            "args": {
+                "command": "powershell -Command \"$filename = '${fileBasenameNoExtension}'; if ($filename -match '(.*)-cover-letter-body') { $words = $matches[1] -split '-'; $result = ''; foreach ($word in $words) { $result += $word.Substring(0,1).ToUpper() + $word.Substring(1) }; $result }\"",
                 "useSingleResult": true
             }
         }
