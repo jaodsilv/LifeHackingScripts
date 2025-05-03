@@ -4,20 +4,41 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
-            "type": "shell",
-            "command": "echo Hello"
-        },
-        {
             "label": "Build LaTeX",
             "type": "shell",
             "command": "xelatex",
             "args": [
                 "-interaction=nonstopmode",
                 "-synctex=1",
-                "-output-directory=${fileDirname}",
-                "-jobname=Resume-JoaoMarco-${input:brachName}-${input:getDate}",
-                "main.tex"
+                "-output-directory=\\\"${fileDirname}\\\"",
+                "-jobname=\\\"${input:outputFilenamePrefix}-JoaoMarco-${input:getDate}\\\"",
+                "\\\"${input:inputMainFilename}\\\""
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
+        {
+            "label": "Re-Build LaTeX",
+            "type": "shell",
+            "command": "xelatex",
+            "args": [
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "-output-directory=\\\"${fileDirname}\\\"",
+                "-jobname=\\\"${input:outputFilenamePrefix}-JoaoMarco-${input:getDate}\\\"",
+                "\\\"${input:inputMainFilename}\\\""
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -32,6 +53,9 @@
             },
             "problemMatcher": [
                 "$tsc"
+            ],
+            "dependsOn":[
+                "Build LaTeX"
             ]
         }
     ],
@@ -46,13 +70,45 @@
             }
         },
         {
-            "id": "brachName",
+            "id": "branchName",
             "type": "command",
             "command": "shellCommand.execute",
             "args": {
                 "command": "powershell -Command \"git branch --show-current | ForEach-Object { $_.Split('/')[-1] }\"",
                 "useSingleResult": true
             }
+        },
+        {
+            "id": "outputDirName",
+            "type": "command",
+            "command": "shellCommand.execute",
+            "args": {
+                "command": "powershell -Command \"cd ${fileDirname}; Get-Location | ForEach-Object { $_.Path.Substring($_.Path.LastIndexOf('\\') + 1) }\"",
+                "useSingleResult": true
+            }
+        },
+        {
+            "id": "outputFilenamePrefix",
+            "type": "command",
+            "command": "shellCommand.execute",
+            "args": {
+                "command": "powershell -Command \"$dirName = (\\\"${fileDirName}\\\".Substring(\\\"${fileDirName}\\\".LastIndexOf('\\\\') + 1)); $branchName = (git branch --show-current | ForEach-Object { $_.Split('\\\\')[-1] }); $filename = \\\"${fileBasenameNoExtension}\\\"; @($dirName, $branchName, $filename) | ForEach-Object { Write-Output $_ }\"",
+                "allowCustomValues": true,
+                "multiselect": true,
+                "multiselectSeparator": "-",
+                "rememberPrevious": true,
+                "rememberAs": "outputFilenamePrefixPrevious"
+            }
+        },
+        {
+            "id": "inputMainFilename",
+            "type": "pickString",
+            "description": "Select the main LaTeX file to compile",
+            "options": [
+                "main.tex",
+                "${fileBasename}"
+            ],
+            "default": "main.tex"
         }
     ]
 }
