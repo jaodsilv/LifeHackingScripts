@@ -8,7 +8,7 @@
 % \newcommand{\MainTechnologies}{, Data Pipelines and Public Cloud Services}
 \newcommand{\RelevantCoursework}{Distributed Systems, Algorithm Analysis, Database systems, Software
     Engineering, Agile (SCRUM and XP), Algorithms and Data Structures, Graph Algorithms,
-    Concurrent Programming, Programming Languages, Machine Learning.}
+    Concurrent Programming, Programming Languages, Machine Learning}
 
 \documentclass[letterpaper,11pt]{article}
 
@@ -17,9 +17,7 @@
 \raggedright
 
 \usepackage{fontspec}
-% \usepackage{blindtext}
-\defaultfontfeatures{Mapping=tex-text}
-\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
+\defaultfontfeatures{Mapping=tex-text, Ligatures=TeX, Scale=MatchLowercase}
 \setmainfont{Arial}
 \setsansfont{Arial}
 \setmonofont{Courier New}
@@ -33,30 +31,15 @@
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 
 \usepackage{titlesec}
-% \titleformat{\section}{\small\scshape\raggedright}{}{0em}{}[\titlerule]
 \newfontfamily\headingfont{Arial Bold}
-\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Format: {\style}{label}{sep}
-\titlespacing{\section}{0pt}{6pt plus 2pt minus 1pt}{4pt plus 1pt minus 1pt}
-% {left indent}{space before}{space after}
-% \titlespacing{\section}{0pt}{6.5pt plus 1.5pt minus 1.5pt}{4pt plus 1pt minus 1pt}
-% \titlespacing{\section}{0pt}{6pt plus 2pt minus 1pt}{3.5pt plus 1.5pt minus 0.5pt}
-% \titleformat{\subsection}{\footnotesize\scshape\raggedright}{}{0em}{}[]
-% \titlespacing{\subsection}{0pt}{3pt plus 1pt minus 0.5pt}{2pt plus 1pt minus 0.5pt}
-% \titlespacing{\subsection}{0pt}{4pt plus 1pt minus 0.5pt}{2pt plus 1pt minus 0.5pt}
-% \titlespacing{\subsection}{0pt}{3pt plus 1pt minus 0.5pt}{2pt plus 1pt minus 0.5pt}
-% Format subsections for company/position titles
-\titleformat{\subsection}
-  {\normalsize\bfseries}  % Format: normal size, bold
-  {}                      % No label
-  {0em}                   % No separation between label and title
-  {}                      % No additional formatting before
-  []                      % No additional formatting after
 
-% Spacing around subsections
-\titlespacing{\subsection}
-  {0pt}                   % Left indent
-  {2pt plus 2pt}  % Space before
-  {0.5pt plus 1pt}  % Space after
+% Format: {\command}{\style}{label}{sep}{additional formatting before}[additional formatting after]
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}[]
+
+% Spacing: {\command}{left indent}{space before}{space after}
+\titlespacing{\section}{0pt}{6pt plus 2pt minus 1pt}{4pt plus 1pt minus 1pt}
+\titlespacing{\subsection}{0pt}{2pt plus 2pt}{0.5pt plus 1pt}
 
 \usepackage[inline]{enumitem}
 \usepackage{enumitem}
@@ -112,7 +95,6 @@
 
 % Apply only to second page content
 % After clearpage, use this to increase section title visibility
-
 % \titlespacing{\section}{0pt}{5pt plus 3pt}{3pt plus 2pt}
 % \setlist[itemize]{topsep=0pt, itemsep=3pt plus 1pt minus 1pt, parsep=1.5pt plus 0.5pt minus 0.5pt, partopsep=0pt}
 
