@@ -92,7 +92,7 @@
             "type": "command",
             "command": "shellCommand.execute",
             "args": {
-                "command": "powershell -Command \"$dirName = (\\\"${fileDirName}\\\".Substring(\\\"${fileDirName}\\\".LastIndexOf('\\\\') + 1)); $branchName = (git branch --show-current | ForEach-Object { $_.Split('\\\\')[-1] }); $filename = \\\"${fileBasenameNoExtension}\\\"; @($dirName, $branchName, $filename) | ForEach-Object { Write-Output $_ }\"",
+                "command": "powershell -Command \"$dirName = (\\\"${fileDirName}\\\".Substring(\\\"${fileDirName}\\\".LastIndexOf('\\') + 1)); $branchName = (git branch --show-current | ForEach-Object { $_.Split('\\')[-1] }); $filename = \\\"${fileBasenameNoExtension}\\\"; @($dirName, $branchName, $filename) | ForEach-Object { Write-Output $_ }\"",
                 "allowCustomValues": true,
                 "multiselect": true,
                 "multiselectSeparator": "-",
