@@ -11,7 +11,6 @@ save_status <parameters>
 
 ## Parameters
 
-|--------------|---------------------------------------------------------------|----------|------------------------------------------------------------------------------------|
 | Parameter    | Description                                                   | Required | Example Values                                                                     |
 |--------------|---------------------------------------------------------------|----------|------------------------------------------------------------------------------------|
 | `topic`      | Path of the course or lesson being updated.                   | Yes*     | `python.fundamentals`, `software_engineering.refactoring.common_cases.exercises`   |
@@ -19,7 +18,7 @@ save_status <parameters>
 | `complete`   | Completion status.                                            | Yes      | `true`, `false`, `partial`, `3/17`, `30%`                                          |
 | `time_spent` | Minutes spent studying.                                       | No       | Any positive integer                                                               |
 | `notes`      | Brief notes about progress.                                   | No       | Text (use quotes for multi-word notes)                                             |
-|--------------|---------------------------------------------------------------|----------|------------------------------------------------------------------------------------|
+
 Either `course_id` or `topic` must be present.
 
 ## Examples

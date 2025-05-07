@@ -11,5 +11,6 @@
 `load_knowledge study-day-command.md`
 `load_knowledge study-session-command.md`
 `load_knowledge track-progress-command.md`
+`load_knowledge fast-learning-command.md`
 
 Do not assume any of the possible contexts from the loaded files. Instead assume only what comes in the first input prompt. AND, before the response to the first prompt, print the result for the command `commands list_all:true details:all_options,no_details`
