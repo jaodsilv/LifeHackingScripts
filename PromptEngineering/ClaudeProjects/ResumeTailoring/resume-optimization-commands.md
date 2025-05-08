@@ -4,6 +4,7 @@ SCOPE: project
 ```
 print_resume_plan [options]
 ```
+If more than one job title is provided, the command should generate a single Resume plan that is a combination of the job titles.
 Plans Resume tailoring with options:
 - `ats_compliance` - Focus on ATS compliance. Based on the provided Resume. Rewrite it to improve ATS compliance by optmizing format, adding role specific keywords for $job_title, emphasizing metrics-driven achievements. Keep it concise and action-oriented.
 - `open_position:$position` - Tailor for specific position
@@ -21,6 +22,7 @@ Sorts bullets in a section for a specific tailoring task.
 The bullets should be sorted from most relevant to least relevant for that `job_title` and `is_ai` (if provided).
 This command should output one or multiple artifacts with the entire sections.
 Remember to keep resume ATS compliance in mind.
+If more than one job title is provided, the command should sort the bullets for all job titles jointly, i.e., generating a single Resume aimed for a single position that is a combination or an intermediate of all the job titles listed.
 
 Options:
 - `job_title:string` - Job title to tailor for.
@@ -36,6 +38,7 @@ sort_items_within_categories [options]
 Sorts elements inside each bullet without sorting the bullets themselves. Only works for Skills/Professional Skills section.
 This command should output one artifact with the entire section.
 Remember to keep resume ATS compliance in mind.
+If more than one job title is provided, the command should sort the items within categories for all job titles jointly, i.e., generating a single Resume aimed for a single position that is a combination or an intermediate of all the job titles listed.
 
 Options:
 - `job_title:string` - Job title to tailor for.
@@ -50,6 +53,7 @@ list_least_relevant_bullets [options]
 Lists least relevant items in the Skills/Professional Skills section or bullets in a section.
 This command should output one artifact with the list of least relevant items.
 If section is the Skills/Professional Skills section, the command should sort only the bullets, keeping the elements of the bullets in the same order.
+If more than one job title is provided, the command should list the least relevant bullets for all job titles jointly, i.e., generating a single Resume aimed for a single position that is a combination or an intermediate of all the job titles listed.
 
 Options:
 - `section:string|list` - Section or file to list least relevant items (Required).
@@ -65,6 +69,7 @@ list_least_relevant_items [options]
 ```
 Lists least relevant items in the Skills/Professional Skills section.
 This command should output one artifact with the list of least relevant items.
+If more than one job title is provided, the command should list the least relevant items for all job titles jointly, i.e., generating a single Resume aimed for a single position that is a combination or an intermediate of all the job titles listed.
 
 Options:
 - `category:string|list` - category or bullet to list least relevant items (Defaults: all categories).
@@ -82,14 +87,16 @@ suggest_text_improvements [options]
 Suggests improvements for the Resume within the context of a specific job title and is_ai and within the context of each bullet text or item text in a section, i.e., sorting, adding, and removing items are not permitted.
 Use placeholders for possibler values to add to the text.
 If multiple improvements are suggested for the same text, print them all separated by a new line.
+If more than one job title is provided, the command should suggest improvements for all job titles jointly, i.e., generating a single Resume aimed for a single position that is a combination or an intermediate of all the job titles listed.
+Remember to keep resume ATS compliance and best practices in mind.
+Use placeholders for information not present in the Resume instead of inventing new information or allucinating information.
+
 Example:
 ```
 \item \small{Diagnosed complex distributed system failures, reducing mean time to resolution for critical production incidents}
 .....
 \item \small{Applied structured root cause analysis techniques ([Techniques used]) to diagnose complex distributed system failures, reducing mean time to resolution by [Time or time percentage reduction] for critical production incidents}
 ```
-Remember to keep resume ATS compliance and best practices in mind.
-Use placeholders for information not present in the Resume instead of inventing new information or allucinating information.
 
 Options:
 - `job_title:string` - Job title to tailor for.
