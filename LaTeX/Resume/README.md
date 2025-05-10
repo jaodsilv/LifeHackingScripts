@@ -37,13 +37,14 @@ With a Resume for each of these positions and for each combination of these thre
 Versions will be hosted on folders named following the REGEX (Backend)?-?(Data)?-(DistributedSystems)?-?(Infra)?(-AI)?
 Neurodiversity will be present within each version folder as a commented bullet point (That will be only difference between the versions).
 
-### Ready Versions
-None
+### Progress
+#### Ready Versions
+- "Backend Software Engineer" + "Infrastructure Software Engineer"
+- "Backend Software Engineer" + AI
 
-### In Progress Versions
-- "Senior Backend Software Engineer" + "Senior Infrastructure Software Engineer"
+#### In Progress Versions
 
-### Planned Versions
+#### Planned Versions
 
 #### Base
 Backend
@@ -52,7 +53,6 @@ Distributed Systems
 Infra
 Backend-Data
 Backend-DistributedSystems
-Backend-Infra
 Data-DistributedSystems
 Data-Infra
 DistributedSystems-Infra
@@ -63,7 +63,6 @@ Data-DistributedSystems-Infra
 Backend-Data-DistributedSystems-Infra
 
 #### Base AI
-Backend-AI
 Data-AI
 DistributedSystems-AI
 Infra-AI
@@ -80,1052 +79,477 @@ Data-DistributedSystems-Infra-AI
 Backend-Data-DistributedSystems-Infra-AI
 
 ### Commands
-#### "Senior Backend Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Data Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Data Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Data Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Distributed Systems Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Distributed Systems Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Distributed Systems Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Infrastructure Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Infrastructure Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Infrastructure Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Data Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Distributed Systems Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Infrastructure Software Engineer"
-[x] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:false`
-[x] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Data Software Engineer" + "Senior Distributed Systems Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Data Software Engineer" + "Senior Infrastructure Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Distributed Systems Software Engineer" + "Senior Infrastructure Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Data Software Engineer" + "Senior Distributed Systems Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Data Software Engineer" + "Senior Infrastructure Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Distributed Systems Software Engineer" + "Senior Infrastructure Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Data Software Engineer" + "Senior Distributed Systems Software Engineer" + "Senior Infrastructure Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Data Software Engineer" + "Senior Distributed Systems Software Engineer" + "Senior Infrastructure Software Engineer"
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:false`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:false`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:false`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:false`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Data Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Data Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Data Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Distributed Systems Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Distributed Systems Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Distributed Systems Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Infrastructure Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Infrastructure Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Infrastructure Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Data Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Distributed Systems Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Infrastructure Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Data Software Engineer" + "Senior Distributed Systems Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Data Software Engineer" + "Senior Infrastructure Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Distributed Systems Software Engineer" + "Senior Infrastructure Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Data Software Engineer" + "Senior Distributed Systems Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Data Software Engineer" + "Senior Infrastructure Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Distributed Systems Software Engineer" + "Senior Infrastructure Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Data Software Engineer" + "Senior Distributed Systems Software Engineer" + "Senior Infrastructure Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
-
-#### "Senior Backend Software Engineer" + "Senior Data Software Engineer" + "Senior Distributed Systems Software Engineer" + "Senior Infrastructure Software Engineer" + AI
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Summary" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Microsoft" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Experience->Google" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Development->Microsoft Learning Paths" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `list_least_relevant_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Interests" is_ai:true`
-[ ] `apply_changes`
-
-[ ] `sort_bullets job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `sort_items_within_categories job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] is_ai:true`
-[ ] `list_least_relevant_items job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] mode:merged is_ai:true`
-[ ] `suggest_text_improvements job_titles:["Senior Backend Software Engineer", "Senior Data Software Engineer", "Senior Distributed Systems Software Engineer", "Senior Infrastructure Software Engineer"] section:"Professional Skills" is_ai:true`
-[ ] `apply_changes`
+#### [ ] "Backend Software Engineer"
+[ ] `sort_items_within_categories job_title:"Backend Software Engineer" seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_title:"Backend Software Engineer" seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+
+[ ] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Data Software Engineer"
+[ ] `sort_items_within_categories job_title:"Data Software Engineer" seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Data Software Engineer" seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_title:"Data Software Engineer" seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_title:"Data Software Engineer" seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_title:"Data Software Engineer" seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_title:"Data Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Data Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+
+[ ] `sort_bullets job_title:"Data Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Data Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_title:"Data Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_title:"Data Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Distributed Systems Software Engineer"
+[ ] `sort_items_within_categories job_title:"Distributed Systems Software Engineer" seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_title:"Distributed Systems Software Engineer" seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+
+[ ] `sort_bullets job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Infrastructure Software Engineer"
+[ ] `sort_items_within_categories job_title:"Infrastructure Software Engineer" seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_title:"Infrastructure Software Engineer" seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+
+[ ] `sort_bullets job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Data Software Engineer"
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Distributed Systems Software Engineer"
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [X] "Backend Software Engineer" + "Infrastructure Software Engineer"
+[x] `suggest_text_improvements job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false`
+[x] `sort_items_within_categories job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false`
+[x] `sort_bullets job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false`
+[x] `sort_items_within_categories job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:false`
+[x] `sort_bullets job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false`
+
+[x] `sort_bullets job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false`
+[x] `suggest_text_improvements job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false`
+
+[x] `sort_bullets job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false`
+[x] `sort_items_within_categories job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior is_ai:false`
+[x] `list_least_relevant_items job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior mode:merged is_ai:false section:"Skills" n:40`
+[x] `suggest_text_improvements job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false`
+
+#### [ ] "Data Software Engineer" + "Distributed Systems Software Engineer"
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Data Software Engineer" + "Infrastructure Software Engineer"
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+
+#### [ ] "Distributed Systems Software Engineer" + "Infrastructure Software Engineer"
+[ ] `sort_items_within_categories job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Data Software Engineer" + "Distributed Systems Software Engineer"
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Data Software Engineer" + "Infrastructure Software Engineer"
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Distributed Systems Software Engineer" + "Infrastructure Software Engineer"
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Data Software Engineer" + "Distributed Systems Software Engineer" + "Infrastructure Software Engineer"
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Data Software Engineer" + "Distributed Systems Software Engineer" + "Infrastructure Software Engineer"
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+
+#### [X] "Backend Software Engineer" + AI
+[X] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[X] `suggest_text_improvements job_title:"Backend Software Engineer" job_description:"Same as in $($(ResumeTailoring:001).p)" seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[X] `sort_bullets job_title:"Backend Software Engineer" job_description:"Same as in $($(ResumeTailoring:001).p)" seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[X] `sort_items_within_categories job_title:"Backend Software Engineer" job_description:"Same as in $($(ResumeTailoring:001).p)" seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[X] `sort_bullets job_title:"Backend Software Engineer" job_description:"Same as in $($(ResumeTailoring:001).p)" seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[X] `sort_bullets job_title:"Backend Software Engineer" job_description:"Same as in $($(ResumeTailoring:001).p)" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[X] `suggest_text_improvements job_title:"Backend Software Engineer" job_description:"Same as in $($(ResumeTailoring:001).p)" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+[X] `sort_bullets job_title:"Backend Software Engineer" job_description:"Same as in $($(ResumeTailoring:001).p)" seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[X] `suggest_text_improvements job_title:"Backend Software Engineer" job_description:"Same as in $($(ResumeTailoring:001).p)" seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to wease review."`
+[X] `sort_items_within_categories job_title:"Backend Software Engineer" job_description:"Same as in $($(ResumeTailoring:001).p)" seniority_level:senior is_ai:true as_artifact:true section:"Skills"`
+[X] `list_least_relevant_items job_title:"Backend Software Engineer" job_description:"Same as in $($(ResumeTailoring:001).p)" seniority_level:senior mode:merged is_ai:true as_artifact:true section:"Skills" n:40`
+
+#### [ ] "Data Software Engineer" + AI
+[ ] `sort_items_within_categories job_title:"Data Software Engineer" seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Data Software Engineer" seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_title:"Data Software Engineer" seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_title:"Data Software Engineer" seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_title:"Data Software Engineer" seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_title:"Data Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Data Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_title:"Data Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Data Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_title:"Data Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_title:"Data Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Distributed Systems Software Engineer" + AI
+[ ] `sort_items_within_categories job_title:"Distributed Systems Software Engineer" seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_title:"Distributed Systems Software Engineer" seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_title:"Distributed Systems Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Infrastructure Software Engineer" + AI
+[ ] `sort_items_within_categories job_title:"Infrastructure Software Engineer" seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_title:"Infrastructure Software Engineer" seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_title:"Infrastructure Software Engineer" seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Data Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Data Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Distributed Systems Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Infrastructure Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Data Software Engineer" + "Distributed Systems Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Data Software Engineer" + "Infrastructure Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Distributed Systems Software Engineer" + "Infrastructure Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Data Software Engineer" + "Distributed Systems Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Data Software Engineer" + "Infrastructure Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Data Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Distributed Systems Software Engineer" + "Infrastructure Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Data Software Engineer" + "Distributed Systems Software Engineer" + "Infrastructure Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
+
+#### [ ] "Backend Software Engineer" + "Data Software Engineer" + "Distributed Systems Software Engineer" + "Infrastructure Software Engineer" + AI
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Summary" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:true as_artifact:true`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior category:"Interests" is_ai:true as_artifact:true`
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Google" is_ai:true as_artifact:true`
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Professional Experience->Microsoft" is_ai:true as_artifact:true`
+
+
+[ ] `sort_bullets job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `suggest_text_improvements job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[ ] `sort_items_within_categories job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true`
+[ ] `list_least_relevant_items job_titles:["Backend Software Engineer", "Data Software Engineer", "Distributed Systems Software Engineer", "Infrastructure Software Engineer"] seniority_level:senior section:"Skills" is_ai:true as_artifact:true mode:merged n:40`
