@@ -6,14 +6,14 @@ The `study_session` command initiates a structured learning session focused on a
 
 ## Basic Syntax
 ```
-study_session prep:<preparation_plan_name> topic:<topic_name> duration:<minutes> [subtopic:<subtopic_name>] [status:continue]
+study_session <preparation_plan_name> topic:<topic_name> duration:<minutes> [subtopic:<subtopic_name>] [status:continue]
 ```
 
 ## Parameters
 
 | Parameter | Description | Required | Example Values |
 |-----------|-------------|----------|---------------|
-| `prep` | Name of the preparation plan | Yes | `Anthropic` |
+| `preparation_plan_name` | Name of the preparation plan | Yes | `Anthropic` |
 | `topic` | Main subject area for study | Yes | `python_fundamentals`, `data_structures`, `refactoring` |
 | `duration` | Length of session in minutes | Yes | `30`, `60`, `90`, `120` |
 | `subtopic` | Specific focus within main topic | No | `list_comprehensions`, `error_handling` |
@@ -23,17 +23,17 @@ study_session prep:<preparation_plan_name> topic:<topic_name> duration:<minutes>
 
 ### Basic usage (2-hour session on Python fundamentals)
 ```
-study_session prep:Anthropic topic:python_fundamentals duration:120
+study_session Anthropic topic:python_fundamentals duration:120
 ```
 
 ### Focused 30-minute session on a specific subtopic
 ```
-study_session prep:Anthropic topic:data_structures subtopic:collections_module duration:30
+study_session Anthropic topic:data_structures subtopic:collections_module duration:30
 ```
 
 ### Continue a previously saved study session
 ```
-study_session prep:Anthropic topic:refactoring subtopic:clean_code duration:60 status:continue
+study_session Anthropic topic:refactoring subtopic:clean_code duration:60 status:continue
 ```
 
 ## Behavior
