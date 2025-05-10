@@ -13,7 +13,7 @@ track_progress <preparation_name> [day:<day_number>] [topic:<topic_name>] [forma
 
 | Parameter | Description | Required | Example Values |
 |-----------|-------------|----------|---------------|
-| `preparation_name` | Filter to show only a specific preparation | Yes | `Anthropic`, `Amazon`, `Meta`, `TechnicalInterviews`, `AwsCertification`, `SystemArchitecture`, `FullStack` |
+| `preparation_name` | Filter to show only a specific preparation | Yes | `Anthropic`, `Amazon`, `Meta`, `TechnicalInterviews`, `BehavioralInterviews`, `SystemArchitecture`, `FullStack`|
 | `day` | Filter to show only a specific day | No | `1` through `9` |
 | `topic` | Filter to show only a specific topic | No | `python_fundamentals`, `refactoring` |
 | `format` | Change the display format | No | `chart`, `text`, `detailed` (default: `chart`) |
