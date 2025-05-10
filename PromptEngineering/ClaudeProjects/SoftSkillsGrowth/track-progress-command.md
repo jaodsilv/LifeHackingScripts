@@ -2,7 +2,7 @@
 SCOPE: project
 
 ## Purpose
-The `track_progress` command provides a visual representation of your progress through the an study plan. It allows you to monitor completion status across all areas, topics, and subtopics, helping you identify knowledge gaps that need more attention.
+The `track_progress` command provides a visual representation of your progress through the an study plan. It allows you to monitor completion status across all areas, topics, and subtopics, helping you identify knowledge gaps that need more attention. If no preparation name is provided, it will show the progress of all preparations.
 
 ## Basic Syntax
 ```
@@ -13,7 +13,7 @@ track_progress <preparation_name> [day:<day_number>] [topic:<topic_name>] [forma
 
 | Parameter | Description | Required | Example Values |
 |-----------|-------------|----------|---------------|
-| `preparation_name` | Filter to show only a specific preparation | Yes | `Anthropic`, `Amazon`, `Meta`, `TechnicalInterviews`, `BehavioralInterviews`, `AwsCertification`, `SystemArchitecture`, `FullStack`, `DSA` |
+| `preparation_name` | Filter to show only a specific preparation | No | `Anthropic`, `Amazon`, `Meta`, `TechnicalInterviews`, `AwsCertification`, `SystemArchitecture`, `FullStack` |
 | `day` | Filter to show only a specific day | No | `1` through `9` |
 | `topic` | Filter to show only a specific topic | No | `python_fundamentals`, `refactoring` |
 | `format` | Change the display format | No | `chart`, `text`, `detailed` (default: `chart`) |
