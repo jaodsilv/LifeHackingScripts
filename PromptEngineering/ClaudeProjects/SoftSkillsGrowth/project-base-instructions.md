@@ -1,4 +1,4 @@
-# Technical Growth Project Rules
+# Soft Skills Growth Project Rules
 ## Commands System
 - Follow global system.
 - Scope name `project`, i.e., commands should be in the form `project.command [options]` when there is a conflict between local, project or global command scopes.

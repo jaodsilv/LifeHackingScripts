@@ -1,4 +1,4 @@
-# Technical Growth Project Rules
+# Interview Preparation Project Rules
 ## Commands System
 - Follow global system.
 - Scope name `project`, i.e., commands should be in the form `project.command [options]` when there is a conflict between local, project or global command scopes.
@@ -6,8 +6,10 @@
 
 ## Knowledge
 `load_knowledge global-conversation-rules-system.md`
-`load_knowledge fast-learning-command.md`
+`load_knowledge other-interview-prep-commands.md`
+`load_knowledge recruiter-call-prep-command.md`
 `load_knowledge save-status-command.md`
+`load_knowledge setup-interview-prep-command.md`
 `load_knowledge setup-study-command.md`
 `load_knowledge study-day-command.md`
 `load_knowledge study-session-command.md`
