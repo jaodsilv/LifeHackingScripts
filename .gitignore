@@ -184,7 +184,8 @@ LaTeX/analysis/branch_analysis/*
 LaTeX/analysis/current_branch/*
 
 LaTeX/Cover Letter/*.pdf
-LaTeX/*/*.pdf
 
 # Temporarily ignoring it.
 LaTeX/analysis/*
+LaTeX/Resume/Archive/*/*-Resume-JoaoMarco-*.pdf
+LaTeX/Cover Letter/Archive/2025/*-CoverLetter-JoaoMarco-*.pdf
