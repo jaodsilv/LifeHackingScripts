@@ -913,12 +913,15 @@ function Generate-HtmlReport {
     }
     
     $outputHtml = $outputHtml.Replace("{{#sections}}", "").Replace("{{/sections}}", "")
-    $outputHtml = $outputHtml.Replace("<tr>
-                    <td>{{name}}</td>
-                    <td>{{score1}}%</td>
-                    <td>{{score2}}%</td>
-                    <td class="{{diff_class}}">{{diff_sign}}{{diff_abs}}%</td>
-                </tr>", $sectionsHtml)
+    $templateOutput = @"
+<tr>
+    <td>{{name}}</td>
+    <td>{{score1}}%</td>
+    <td>{{score2}}%</td>
+    <td class="{{diff_class}}">{{diff_sign}}{{diff_abs}}%</td>
+</tr>
+"@
+    $outputHtml = $outputHtml.Replace($templateOutput, $sectionsHtml)
     
     # Replace chart data
     $radarDataJson = ConvertTo-Json -InputObject $comparisonData.radar_data -Depth 4 -Compress

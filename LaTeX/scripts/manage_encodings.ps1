@@ -143,7 +143,7 @@ function Generate-Reports {
     $reportPath = "$REPORTS_DIR\main_vs_${cleanName}.html"
     
     # Call report generator script
-    & .\html-report-generator.ps1 -OutputDir $REPORTS_DIR -Branches $branchName -CompareToMain -Silent
+    & .\scripts\html-report-generator.ps1 -OutputDir $REPORTS_DIR -Branches $branchName -CompareToMain -Silent
     
     # Check if the report was generated
     if (Test-Path $reportPath) {
@@ -559,8 +559,8 @@ if ($Action -eq "compare" -and $Branch1 -and $Branch2) {
     
     # Compare focus tags
     Write-Host "FOCUS TAGS:" -ForegroundColor White
-    Write-Host "$Branch1: $($data1.focus_tags -join ', ')" -ForegroundColor White
-    Write-Host "$Branch2: $($data2.focus_tags -join ', ')" -ForegroundColor White
+    Write-Host "$($Branch1): $($data1.focus_tags -join ', ')" -ForegroundColor White
+    Write-Host "$($Branch2): $($data2.focus_tags -join ', ')" -ForegroundColor White
     Write-Host ""
     
     # Compare JD info if available
@@ -579,8 +579,8 @@ if ($Action -eq "compare" -and $Branch1 -and $Branch2) {
         $primary1Score = if ($primary1) { "$($primary1.alignment_score)%" } else { "N/A" }
         $primary2Score = if ($primary2) { "$($primary2.alignment_score)%" } else { "N/A" }
         
-        Write-Host "$Branch1: Primary JD = $primary1Id, Alignment = $primary1Score" -ForegroundColor White
-        Write-Host "$Branch2: Primary JD = $primary2Id, Alignment = $primary2Score" -ForegroundColor White
+        Write-Host "$($Branch1): Primary JD = $primary1Id, Alignment = $primary1Score" -ForegroundColor White
+        Write-Host "$($Branch2): Primary JD = $primary2Id, Alignment = $primary2Score" -ForegroundColor White
         Write-Host ""
     }
     
@@ -637,7 +637,7 @@ if ($Action -eq "compare" -and $Branch1 -and $Branch2) {
             $reportPath = "$reportDir\${cleanName1}_vs_${cleanName2}.html"
             
             # Call report generator script
-            & .\html-report-generator.ps1 -OutputDir $reportDir -Branches "$Branch1,$Branch2" -OutputFile "${cleanName1}_vs_${cleanName2}.html"
+            & .\scripts\html-report-generator.ps1 -OutputDir $reportDir -Branches "$Branch1,$Branch2" -OutputFile "${cleanName1}_vs_${cleanName2}.html"
             
             Write-Host "Report generated: $reportPath" -ForegroundColor Green
             
@@ -652,7 +652,7 @@ if ($Action -eq "compare" -and $Branch1 -and $Branch2) {
 # Action: Find best resume for a JD
 if ($Action -eq "jd-match" -and $JdId) {
     # Call the best-match action in manage_job_descriptions.ps1
-    & .\manage_job_descriptions.ps1 -Action best-match -JdId $JdId
+    & .\scripts\manage_job_descriptions.ps1 -Action best-match -JdId $JdId
     
     # Ask if user wants to see reports for top matches
     $index = Load-Index
@@ -683,7 +683,7 @@ if ($Action -eq "jd-match" -and $JdId) {
             # Check if report exists, generate if not
             if (-not (Test-Path $reportPath)) {
                 Write-Host "Generating report for $topBranch..." -ForegroundColor Cyan
-                & .\html-report-generator.ps1 -OutputDir $REPORTS_DIR -Branches $topBranch -CompareToMain -Silent
+                & .\scripts\html-report-generator.ps1 -OutputDir $REPORTS_DIR -Branches $topBranch -CompareToMain -Silent
             }
             
             if (Test-Path $reportPath) {
@@ -693,4 +693,17 @@ if ($Action -eq "jd-match" -and $JdId) {
             }
         }
     }
+}
+
+# Action: Launch web interface
+if ($Action -eq "web") {
+    $webPath = "analysis\web\encoding_browser.html"
+    
+    if (-not (Test-Path $webPath)) {
+        Write-Host "Error: Web interface files not found at $webPath" -ForegroundColor Red
+        exit 1
+    }
+    
+    Write-Host "Launching web interface..." -ForegroundColor Cyan
+    Start-Process $webPath
 }

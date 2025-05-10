@@ -77,23 +77,88 @@ function Generate-JdId {
 function Extract-Skills {
     param($jdText)
     
-    # This is a simple implementation - could be enhanced with NLP
-    $commonSkills = @(
-        "python", "java", "javascript", "c#", "go", "golang", "rust", "c++",
-        "azure", "aws", "gcp", "cloud", "kubernetes", "docker", "terraform",
-        "data-engineering", "machine-learning", "ai", "data-science",
-        "distributed-systems", "microservices", "rest", "graphql",
-        "react", "angular", "vue", "frontend", "backend", "full-stack",
-        "sql", "nosql", "mongodb", "postgresql", "mysql", "oracle",
-        "kafka", "rabbitmq", "redis", "spark", "hadoop", "airflow",
-        "ci/cd", "github", "gitlab", "jenkins", "agile", "scrum"
-    )
+    # Check if there's text to analyze
+    if ([string]::IsNullOrWhiteSpace($jdText)) {
+        Write-Host "Warning: Job description text is empty. Cannot extract skills." -ForegroundColor Yellow
+        return @()
+    }
+    
+    # Prompt-based approach
+    Clear-Host
+    Write-Host "===== AI-ASSISTED SKILL EXTRACTION =====" -ForegroundColor Cyan
+    Write-Host "We'll use an AI-assisted approach to extract skills from this job description." -ForegroundColor White
+    Write-Host "Please follow these steps:" -ForegroundColor White
+    Write-Host ""
+    Write-Host "1. Copy the following prompt and the job description:" -ForegroundColor Green
+    Write-Host "---------------------------------------------------------" -ForegroundColor White
+    Write-Host "Please analyze this job description and extract a list of technical skills, technologies," -ForegroundColor White
+    Write-Host "programming languages, frameworks, and tools that are mentioned or implied." -ForegroundColor White
+    Write-Host "Format the output as a simple comma-separated list of lowercase terms with no explanations." -ForegroundColor White
+    Write-Host "For example: python, kubernetes, terraform, distributed systems, ci/cd" -ForegroundColor White
+    Write-Host "---------------------------------------------------------" -ForegroundColor White
+    Write-Host ""
+    Write-Host "Job Description:" -ForegroundColor White
+    Write-Host "---------------------------------------------------------" -ForegroundColor White
+    Write-Host $jdText
+    Write-Host "---------------------------------------------------------" -ForegroundColor White
+    Write-Host ""
+    Write-Host "2. Paste this into your preferred AI assistant (ChatGPT, Claude, etc.)" -ForegroundColor Green
+    Write-Host "3. Copy the comma-separated list of skills from the AI's response" -ForegroundColor Green
+    Write-Host "4. Paste it below:" -ForegroundColor Green
+    Write-Host ""
+    
+    $skillsList = Read-Host "Skills (comma-separated)"
+    
+    # Process the skills list
+    if ([string]::IsNullOrWhiteSpace($skillsList)) {
+        Write-Host "No skills entered. Using automatic extraction instead." -ForegroundColor Yellow
+        
+        # Fallback to regex-based extraction
+        return Extract-Skills-Regex -jdText $jdText
+    }
+    
+    # Split by comma and trim each skill
+    $skills = $skillsList -split ',' | ForEach-Object { $_.Trim() } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+    
+    # Remove duplicates
+    $uniqueSkills = $skills | Select-Object -Unique
+    
+    return $uniqueSkills
+}
+
+# Fallback function using regex patterns for common tech terms
+function Extract-Skills-Regex {
+    param($jdText)
     
     $detectedSkills = @()
     
-    foreach ($skill in $commonSkills) {
-        if ($jdText -match $skill) {
-            $detectedSkills += $skill
+    # Common programming languages
+    $languages = "python|java|javascript|typescript|c\#|go|golang|rust|c\+\+|ruby|php|scala|kotlin|swift|perl|shell|bash|powershell|r|matlab"
+    
+    # Cloud platforms
+    $cloud = "azure|aws|gcp|cloud|google cloud|amazon web services|microsoft azure"
+    
+    # DevOps & infrastructure
+    $devops = "kubernetes|k8s|docker|terraform|ansible|jenkins|circleci|github actions|gitlab ci|ci\/cd|devops|sre|site reliability|infrastructure"
+    
+    # Data technologies
+    $data = "sql|nosql|mongodb|postgresql|mysql|oracle|data engineer|data science|machine learning|ml|ai|artificial intelligence|deep learning|etl|data warehouse|data lake|spark|hadoop|airflow|kafka|rabbitmq|redis"
+    
+    # Web technologies
+    $web = "react|angular|vue|frontend|backend|full-stack|fullstack|restful|rest api|graphql|node.js|nodejs|express|django|flask|spring boot|microservices|distributed systems"
+    
+    # Get all matches
+    $patterns = @($languages, $cloud, $devops, $data, $web)
+    
+    foreach ($pattern in $patterns) {
+        $regex = [regex]::new("\b($pattern)\b", [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+        $matches = $regex.Matches($jdText)
+        
+        foreach ($match in $matches) {
+            $skill = $match.Groups[1].Value.ToLower()
+            if ($detectedSkills -notcontains $skill) {
+                $detectedSkills += $skill
+            }
         }
     }
     
