@@ -127,9 +127,26 @@ print("Starting Resume Tailoring\n\n# Step 5: Resume Tailoring - Adjusting Termi
 
 Scan through ALL the resume files and adjust the terminology to match the job posting.
 
-# Step 6: Resume Tailoring - Sorting Coursework
+# Step 6: Resume Tailoring - Sorting Languages
 ```python
-print("# Step 6: Resume Tailoring - Sorting Coursework")
+print("# Step 6: Resume Tailoring - Sorting Languages")
+```
+
+```
+sort_items_within_categories job_title:Infer seniority_level:senior category:"main.tex->\LanguagesOrderSummary" is_ai:infer as_artifact:true
+```
+
+```
+sort_items_within_categories job_title:Infer seniority_level:senior category:"main.tex->\LanguagesOrderSkills" is_ai:infer as_artifact:true
+```
+
+```
+wait_command response_map or next_step
+```
+
+# Step 7: Resume Tailoring - Sorting Coursework
+```python
+print("# Step 7: Resume Tailoring - Sorting Coursework")
 ```
 
 ```
@@ -139,9 +156,9 @@ sort_items_within_categories job_title:Infer seniority_level:senior category:"Ed
 wait_command response_map or next_step
 ```
 
-# Step 7: Resume Tailoring - Suggesting Professional Summary Improvements
+# Step 8: Resume Tailoring - Suggesting Professional Summary Improvements
 ```python
-print("# Step 7: Resume Tailoring - Suggesting Professional Summary Improvements")
+print("# Step 8: Resume Tailoring - Suggesting Professional Summary Improvements")
 ```
 
 ```
@@ -152,9 +169,9 @@ suggest_text_improvements job_title:Infer seniority_level:senior section:"Profes
 wait_command response_map or next_step
 ```
 
-# Step 8: Resume Tailoring - Sorting Professional Development
+# Step 9: Resume Tailoring - Sorting Professional Development
 ```python
-print("# Step 8: Resume Tailoring - Sorting Professional Development Microsoft Learning Paths")
+print("# Step 9: Resume Tailoring - Sorting Professional Development Microsoft Learning Paths")
 ```
 
 ```
@@ -165,9 +182,9 @@ sort_bullets job_title:Infer seniority_level:senior section:"Professional Develo
 wait_command response_map or next_step
 ```
 
-# Step 9: Resume Tailoring - Sorting Interests
+# Step 10: Resume Tailoring - Sorting Interests
 ```python
-print("# Step 9: Resume Tailoring - Sorting Interests")
+print("# Step 10: Resume Tailoring - Sorting Interests")
 ```
 
 ```
@@ -178,9 +195,9 @@ sort_items_within_categories job_title:Infer seniority_level:senior category:"In
 wait_command response_map or next_step
 ```
 
-# Step 10: Resume Tailoring - Sorting Professional Experience
+# Step 11: Resume Tailoring - Sorting Professional Experience
 ```python
-print("# Step 10: Resume Tailoring - Sorting Professional Experience - Google")
+print("# Step 11: Resume Tailoring - Sorting Professional Experience - Google")
 ```
 
 ```
@@ -191,9 +208,9 @@ sort_bullets job_title:Infer seniority_level:senior section:"Professional Experi
 wait_command response_map or next_step
 ```
 
-# Step 11: Resume Tailoring - Suggesting Text Improvements for Professional Experience - Microsoft
+# Step 12: Resume Tailoring - Suggesting Text Improvements for Professional Experience - Microsoft
 ```python
-print("# Step 11: Resume Tailoring - Suggesting Text Improvements for Professional Experience - Microsoft")
+print("# Step 12: Resume Tailoring - Suggesting Text Improvements for Professional Experience - Microsoft")
 ```
 
 
@@ -201,9 +218,9 @@ print("# Step 11: Resume Tailoring - Suggesting Text Improvements for Profession
 suggest_text_improvements job_title:Infer seniority_level:senior section:"Professional Experience->Microsoft" is_ai:infer as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."
 ```
 
-# Step 12: Resume Tailoring - Sorting Professional Experience - Microsoft
+# Step 13: Resume Tailoring - Sorting Professional Experience - Microsoft
 ```python
-print("# Step 12: Resume Tailoring - Sorting Professional Experience - Microsoft")
+print("# Step 13: Resume Tailoring - Sorting Professional Experience - Microsoft")
 ```
 
 ```
@@ -214,9 +231,9 @@ sort_bullets job_title:Infer seniority_level:senior section:"Professional Experi
 wait_command response_map or next_step
 ```
 
-# Step 13: Resume Tailoring - Sorting Skill Categories
+# Step 14: Resume Tailoring - Sorting Skill Categories
 ```python
-print("# Step 13: Resume Tailoring - Sorting Skill Categories")
+print("# Step 14: Resume Tailoring - Sorting Skill Categories")
 ```
 
 ```
@@ -227,9 +244,9 @@ sort_bullets job_title:Infer seniority_level:senior section:"Skills" is_ai:infer
 wait_command response_map or next_step
 ```
 
-# Step 14: Resume Tailoring - Suggesting Text Improvements for Skills
+# Step 15: Resume Tailoring - Suggesting Text Improvements for Skills
 ```python
-print("# Step 14: Resume Tailoring - Suggesting Text Improvements for Skills")
+print("# Step 15: Resume Tailoring - Suggesting Text Improvements for Skills")
 ```
 
 ```
@@ -240,9 +257,9 @@ suggest_text_improvements job_title:Infer seniority_level:senior section:"Skills
 wait_command response_map or next_step
 ```
 
-# Step 15: Resume Tailoring - Sorting Skills in each category
+# Step 16: Resume Tailoring - Sorting Skills in each category
 ```python
-print("# Step 15: Resume Tailoring - Sorting Skills in each category")
+print("# Step 16: Resume Tailoring - Sorting Skills in each category")
 ```
 
 ```
@@ -253,18 +270,18 @@ sort_items_within_categories job_title:Infer seniority_level:senior section:"Ski
 wait_command response_map or next_step
 ```
 
-# Step 16: Resume Tailoring - Evaluate ATS Parseability
+# Step 17: Resume Tailoring - Evaluate ATS Parseability
 ```python
-print("# Step 16: Resume Tailoring - Evaluate ATS Parseability")
+print("# Step 17: Resume Tailoring - Evaluate ATS Parseability")
 ```
 
 Check if the resume is fully parseable by ATS systems.
 Focus on formatting, layout, etc. Avoid content.
 Be very concise, no need for explanations. Just suggest the changes if any.
 
-# Step 17: Resume Tailoring - List Least Relevant Skills
+# Step 18: Resume Tailoring - List Least Relevant Skills
 ```python
-print("# Step 17: Resume Tailoring - List Least Relevant Skills")
+print("# Step 18: Resume Tailoring - List Least Relevant Skills")
 ```
 
 ```
