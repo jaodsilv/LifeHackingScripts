@@ -39,7 +39,9 @@ Neurodiversity will be present within each version folder as a commented bullet 
 
 ### Progress
 #### Ready Versions
+- "Backend Software Engineer"
 - "Backend Software Engineer" + "Infrastructure Software Engineer"
+
 - "Backend Software Engineer" + AI
 
 #### In Progress Versions
@@ -47,7 +49,6 @@ Neurodiversity will be present within each version folder as a commented bullet 
 #### Planned Versions
 
 #### Base
-Backend
 Data
 Distributed Systems
 Infra
@@ -79,21 +80,20 @@ Data-DistributedSystems-Infra-AI
 Backend-Data-DistributedSystems-Infra-AI
 
 ### Commands
-#### [ ] "Backend Software Engineer"
-[ ] `sort_items_within_categories job_title:"Backend Software Engineer" seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
-[ ] `suggest_text_improvements job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true`
-[ ] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
-[ ] `sort_items_within_categories job_title:"Backend Software Engineer" seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
-[ ] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
+#### [X] "Backend Software Engineer"
+[X] `sort_items_within_categories job_title:"Backend Software Engineer" seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
+[X] `suggest_text_improvements job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Summary" is_ai:false as_artifact:true job_description:"Same as in $($(Optimization:002).p)"`
+[X] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Development->Microsoft Learning Paths" is_ai:false as_artifact:true`
+[X] `sort_items_within_categories job_title:"Backend Software Engineer" seniority_level:senior category:"Interests" is_ai:false as_artifact:true`
+[X] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Experience->Google" is_ai:false as_artifact:true`
 
-[ ] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
-[ ] `suggest_text_improvements job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[X] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
+[X] `suggest_text_improvements job_title:"Backend Software Engineer" seniority_level:senior section:"Professional Experience->Microsoft" is_ai:false as_artifact:true`
 
-
-[ ] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
-[ ] `suggest_text_improvements job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
-[ ] `sort_items_within_categories job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
-[ ] `list_least_relevant_items job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
+[X] `sort_bullets job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[X] `suggest_text_improvements job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."`
+[X] `sort_items_within_categories job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true`
+[X] `list_least_relevant_items job_title:"Backend Software Engineer" seniority_level:senior section:"Skills" is_ai:false as_artifact:true mode:merged n:40`
 
 #### [ ] "Data Software Engineer"
 [ ] `sort_items_within_categories job_title:"Data Software Engineer" seniority_level:senior category:"Education->Bachelor's Degree->Relevant coursework(\newcommand{\RelevantCoursework} in main.tex file)" is_ai:false as_artifact:true`
