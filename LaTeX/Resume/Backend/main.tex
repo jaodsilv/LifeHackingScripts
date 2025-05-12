@@ -1,0 +1,110 @@
+% Terminology:
+\newcommand{\BackEnd}{Backend}
+\newcommand{\FrontEnd}{Frontend}
+\newcommand{\FullStack}{Fullstack}
+
+%\newcommand{\POSITION}{Data Software Engineer}
+\newcommand{\POSITION}{Software Engineer}
+\newcommand{\LanguagesOrderSummary}{Python, Java, C/C++, Go, C\#, and Scala}
+\newcommand{\LanguagesOrderSkills}{Python, Java, C/C++, Go, C\# (.NET/.NET framework/.NET core), Scala}
+\newcommand{\MainTechnologies}{}
+% \newcommand{\EMAIL}{joaodasisilva@gmail.com}
+\newcommand{\EMAIL}{joao@joaodasilva.com.br}
+% \newcommand{\MainTechnologies}{, Data Pipelines and Public Cloud Services}
+\newcommand{\RelevantCoursework}{Distributed Systems, Database Systems, Concurrent Programming, Algorithms and Data Structures, Graph Algorithms, Software Engineering, Algorithm Analysis, Agile (SCRUM and XP), Programming Languages, Machine Learning}
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[margin=0.75in]{geometry}
+
+\raggedright
+
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text, Ligatures=TeX, Scale=MatchLowercase}
+\setmainfont{Arial}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\usepackage{xunicode,xltxtra,url,parskip}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0,0}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+\usepackage{titlesec}
+\newfontfamily\headingfont{Arial Bold}
+
+% Format: {\command}{\style}{label}{sep}{additional formatting before}[additional formatting after]
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}[]
+
+% Spacing: {\command}{left indent}{space before}{space after}
+\titlespacing{\section}{0pt}{6pt plus 2pt minus 1pt}{4pt plus 1pt minus 1pt}
+\titlespacing{\subsection}{0pt}{2pt plus 2pt}{0.5pt plus 1pt}
+
+\usepackage[inline]{enumitem}
+\usepackage{enumitem}
+\makeatletter
+\newcommand{\inlineitem}[1][]{%
+\ifnum\enit@type=\tw@
+    {\descriptionlabel{#1}}
+  \hspace{\labelsep}%
+\else
+  \ifnum\enit@type=\z@
+       \refstepcounter{\@listctr}\fi
+    \quad\@itemlabel\hspace{\labelsep}%
+\fi}
+\makeatother
+\parindent=0pt
+\parskip=3pt plus 1pt minus 1pt
+
+% \setlist[itemize]{topsep=0pt, itemsep=3pt plus 1pt minus 1pt, parsep=1.5pt plus 0.5pt minus 0.5pt, partopsep=0pt}
+\setlist[itemize]{topsep=0pt, itemsep=2pt, parsep=0pt, partopsep=0pt}
+% \setlist[itemize]{topsep=0pt, itemsep=3pt plus 1pt minus 1pt, parsep=2pt minus 1pt, partopsep=0pt}
+
+\pagestyle{empty}
+
+\font\fb=''[cmr9]''
+
+\usepackage{import}
+% For title case capitalization
+\usepackage{titlecaps}
+\Addlcwords{a an the and or for in of on with to by at}
+
+% Prevent hyphenation of words at line breaks
+\usepackage[none]{hyphenat}
+\sloppy
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\renewcommand{\baselinestretch}{1.05}
+
+\begin{document}
+
+\begin{center}
+  {\Large João Marco Maciel da Silva}\\[5pt]
+  {\small \EMAIL{} | (360) 590-9659 | linkedin.com/in/joaodasisilva | Redmond, WA}\\[5pt]
+\end{center}
+
+\input{1.Summary}
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Work Experience}
+\input{2.1.Microsoft}
+\input{2.2.Google}
+
+% Apply only to second page content
+% After clearpage, use this to increase section title visibility
+% \titlespacing{\section}{0pt}{5pt plus 3pt}{3pt plus 2pt}
+% \setlist[itemize]{topsep=0pt, itemsep=3pt plus 1pt minus 1pt, parsep=1.5pt plus 0.5pt minus 0.5pt, partopsep=0pt}
+
+\input{../2.3.Internships}
+\input{../3.Education}
+\input{4.Skills}
+\input{5.ProfessionalDevelopment}
+\input{6.Interests}
+
+\end{document}
