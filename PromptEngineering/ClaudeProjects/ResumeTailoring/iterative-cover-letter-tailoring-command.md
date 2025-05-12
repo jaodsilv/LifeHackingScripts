@@ -2,14 +2,13 @@
 SCOPE: project
 
 ```
-prepare_cover_letter job_posting_filenames [source:(attachment|project)] [cv:cv_filename] [cv_source:(project|attachment)] [noiterative:(false|true)] [options]
+prepare_cover_letter_step_by_step job_posting_filenames [source:(attachment|project)] [cv:cv_filename] [cv_source:(project|attachment)] [options]
 ```
 Runs the command series below. Prepares cover letters for all job postings mentioned.
 job_posting_filenames is a required comma separated list of filenames.
 If source option is not given, defaults to 'attachment'.
 if cv filename option is not given, defaults to ['main.tex', '\d\.(\d\.)?[a-zA-Z]+\.tex']
 if cv_source option is not given, defaults to 'project'.
-if noiterative option is not given, defaults to 'false', i.e., do it iteratively, one step at a time.
 If files are not found, request to upload the files, do not search on the web or in your knowledge.
 
 ```
