@@ -2,16 +2,22 @@
 SCOPE: project
 
 ```
-prepare_resume_step_by_step [job_posting_filenames:(comma separated list of filenames)] [job_posting_source:(attachment|project|pasted|generic|job_description_parameter)] [base:resume_filenames] [base_source:(project|attachment)] [job_descriptions:(comma separated list of job descriptions)] [options]
+prepare_resume_step_by_step [job_posting_filenames:(comma separated list of filenames)] [job_posting_source:(attachment|project|pasted|generic|job_description_parameter)] [base:resume_filenames] [base_source:(project|attachment)] [job_descriptions:(comma separated list of job descriptions)] [job_titles:(comma separated list of job titles)] [skip_to_step:step_number] [options]
 ```
-Runs the command series below. Prepares a single resume aimed for a set of job postings mentioned.
-Either job_posting_filenames or job_description must be present.
-You must keep the ATS in mind at all times.
-If source option is not given, defaults to 'attachment'.
-if `base` resume filenames option is not given, defaults to ['main.tex', '\d\.(\d\.)?[a-zA-Z]+\.tex']
-if `base_source` option is not given, defaults to 'project'.
-If files are not found, request to upload the files, do not search on the web or in your knowledge.
-You should perform ONLY STEP 1 at the time of this command.
+* Runs the command series below. Prepares a single resume aimed for a set of job postings mentioned.
+* Either job_posting_filenames or job_description or job_titles must be present.
+* You must keep the ATS in mind at all times.
+* If source option is not given, defaults to 'attachment'.
+* if `base` resume filenames option is not given, defaults to ['main.tex', '\d\.(\d\.)?[a-zA-Z]+\.tex']
+* if `base_source` option is not given, defaults to 'project'.
+* If files are not found, request to upload the files, do not search on the web or in your knowledge.
+* You should perform ONLY STEP 1 at the time of this command.
+* Include a tracking of the steps performed in the command, something visual in the text body, not including it in the outputted artifacts.
+    * This tracking should include:
+        * Last Step Completed number and name.
+        * Current step number and name.
+        * Next step number and name.
+        * A progress bar considering since step 1, even if we skip steps.
 
 ```
 next_step [options]
@@ -195,7 +201,7 @@ sort_items_within_categories job_title:Infer seniority_level:senior category:"In
 wait_command response_map or next_step
 ```
 
-# Step 11: Resume Tailoring - Sorting Professional Experience
+# Step 11: Resume Tailoring - Sorting Google Professional Experience
 ```python
 print("# Step 11: Resume Tailoring - Sorting Professional Experience - Google")
 ```
@@ -213,9 +219,8 @@ wait_command response_map or next_step
 print("# Step 12: Resume Tailoring - Suggesting Text Improvements for Professional Experience - Microsoft")
 ```
 
-
 ```
-suggest_text_improvements job_title:Infer seniority_level:senior section:"Professional Experience->Microsoft" is_ai:infer as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review."
+suggest_text_improvements job_title:Infer seniority_level:senior section:"Professional Experience->Microsoft" is_ai:infer as_artifact:true notes:"Focus in the text itself and terminology. DO NOT sort anything yourself. Use the order above for the bullets and keep the original order within each category, this is to ease review. I do not have more data with numbers other than what is already written, therefore you should not suggest any numbers."
 ```
 
 # Step 13: Resume Tailoring - Sorting Professional Experience - Microsoft
@@ -224,7 +229,7 @@ print("# Step 13: Resume Tailoring - Sorting Professional Experience - Microsoft
 ```
 
 ```
-sort_bullets job_title:Infer seniority_level:senior section:"Professional Experience->Microsoft" is_ai:infer as_artifact:true
+sort_bullets job_title:Infer seniority_level:senior section:"Professional Experience->Microsoft" is_ai:infer as_artifact:true notes:"Do not forget to read and include comments present in the file. Include comments in the output regarding the priority used in this sorting."
 ```
 
 ```
@@ -292,3 +297,67 @@ list_least_relevant_items job_title:Infer seniority_level:senior section:"Skills
 wait_command response_map or next_step
 ```
 
+# Step 19: Resume Tailoring - Tailor to fit space
+This is a two step process.
+1. ask information about the current state of the resume
+2. tailor to fit space
+
+# Step 19.1: Resume Tailoring - Prompt for current state
+```python
+print("# Step 19: Resume Tailoring - Tailor to fit space")
+print("## Step 19.1: Resume Tailoring - Prompt for current state")
+print("Please provide information about the current state of the resume compiled from this tailoring process.")
+```
+
+```
+wait_command response
+```
+
+# Step 19.2: Resume Tailoring - Tailor to fit space
+```python
+print("## Step 19.2: Resume Tailoring - Tailor to fit space")
+```
+
+```
+tailor_to_fit_space source:context_window goal:fit_2_pages current_state:$response
+```
+
+```
+wait_command response_map or next_step
+```
+
+# Step 20: Resume Tailoring - Count words and tailor for vocabulary adjustment
+This is a two step process.
+Count the words in the resume and tailor for vocabulary adjustment.
+The goal is to avoid repeating the same words in the resume too much. Centain level of repetition is acceptable.
+
+## Step 19.1: Resume Tailoring - Find words with repetitions
+Finds words with repetitions in the Resume. Outputs a list of words and the number of times they appear in the Resume and in the same bullet when applicable.
+
+```python
+print("# Step 20: Resume Tailoring - Reducing Word Repetitions")
+print("## Step 20.1: Resume Tailoring - Find words with repetitions")
+```
+
+```
+find_repetitions job_title:Infer seniority_level:senior section:"all" is_ai:infer as_artifact:true max_length:1000 threshold:4 threshold_same_bullet:2
+```
+
+```
+wait_command response_map or next_step
+```
+
+## Step 19.2: Resume Tailoring - Reduce word repetitions
+This step is to reduce word repetitions in the Resume.
+
+```python
+print("## Step 20.2: Resume Tailoring - Reduce word repetitions")
+```
+
+```
+suggest_text_improvements job_title:Infer seniority_level:senior section:"all" is_ai:infer as_artifact:true notes:"Focus in the text itself and terminology to reduce word repetitions. DO NOT sort anything yourself"
+```
+
+```
+wait_command response_map
+```
