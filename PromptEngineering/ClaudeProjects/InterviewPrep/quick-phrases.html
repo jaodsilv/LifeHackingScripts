@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Technical Interview Quick Phrases</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0.25in;
+        padding: 0;
+        background-color: #ffffff;
+        line-height: 1.4;
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 5px;
+    }
+    .column {
+        width: calc(50% - 5px);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    h2 {
+        font-size: 14pt;
+        background-color: #f0f0f0;
+        padding: 5px 15px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        border-radius: 5px 5px 0 0;
+        width: calc(100% - 30px);
+        cursor: move;
+    }
+    h3 {
+        font-size: 12pt;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        color: #333;
+        padding: 0 15px;
+    }
+    p {
+        margin: 5px 0;
+    }
+    .section-box {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        padding: 0 0 12px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        background-color: #ffffff;
+        page-break-inside: avoid;
+        width: 100%;
+        cursor: move;
+        transition: box-shadow 0.3s;
+    }
+    .section-box:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .section-box.dragging {
+        opacity: 0.7;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .highlight {
+        background-color: #FFFF9C;
+        font-weight: bold;
+    }
+    .phrase-item {
+        margin: 8px 15px;
+        border-left: 3px solid #ddd;
+        padding-left: 10px;
+    }
+    .drag-handle {
+        cursor: move;
+        color: #888;
+        float: right;
+        font-size: 14px;
+        margin-right: 5px;
+    }
+    @media print {
+        body {
+            margin: 0.25in;
+        }
+        .container {
+            gap: 5px;
+        }
+        .column {
+            gap: 5px;
+        }
+        .highlight {
+            background-color: #FFFF9C !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .section-box {
+            box-shadow: none;
+            border: 1px solid #aaa;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            margin-bottom: 5px;
+        }
+        .drag-handle {
+            display: none;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- Column 1 -->
+        <div class="column" id="column1">
+            <div class="section-box" draggable="true">
+                <h2><span class="drag-handle">⋮⋮</span>PROBLEM CLARIFICATION</h2>
+                
+                <h3>Basic Understanding:</h3>
+                <div class="phrase-item">
+                    <p>"Just to make sure I <span class="highlight">understand correctly</span>, we need to [restate problem]..."</p>
+                </div>
+
+                <h3>Input Clarification:</h3>
+                <div class="phrase-item">
+                    <p>"What's the expected <span class="highlight">size range</span> of the input? Are we talking dozens, thousands, or millions of elements?"</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"Will the input contain any <span class="highlight">special characters</span> or only alphanumeric values?"</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"Can we assume the input array is <span class="highlight">sorted</span>, or could it be in any order?"</p>
+                </div>
+
+                <h3>Output Expectations:</h3>
+                <div class="phrase-item">
+                    <p>"Should I return the actual <span class="highlight">values</span>, or just their indices?"</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"For invalid inputs, should I <span class="highlight">return null</span>, throw an exception, or handle it another way?"</p>
+                </div>
+
+                <h3>Edge Cases:</h3>
+                <div class="phrase-item">
+                    <p>"How should we handle the case where the <span class="highlight">input is empty</span>?"</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"What about <span class="highlight">duplicate values</span>? Should they be counted once or multiple times?"</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"Are there any <span class="highlight">constraints on memory usage</span> I should be aware of?"</p>
+                </div>
+            </div>
+
+            <div class="section-box" draggable="true">
+                <h2><span class="drag-handle">⋮⋮</span>SOLUTION PLANNING</h2>
+                
+                <h3>Considering Approaches:</h3>
+                <div class="phrase-item">
+                    <p>"I see a few <span class="highlight">different ways</span> to approach this problem. Let me talk through them..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"The first approach that comes to mind is using <span class="highlight">[data structure/algorithm]</span>..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"We could solve this either <span class="highlight">iteratively or recursively</span>. Let me explore both options..."</p>
+                </div>
+
+                <h3>Comparing Approaches:</h3>
+                <div class="phrase-item">
+                    <p>"The brute force approach would be <span class="highlight">O(n²)</span>, but I think we can do better..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"Using a hash map would give us <span class="highlight">O(n) time complexity</span> at the cost of O(n) space..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"A two-pointer approach would let us solve this <span class="highlight">in-place</span> without extra memory..."</p>
+                </div>
+
+                <h3>Data Structure Selection:</h3>
+                <div class="phrase-item">
+                    <p>"A <span class="highlight">hash map</span> makes sense here because we need fast lookups..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"I'll use a <span class="highlight">queue</span> for this problem since we need FIFO processing..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"A <span class="highlight">min-heap</span> would be perfect for efficiently tracking the k smallest elements..."</p>
+                </div>
+
+                <h3>Confirming Direction:</h3>
+                <div class="phrase-item">
+                    <p>"Before I start coding, does this <span class="highlight">approach make sense</span> to you?"</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"Would you prefer I focus on <span class="highlight">optimizing for time or space</span> efficiency?"</p>
+                </div>
+            </div>
+
+            <div class="section-box" draggable="true">
+                <h2><span class="drag-handle">⋮⋮</span>IMPLEMENTATION NARRATION</h2>
+                
+                <h3>Starting Implementation:</h3>
+                <div class="phrase-item">
+                    <p>"I'll start by <span class="highlight">initializing</span> our data structures..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"Let's define the <span class="highlight">helper function</span> first, which will handle..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"I'll begin with the <span class="highlight">edge cases</span> before moving to the main algorithm..."</p>
+                </div>
+
+                <h3>During Coding:</h3>
+                <div class="phrase-item">
+                    <p>"This variable tracks the <span class="highlight">current max value</span> we've seen so far..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"I'm using a <span class="highlight">'seen' set</span> to avoid processing duplicates..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"This loop will process each element <span class="highlight">exactly once</span>, giving us O(n) time..."</p>
+                </div>
+
+                <h3>Function Extraction:</h3>
+                <div class="phrase-item">
+                    <p>"I'll extract this logic into a <span class="highlight">helper function</span> for better readability..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"This subtask is repeated, so I'll create a <span class="highlight">separate function</span> to handle it..."</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Column 2 -->
+        <div class="column" id="column2">
+            <div class="section-box" draggable="true">
+                <h2><span class="drag-handle">⋮⋮</span>TESTING & DEBUGGING</h2>
+                
+                <h3>Example Walkthrough:</h3>
+                <div class="phrase-item">
+                    <p>"Let's <span class="highlight">trace through</span> this with a simple example: input = [1,2,3]..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"At this point, our variable values are: <span class="highlight">current = 2, result = 5</span>..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"When i = 1, we <span class="highlight">enter the condition</span> and update our result..."</p>
+                </div>
+
+                <h3>Edge Case Testing:</h3>
+                <div class="phrase-item">
+                    <p>"Let's verify with an <span class="highlight">empty array</span> input... In this case..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"With a <span class="highlight">single element</span> input, our algorithm would..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"For the <span class="highlight">maximum input size</span>, our approach would still be efficient because..."</p>
+                </div>
+
+                <h3>Debugging Narration:</h3>
+                <div class="phrase-item">
+                    <p>"I see the issue - we're not correctly <span class="highlight">updating the pointer</span> when..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"Let me fix this by <span class="highlight">changing the condition</span> to check for..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"The bug was in the <span class="highlight">initialization</span> - we should start with..."</p>
+                </div>
+            </div>
+
+            <div class="section-box" draggable="true">
+                <h2><span class="drag-handle">⋮⋮</span>OPTIMIZATION & COMPLEXITY</h2>
+                
+                <h3>Time Complexity:</h3>
+                <div class="phrase-item">
+                    <p>"The time complexity is <span class="highlight">O(n)</span> because we iterate through the array once..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"This has <span class="highlight">O(n log n)</span> time complexity due to the sorting operation..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"The nested loops give us <span class="highlight">O(n²)</span> in the worst case, but on average..."</p>
+                </div>
+
+                <h3>Space Complexity:</h3>
+                <div class="phrase-item">
+                    <p>"For space complexity, we're using an auxiliary array of size n, so it's <span class="highlight">O(n)</span>..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"This solution uses constant extra space, so <span class="highlight">O(1)</span> space complexity..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"The recursion will build up a call stack of depth n, giving us <span class="highlight">O(n)</span> space..."</p>
+                </div>
+
+                <h3>Optimization Ideas:</h3>
+                <div class="phrase-item">
+                    <p>"We could optimize this further by <span class="highlight">pre-computing the frequencies</span>..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"An <span class="highlight">early termination condition</span> here would improve average-case performance..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"By <span class="highlight">reusing the input array</span> instead of creating a new one, we could reduce space usage..."</p>
+                </div>
+            </div>
+
+            <div class="section-box" draggable="true">
+                <h2><span class="drag-handle">⋮⋮</span>HANDLING DIFFICULTIES</h2>
+                
+                <h3>When Stuck:</h3>
+                <div class="phrase-item">
+                    <p>"I'm considering a few different approaches here. Let me <span class="highlight">think through this systematically</span>..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"Let me <span class="highlight">take a step back</span> and see if there's a pattern I'm missing..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"I'm going to try a <span class="highlight">simpler version</span> of this problem first to gain some insight..."</p>
+                </div>
+
+                <h3>Asking for Hints:</h3>
+                <div class="phrase-item">
+                    <p>"I'm wondering if a <span class="highlight">sliding window approach</span> might be applicable here?"</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"Would it make sense to use <span class="highlight">dynamic programming</span> for this problem?"</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"Am I on the right track with this <span class="highlight">greedy approach</span>, or should I consider alternatives?"</p>
+                </div>
+
+                <h3>Admitting Knowledge Gaps:</h3>
+                <div class="phrase-item">
+                    <p>"I haven't encountered this <span class="highlight">specific algorithm</span> before, but based on the problem constraints..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"While I'm not entirely familiar with <span class="highlight">Bloom filters</span>, I understand the general concept of..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"I'm not 100% confident about this <span class="highlight">specific optimization</span>, but my approach would be..."</p>
+                </div>
+            </div>
+
+            <div class="section-box" draggable="true">
+                <h2><span class="drag-handle">⋮⋮</span>WRAP-UP PHRASES</h2>
+                
+                <h3>Solution Summary:</h3>
+                <div class="phrase-item">
+                    <p>"To summarize, my approach uses a <span class="highlight">[data structure]</span> to achieve O(X) time and O(Y) space..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"The key insight was recognizing that this problem <span class="highlight">reduces to [known problem]</span>..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"My solution handles all the edge cases we discussed by <span class="highlight">[handling approach]</span>..."</p>
+                </div>
+
+                <h3>Potential Improvements:</h3>
+                <div class="phrase-item">
+                    <p>"With more time, I'd add <span class="highlight">better error handling</span> and input validation..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"This solution works well for the constraints we discussed, but for <span class="highlight">larger inputs</span>, we might need to..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"An alternative approach would be to use <span class="highlight">[alternative algorithm]</span>, which could be more efficient for specific inputs..."</p>
+                </div>
+
+                <h3>Final Reflections:</h3>
+                <div class="phrase-item">
+                    <p>"I enjoyed working through this problem, especially the part where we had to <span class="highlight">[challenging aspect]</span>..."</p>
+                </div>
+                <div class="phrase-item">
+                    <p>"This was an interesting challenge that demonstrates the <span class="highlight">importance of [concept]</span>..."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+// Drag and drop functionality
+document.addEventListener('DOMContentLoaded', function() {
+    let draggedItem = null;
+    let dragSource = null;
+
+    // Elements that can be dragged
+    const draggableItems = document.querySelectorAll('.section-box');
+    const columns = document.querySelectorAll('.column');
+
+    // Add event listeners to draggable items
+    draggableItems.forEach(item => {
+        // Start dragging
+        item.addEventListener('dragstart', function(e) {
+            draggedItem = this;
+            dragSource = this.parentNode;
+            setTimeout(() => {
+                this.classList.add('dragging');
+            }, 0);
+            e.dataTransfer.setData('text/plain', ''); // Required for Firefox
+        });
+
+        // End dragging
+        item.addEventListener('dragend', function() {
+            this.classList.remove('dragging');
+            draggedItem = null;
+            dragSource = null;
+        });
+    });
+
+    // Add event listeners to columns (drop targets)
+    columns.forEach(column => {
+        // When dragging over a valid drop target
+        column.addEventListener('dragover', function(e) {
+            e.preventDefault(); // Allow drop
+        });
+
+        // When entering a drop target
+        column.addEventListener('dragenter', function(e) {
+            e.preventDefault();
+            this.style.backgroundColor = '#f8f8f8';
+        });
+
+        // When leaving a drop target
+        column.addEventListener('dragleave', function() {
+            this.style.backgroundColor = '';
+        });
+
+        // When dropping an item
+        column.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.style.backgroundColor = '';
+            
+            if (draggedItem) {
+                const afterElement = getDragAfterElement(this, e.clientY);
+                
+                if (afterElement) {
+                    this.insertBefore(draggedItem, afterElement);
+                } else {
+                    this.appendChild(draggedItem);
+                }
+            }
+        });
+    });
+
+    // Helper function to determine where to insert the dragged element
+    function getDragAfterElement(container, y) {
+        const draggableElements = [...container.querySelectorAll('.section-box:not(.dragging)')];
+        
+        return draggableElements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            
+            if (offset < 0 && offset > closest.offset) {
+                return { offset: offset, element: child };
+            } else {
+                return closest;
+            }
+        }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Technical Interview Checklist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0.25in;
+            width: 8in;
+            height: 10.5in;
+            min-height: 10.5in;
+            max-height: 10.5in;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 42+29+29=100 */
+        .column1 {
+            width: 56%;
+            padding: 0 2px 0 0;
+            box-sizing: border-box;
+        }
+
+        /* .column2 {
+            width: 29%;
+            padding: 0 5px 0 5px;
+            box-sizing: border-box;
+        } */
+
+        .column3 {
+            width: 44%;
+            padding: 0 0 0 2px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 16pt;
+            margin-bottom: 2px;
+            margin-top: 0px;
+        }
+
+        h2 {
+            font-size: 14pt;
+            background-color: #f0f0f0;
+            padding: 2px;
+            margin-top: 0;
+            margin-bottom: 2px;
+            border-radius: 2px 2px 0 0;
+        }
+
+        h3 {
+            font-size: 13pt;
+            margin-top: 5px;
+            margin-bottom: 0px;
+        }
+
+        ul {
+            margin-top: 2px;
+            padding-left: 10px;
+            margin-block-end: 0px;
+        }
+
+        li {
+            margin-bottom: 2px;
+        }
+
+        .checklist-item {
+            font-size: 14pt;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2px;
+        }
+
+        .checklist-item-with-subitems {
+            font-size: 14pt;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0px;
+        }
+
+        .checkbox {
+            min-width: 10px;
+            height: 10px;
+            border: 1px solid #000;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        .highlight {
+            background-color: #FFFF9C;
+            font-weight: bold;
+        }
+
+        .section-box {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 2px;
+            padding: 0 2px 2px 2px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        .section-box h2 {
+            margin-left: -2px;
+            margin-right: -2px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        @media print {
+            body {
+                margin: 0.25in;
+            }
+
+            .no-break {
+                break-inside: avoid;
+            }
+
+            .highlight {
+                background-color: #FFFF9C !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .section-box {
+                box-shadow: none;
+                border: 1px solid #aaa;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TECHNICAL INTERVIEW CHECKLIST</h1>
+
+    <div class="container">
+        <!-- COLUMN 1: Problem Clarification and Questions to Ask -->
+        <div class="column1">
+            <div class="section-box">
+                <div class="no-break">
+                    <h2>PROBLEM CLARIFICATION</h2>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Restate</span> the problem in my own words to confirm understanding
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Ask about <span class="highlight">input constraints</span> (size, range, data types)</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Confirm <span class="highlight">expected output</span> format and requirements</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Question potential <span class="highlight">edge cases</span>:
+                            <ul>
+                                <li><span class="highlight">Empty</span> input</li>
+                                <li><span class="highlight">Maximum/minimum</span> values</li>
+                                <li><span class="highlight">Duplicate</span> elements</li>
+                                <li><span class="highlight">Invalid</span> input</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Clarify</span> any ambiguities before proceeding</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="no-break">
+                    <h2>QUESTIONS TO ASK THE INTERVIEWER</h2>
+
+                    <h3>Team/Collaboration Questions</h3>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>"How do engineers and <span class="highlight">product/design teams collaborate</span> at
+                            Airbnb?" (direct team question)</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>"What's the <span class="highlight">onboarding process</span> like for new engineers?"
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>"How does your team make <span class="highlight">technical decisions</span> when there are
+                            different opinions?"</div>
+                    </div>
+
+                    <h3>Technical/Role Questions</h3>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>"What kinds of <span class="highlight">technical challenges</span> is your team currently
+                            facing?" (direct team question)</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>"How does your team handle <span class="highlight">technical debt</span> and code quality?"
+                        </div>
+                    </div>
+
+                    <h3>Company Questions</h3>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>"How has Airbnb's <span class="highlight">engineering culture</span> evolved since you
+                            joined?"
+                            (personal experience question)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="no-break">
+                    <h2>SOLUTION PLANNING</h2>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Consider <span class="highlight">multiple approaches</span> before selecting one</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Explain the <span class="highlight">tradeoffs</span> between different solutions</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Select appropriate <span class="highlight">data structures</span> with justification</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Outline algorithm</span> steps before coding</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Discuss <span class="highlight">time and space complexity</span> of planned approach</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Confirm approach</span> with interviewer before implementation
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN 3: Interview Red Flags and Closing Strong -->
+        <div class="column3">
+
+            <div class="section-box">
+                <div class="no-break">
+                    <h2>TESTING & VERIFICATION</h2>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Test with a <span class="highlight">simple example</span> first</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Verify</span> each part of the solution incrementally</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Test with <span class="highlight">edge cases</span>:
+                            <ul>
+                                <li><span class="highlight">Empty</span> input</li>
+                                <li><span class="highlight">Single</span> element</li>
+                                <li><span class="highlight">Very large</span> input</li>
+                                <li><span class="highlight">Duplicates</span>/special cases</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Step through</span> code execution manually with an example</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Debug</span> any issues methodically</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Verify</span> final solution produces correct output</div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-box">
+                <div class="no-break">
+                    <h2>INTERVIEW RED FLAGS TO AVOID</h2>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Never criticize</span> previous employers or colleagues</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Don't claim to know something you don't - <span class="highlight">admit knowledge
+                                gaps</span>
+                            honestly</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Avoid <span class="highlight">absolute statements</span> ("always," "never," "impossible")
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Don't <span class="highlight">argue defensively</span> with the interviewer or reject hints
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Never <span class="highlight">give up</span> completely on a problem - show perseverance
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Avoid focusing solely on the solution while <span class="highlight">ignoring
+                                communication</span></div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Don't <span class="highlight">rush to code</span> without planning or clarification</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Avoid <span class="highlight">negative self-talk</span> or expressing frustration openly
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Never make <span class="highlight">assumptions</span> about requirements without verifying
+                        </div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div>Don't <span class="highlight">oversell</span> your solution without acknowledging
+                            limitations
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="no-break">
+                    <h2>CLOSING STRONG</h2>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Summarize</span> your approach concisely</div>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox"></div>
+                        <div><span class="highlight">Highlight</span> key aspects of your solution</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
