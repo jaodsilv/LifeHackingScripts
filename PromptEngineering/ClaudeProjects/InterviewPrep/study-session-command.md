@@ -6,7 +6,7 @@ The `study_session` command initiates a structured learning session focused on a
 
 ## Basic Syntax
 ```
-study_session <preparation_plan_name> topic:<topic_name> duration:<minutes> [subtopic:<subtopic_name>] [status:continue]
+study_session <preparation_plan_name> topic:<topic_name> duration:<minutes> [subtopic:<subtopic_name>] [status:continue] [mode:<learning_mode>] [focus:<skill_focus>]
 ```
 
 ## Parameters
@@ -18,6 +18,10 @@ study_session <preparation_plan_name> topic:<topic_name> duration:<minutes> [sub
 | `duration` | Length of session in minutes | Yes | `30`, `60`, `90`, `120` |
 | `subtopic` | Specific focus within main topic | No | `list_comprehensions`, `error_handling` |
 | `status` | Continue previous session | No | `continue` |
+| `mode` | Learning approach | No | `concept`, `practice`, `interview`, `review`, `mixed` (default: `mixed`) |
+| `focus` | Specific skill to emphasize | No | `speed`, `accuracy`, `communication`, `depth` |
+| `difficulty` | Challenge level | No | `easy`, `medium`, `hard`, `adaptive` (default: `adaptive`) |
+| `materials` | External resources to include | No | `docs`, `videos`, `exercises`, `all` |
 
 ## Examples
 
@@ -36,17 +40,107 @@ study_session Anthropic topic:data_structures subtopic:collections_module durati
 study_session Anthropic topic:refactoring subtopic:clean_code duration:60 status:continue
 ```
 
+### Practice-focused session with high difficulty
+```
+study_session Anthropic topic:algorithms duration:90 mode:practice difficulty:hard
+```
+
+### Interview preparation with communication focus
+```
+study_session Anthropic topic:system_design duration:60 mode:interview focus:communication
+```
+
+### Quick concept review before an interview
+```
+study_session Anthropic topic:behavioral_questions duration:30 mode:review
+```
+
 ## Behavior
 
 When executed, the command will:
 
 1. Check if the topic/subtopic combination exists in the preparation plan
 2. Retrieve or generate appropriate study materials for the specified topic
-3. Structure the session based on the allocated time
+3. Structure the session based on the allocated time and selected mode
 4. Present materials, exercises, and guidance in order of increasing difficulty
 5. Track progress through the session
 6. Offer to save your status at the end of the allocated time
 7. Provide next steps for continued learning
+8. Automatically adjust difficulty based on your performance (if adaptive)
+9. Simulate interview conditions when in interview mode
+10. Generate personalized practice exercises based on your weak areas
+
+## Learning Modes
+
+### Concept Mode
+Focuses on understanding key principles and theory:
+- Clear explanations of fundamental concepts
+- Visual aids and diagrams
+- Real-world examples
+- Key terminology and definitions
+- Limited practice exercises
+
+### Practice Mode
+Emphasizes hands-on problem solving:
+- Minimal theory refreshers
+- Multiple practice problems
+- Progressive difficulty levels
+- Solution walkthroughs
+- Performance feedback
+- Time-constrained exercises
+
+### Interview Mode
+Simulates actual interview conditions:
+- Realistic time constraints
+- Interview-style questions
+- Verbal explanation prompts
+- On-the-spot problem solving
+- Communication guidance
+- Interviewer role-playing
+
+### Review Mode
+Quick refresher of previously studied material:
+- Concise summaries of key points
+- Spaced repetition of core concepts
+- Targeted mini-exercises
+- Common pitfall reminders
+- Interview-relevant highlights
+
+### Mixed Mode (Default)
+Balanced approach combining multiple modes:
+- Concept introduction
+- Guided practice
+- Interview preparation
+- Performance assessment
+
+## Focus Areas
+
+When specifying a skill focus:
+
+### Speed
+- Timed exercises
+- Efficient algorithm selection
+- Quick problem-solving techniques
+- Pattern recognition training
+
+### Accuracy
+- Edge case identification
+- Test case development
+- Solution verification
+- Code quality emphasis
+
+### Communication
+- Explanation techniques
+- Thought process verbalization
+- Clarifying question practice
+- Visual representation skills
+
+### Depth
+- Advanced concepts
+- Implementation details
+- Performance optimization
+- Alternative approaches
+- Underlying principles
 
 ## Examples of Topics & Subtopics Example, based on the Anthropic preparation plan
 
@@ -99,6 +193,20 @@ When executed, the command will:
 - `timed_exercises`
 - `efficiency_strategies`
 
+### Behavioral Interviews
+- `personal_introduction`
+- `strength_weakness_questions`
+- `conflict_resolution`
+- `leadership_examples`
+- `team_collaboration`
+
+### System Design
+- `requirements_gathering`
+- `architecture_patterns`
+- `scaling_strategies`
+- `database_design`
+- `api_design`
+
 ## Related Commands
 
 - `track_progress` - View your progress through the preparation plan
@@ -106,3 +214,5 @@ When executed, the command will:
 - `study_day` - Get an overview of all topics for a specific day
 - `next_exercise` - Get another practice problem within the current session
 - `explain_concept` - Get detailed explanation of specific concepts
+- `interview_roleplay` - Practice full interview scenarios
+- `practice_weak_areas` - Focus on topics with low confidence ratings
