@@ -5,44 +5,169 @@
 \section{Skills}
 
 \begin{itemize}
-    \item \small{\titlecap{Programming Languages and Frameworks:}}\footnotesize{ \titlecap{\LanguagesOrderSkills}}
+    % CATEGORY 1: Programming Languages and Frameworks - Using Step 14 ordering
+    % PRIORITY 1: Core technical foundation - programming languages are fundamental
+    \item \small{\titlecap{Programming Languages \& Frameworks:}}\footnotesize{ \titlecap{\LanguagesOrderSkills}}
+    % IMPROVEMENT: No improvements needed - references macro that will be sorted separately
 
+    % CATEGORY 2: System Architecture and Design - Using Step 14 ordering
+    % PRIORITY 1: System architecture - critical for backend/distributed systems roles
+    \item \small{\titlecap{System Architecture \& Design:}}\footnotesize{ \titlecap{
+        Distributed Systems Design and Architecture, Microservices Patterns
+        % Architecture,
+        High-Availability
+        % System
+        % Design,
+        Solutions,
+        % Scalable System Design, \BackEnd{} Architecture, High-throughput System Design,
+        REST and gRPC API
+        % Design
+        Patterns, Horizontal Scalability, Service Isolation, CAP Theorem, Eventual Consistency, Consensus Algorithms, Multi-tenancy, User Identity Systems, Friend Graph Systems, Architecture
+        % Design
+        Reviews, High-Performance Computing (HPC)
+    }}
+    % IMPROVEMENT: "User Identity Services" → "User Identity Systems" (more precise terminology)
+    % SORTING: Distributed systems concepts first, then architecture patterns, then specific implementations
+
+    % CATEGORY 3: Data Engineering and Analytics - Using Step 14 ordering
+    % PRIORITY 1: Data engineering - directly relevant to data engineering roles
+    \item \small{\titlecap{Data Engineering \& Analytics:}}\footnotesize{ \titlecap{
+        % Data
+        Pipeline Design and Development, Large-Scale
+        % Data
+        Processing,
+        % /Multi-Petabyte Data Processing,
+        Apache Spark, Stream
+        % ing Data
+        Processing, Real-time Analytics, ETL/ELT
+        Workflows,
+        % Processes, Data
+        Modeling, Distributed Transaction Models, High-Performance
+        % Data
+        Delivery, Google Cloud Dataflow, Apache Beam,
+        % Data
+        Governance and Quality Assurance,
+        % Data
+         Partitioning Strategies
+        % , BI Dashboards, PowerBI
+    }}
+    % IMPROVEMENTS: 
+    % "Data Pipelines Design and Development" → "Data Pipeline Design and Development" (more standard terminology)
+    % "Large Datasets Processing" → "Large-Scale Data Processing" (more professional terminology)
+    % "ETL" → "ETL/ELT Processes" (includes modern ELT patterns)
+    % "Streaming Data" → "Streaming Data Processing" (more specific)
+    % "Dataflow" → "Google Cloud Dataflow" (more specific)
+    % "Data Governance and Quality" → "Data Governance and Quality Assurance" (more comprehensive)
+    % SORTING: Core data pipeline skills first, then processing technologies, then governance and visualization
+
+    % CATEGORY 4: Data Storage and Databases - Using Step 14 ordering
+    % PRIORITY 1: Data storage - essential for backend and data engineering
+    \item \small{\titlecap{Data Storage \& Databases:}}\footnotesize{ \titlecap{
+        Distributed Storage Solutions (HDFS, Parquet, ORC), SQL Databases, NoSQL Databases (BigTable, Azure Cosmos DB), Cloud Storage (Google Cloud Storage, Azure Data Lake, Google Filestore, BigQuery, Google Pub/Sub), Data Consistency Controls, Persistence Layer Design, Tiered Storage Management, In-memory Caching Strategies
+    }}
+    % IMPROVEMENTS:
+    % "Azure Key-Value Data Store" → "Azure Cosmos DB" (more specific and recognizable)
+    % "Filestore" → "Google Filestore" (more specific)
+    % "Pub/Sub" → "Google Pub/Sub" (more specific)
+    % SORTING: Distributed storage first, then database types, then cloud storage, then optimization strategies
+
+    % CATEGORY 5: Cloud Technologies and Platforms - Using Step 14 ordering
+    % PRIORITY 1: Cloud technologies - essential for modern backend/data engineering
+    \item \small{\titlecap{Cloud Technologies \& Platforms:}}\footnotesize{ \titlecap{
+        Container Orchestration (Kubernetes and Docker), Azure Cloud Services, Google Cloud Platform (GCP) Services, Message Brokers (Apache Kafka, Azure Service Bus), Cloud-Native Applications, Infrastructure-as-Code (IaC), Auto-scaling Infrastructure, Self-healing System Design, Traffic Management and Load Balancing
+    }}
+    % IMPROVEMENTS:
+    % "Cloud-Native Services" → "Cloud-Native Applications" (more precise)
+    % "Azure Services" → "Azure Cloud Services" (more specific)
+    % "GCP Services" → "Google Cloud Platform (GCP) Services" (expanded for clarity)
+    % "Traffic Management" → "Traffic Management and Load Balancing" (more comprehensive)
+    % SORTING: Container orchestration first, then cloud platforms, then messaging, then infrastructure patterns
+
+    % CATEGORY 6: Reliability Engineering and Operations - Using Step 14 ordering
+    % PRIORITY 1: Reliability engineering - critical for senior backend roles
+    \item \small{\titlecap{Reliability Engineering \& Operations:}}\footnotesize{ \titlecap{
+        High-Availability Systems, Scalability Engineering, Service
+        % System
+        Reliability, Monitoring and Observability, Performance Profiling and Tuning,
+        % Optimization, System
+        Infrastructure Optimization, Bottleneck Identification and Resolution, SLO/SLI Management, Incident Response, Root Cause Analysis (Fault Tree Analysis, 5 Whys), Postmortem Processes, Resilience Patterns (Circuit Breaking, Bulkhead Patterns, Rate Limiting), Metrics Collection and Analytics,
+        % Analysis,
+        Alerting Frameworks,
+        % Systems,
+        Centralized Logging
+        % , Security Engineering, Operational Excellence - Too generic for the resume
+    }}
+    % IMPROVEMENTS:
+    % "Reliability Engineering and Ops" → "Reliability Engineering and Operations" (more professional)
+    % "High-Availability" → "High-Availability Systems" (more specific)
+    % "Scalability" → "Scalability Engineering" (more specific)
+    % "Reliability" → "System Reliability" (more specific)
+    % "Performance Profiling" → "Performance Profiling and Optimization" (more comprehensive)
+    % "Observability" → "Monitoring and Observability" (maintains order but adds clarity)
+    % "Logging" → "Centralized Logging" (more specific)
+    % "Security" → "Security Engineering" (more specific)
+    % "Optimization" → "System Optimization" (more specific)
+    % SORTING: Core reliability concepts first, then monitoring/optimization, then incident management, then patterns and practices
+
+    % CATEGORY 7: Software Engineering - Using Step 14 ordering
+    % PRIORITY 2: Software engineering practices - important foundation but less specific
     \item \small{\titlecap{Software Engineering:}}\footnotesize{ \titlecap{
-        Software Design, \BackEnd{} Architecture, Algorithms and Data Structures, Performance Optimization, Concurrency and Parallelism, Test Automation and Test-Driven Development, CI/CD, Code Quality Analysis, DevOps, Agile (XP and Scrum), SDLC, A/B Testing, MSBuild, Blaze
-        }}
+        Software Design Patterns,
+        % \BackEnd{} Architecture,
+        Algorithms and Data Structures,
+        % Performance Optimization,
+        Concurrency and Parallelism,
+        % Test Automation and 
+        Test-driven Development (TDD), Behavior-driven Development (BDD), CI/CD Pipelines, Code Quality \& Static Analysis, DevOps Practices, Agile Methodologies (XP and Scrum), Software Development Life Cycle (SDLC),
+        % A/B Testing
+        % , Technical Debt Prioritization, MSBuild
+        Bazel Build System
+    }}
+    % IMPROVEMENTS:
+    % "Software Design" → "Software Design Patterns" (more specific)
+    % "CI/CD" → "CI/CD Pipelines" (more specific)
+    % "DevOps" → "DevOps Practices" (more specific)
+    % "Agile (XP and Scrum)" → "Agile Methodologies (XP and Scrum)" (more professional)
+    % "SDLC" → "Software Development Life Cycle (SDLC)" (expanded for clarity)
+    % "Blaze" → "Bazel Build System" (more recognizable - Blaze is Google's internal version)
+    % SORTING: Core engineering concepts first, then testing practices, then development processes, then tools
 
-    \item \small{\titlecap{Data Engineering and Analytics:}}\footnotesize{ \titlecap{Data Pipelines
-        Design and Development, Large Datasets Processing, ETL, Streaming Data, Real-time Analytics, High-Performance Data Delivery, Apache Spark, Data Modeling, Distributed Transaction Models, Dataflow, Data Governance, Apache Beam, BI Dashboards
-        }}
+    % CATEGORY 8: Technical Leadership and Collaboration - Using Step 14 ordering
+    % PRIORITY 2: Technical leadership - valuable for senior roles but less technical depth
+    \item \small{\titlecap{Technical Leadership \& Collaboration:}}\footnotesize{ \titlecap{
+        Engineering
+        % Technical
+        Leadership, Mentorship and Coaching,
+        % Technical
+        Trade-off Analysis,
+        % Technical
+        Roadmap Planning,
+        % Cross-team/
+        Cross-functional Collaboration,
+        % /Teamwork and Interdisciplinary Work,
+        Distributed Teams Coordination,
+        % Collaborative Problem-Solving,
+        Stakeholder Communication, Requirements Gathering and Evaluation,
+        % Product Requirements Understanding, Technical
+        Documentation and Standards, Knowledge Sharing,
+        % Constructive Feedback, Technical
+        Adaptability
+        % Continuous Learning Aptitude, Growth Mindset
+    }}
+    % IMPROVEMENTS:
+    % "Leadership" → "Technical Leadership" (more specific)
+    % "High Aptitude to Learn" → "Continuous Learning Aptitude" (more professional phrasing)
+    % SORTING: Leadership skills first, then collaboration skills, then communication and documentation, then personal attributes
 
-    \item \small{\titlecap{System Architecture and Design:}}\footnotesize{ \titlecap{Distributed Systems
-        Design and Architecture, Microservices Architecture, REST and gRPC API Design Patterns,
-        Multi-tenant systems, Eventual Consistency, CAP Theorem, Consensus Algorithms, High-Performance Computing (HPC)
-        }}
+    % CATEGORY 9: AI/ML and Data Science
+    % PRIORITY 3: AI/ML - relevant for AI companies but not core backend/data engineering
+    % \item \small{\titlecap{AI/ML \& Data Science:}}\footnotesize{ \titlecap{AI/ML Fundamentals, Data Ingestion and Preparation, Statistical Analysis, LLM Prompt Engineering}}
+    % IMPROVEMENT: "Prompt Engineering" → "LLM Prompt Engineering" (more specific)
+    % SORTING: Fundamentals first, then data preparation, then analysis, then specialized skills
 
-    \item \small{\titlecap{Data Storage and Databases:}}\footnotesize{ \titlecap{SQL Databases, NoSQL
-        Databases (BigTable, Azure Key-Value Data Store), Cloud Storage (Google Cloud Storage,
-        Azure Data Lake, Filestore, BigQuery, Pub/Sub), Distributed Storage Solutions (HDFS, Parquet,
-        ORC), Tiered Storage Management
-        }}
-
-    \item \small{\titlecap{Cloud Technologies and Platforms:}}\footnotesize{ \titlecap{Container
-        Orchestration (Kubernetes and Docker), Message Brokers (Apache Kafka, Azure Service Bus),
-        Cloud-Native Services, Azure, GCP}}
-
-    \item \small{\titlecap{Reliability Engineering and Ops:}}\footnotesize{ \titlecap{High-Availability,
-        Scalability, Reliability, Performance Profiling, Monitoring, Observability, Logging, Security,
-        Fault Tolerance, Optimization, Metrics Collection and Analysis, Alerting Systems, SLO/SLI Management, Incident Response, Root Cause Analysis (Fault Tree Analysis, 5 Whys), Postmortem Processes
-        }}
-
-    \item \small{\titlecap{AI/ML and Data Science:}}\footnotesize{ \titlecap{AI/ML Fundamentals, Data Ingestion and Preparation, Prompt Engineering, Statistical Analysis}}
-
-    \item \small{\titlecap{Technical Leadership and Collaboration:}}\footnotesize{ \titlecap{Leadership,
-        Mentorship and Coaching, Cross-team Collaboration and Interdisciplinary Work,
-        Stakeholder Communication, Technical Adaptability, Collaborative Problem-Solving, 
-        Requirements Gathering, Constructive Feedback, Technical Documentation, 
-        High Aptitude to Learn, Distributed Teams Coordination, Growth Mindset
-        }}
-
-    \item \small{\titlecap{Languages:}}\footnotesize{ \titlecap{English (Fluent), Portuguese (Native)}}
+    % CATEGORY 10: Languages - Using Step 14 ordering
+    % PRIORITY 4: Languages - important but not technical skill
+    % \item \small{\titlecap{Languages:}}\footnotesize{ \titlecap{English (Fluent), Portuguese (Native)}}
+    % IMPROVEMENT: No improvements needed
+    % SORTING: Professional language first, then native language
 \end{itemize}

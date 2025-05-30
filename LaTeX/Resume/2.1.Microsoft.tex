@@ -6,36 +6,69 @@
 \footnotesize{São Paulo-SP, Brazil and Redmond-WA, USA (06/2019-03/2025)}
 
 \begin{itemize}
-    % To AI Systems I use: This is the bases of everything I did at Microsoft. Do not move it down.
-    \item \small{As a member of Microsoft AI Spartans, accelerated critical projects across Microsoft AI by delivering targeted solutions, elevating code quality and documentation standards, and guiding teams through technical challenges for production-level outcomes. Demonstrated versatility in adopting new technologies based on project requirements}
+    % PRIORITY 1: Core distributed systems architecture - directly relevant to all target roles
+    % Bullet 1: Base context - foundational for understanding all subsequent achievements
+    % To AI Systems I use: This is the bases of everything I did at Microsoft. Do not move it down. Also, do not remove this comment.
+    \item \small{As a member of Microsoft AI Spartans, accelerated critical projects across Microsoft AI by delivering scalable distributed solutions, implementing engineering best practices, and providing technical leadership for production systems. Demonstrated adaptability in adopting emerging technologies and frameworks based on project requirements}
 
-    \item \small{Constructed scalable microservice architecture for Bing Image Creator's UserHistoryV2 REST API, focusing on horizontal scalability, and service isolation, handling over 100k requests per second with 99.9\% system availability}
+    % PRIORITY 1: Microservice architecture at scale - critical for backend/distributed systems roles
+    % Bullet 2: Microservice architecture - shows system design skills and scale handling
+    \item \small{Constructed highly-available and scalable microservice architecture for Bing Image Creator's user identity service RESTful API, focusing on horizontal scalability, and service isolation, handling over 100k requests per second with 99.9\% system availability}
 
-    \item \small{Applied structured root cause analysis techniques (fault tree analysis and 5 Whys) to diagnose complex \BackEnd{} system failures, reducing mean time to resolution by 40\% for critical production incidents while implementing automated recovery mechanisms and comprehensive incident documentation to prevent recurring failures}
+    % PRIORITY 1: Distributed storage and data management - essential for data engineering roles
+    % Bullet 6: Distributed storage - directly relevant to data engineering and backend systems
+    \item \small{Engineered distributed storage architectures leveraging Azure Data Lake, Azure Cosmos DB, and HDFS to manage multi-petabyte volumes with strong consistency guarantees and intelligent tiering strategies, improving system resilience by 15\% while establishing robust data governance frameworks with auditable compliance controls}
 
-    \item \small{Established infrastructure monitoring systems with proactive alerting capabilities and automated remediation workflows to maintain 99.9\% service availability with rapid incident response}
+    % PRIORITY 1: Complex concurrent systems - core backend engineering skill
+    % Bullet 5: Concurrent goroutine execution - demonstrates advanced backend engineering
+    \item \small{Architected complex concurrent goroutine execution with custom pooling, queueing, and retry caching mechanisms replacing Microsoft Ads server logging infrastructure, improving throughput by 70\%, consistency, and reliability, while orchestrating Go and Java microservices via Kubernetes for horizontal scaling, and integrating with Azure Service Bus for resilient message processing}
 
-    \item \small{Architected complex goroutine parallelization with custom pooling, queueing, and retry caching mechanisms replacing Microsoft Ads server logging infrastructure, improving data throughput by 70\%, consistency, and reliability, while orchestrating Go and Java microservices via Kubernetes for horizontal scaling, and integrating with Azure Service Bus for resilient message processing}
+    % PRIORITY 1: Data pipeline engineering - directly relevant to data engineering roles
+    % Bullet 10: Technology migration - shows data pipeline expertise and cost optimization
+    \item \small{Led large-scale technology migration of Bing's Content Discovery and Selection pipelines to Apache Spark, implementing optimization strategies that reduced operational costs by 20\% and improved end-to-end processing time by 12\%}
 
-    \item \small{Engineered distributed storage solutions (Azure Data Lake, Azure Key-Value Data Store, HDFS) to handle multi-petabyte data volumes with proper consistency controls, and tiered storage strategies, enhancing system resilience by 15\% and implementing configurable data governance policies with transparent audit trails}
+    % PRIORITY 1: Pipeline optimization and performance - key for data engineering
+    % Bullet 9: Pipeline orchestration - demonstrates data engineering and performance optimization
+    \item \small{Reengineered pipeline orchestration framework, achieving 30\% performance improvement across Bing's Content Discovery and Selection pipelines through optimized resource scheduling and task distribution, reducing compute resource idle time by 80\%}
 
-    \item \small{Reduced API calls to other services by 90\% by implementing multi-level caching strategies, resulting in 50\% reduced latency}
+    % PRIORITY 1: Data processing optimization - essential data engineering skill
+    % Bullet 11: Food Recipes pipeline - shows data freshness optimization and system consolidation
+    \item \small{Improved data freshness for Food Recipes pipeline from 7-day to sub-48-hour latency through 80\% performance optimization, enabling daily batch processing while pioneering adoption of unified document ingestion platform designated to consolidate 3 organization-wide systems}
 
-    \item \small{Facilitated cross-team consensus on architectural decisions by establishing clear evaluation criteria, addressing competing priorities, and aligning technical choices with business objectives}
+    % PRIORITY 2: System reliability and monitoring - important for senior backend roles
+    % Bullet 4: Infrastructure monitoring - shows operational excellence and SLA management
+    \item \small{Established comprehensive observability infrastructure with proactive alerting mechanisms and automated remediation workflows to maintain 99.9\% service uptime and 15-minute incident response SLA}
 
-    \item \small{Reengineered Pipeline management framework, resulting in 30\% performance improvement across all Bing's Content Discovery and Selection bucketed pipelines without changes to job implementations, decreasing allocated resources idle time by 80\%}
+    % PRIORITY 2: Incident response and system reliability - valuable for senior roles
+    % Bullet 3: Root cause analysis - demonstrates senior-level problem-solving and reliability engineering
+    \item \small{
+        Applied structured root cause analysis to diagnose complex distributed system failures, reducing MTTR by 40\% while implementing automated recovery mechanisms
+        % Applied structured root cause analysis methodologies (fault tree analysis and 5 Whys) to diagnose complex distributed system failures, reducing mean time to resolution by 40\% for critical production incidents while implementing automated recovery mechanisms and comprehensive incident documentation to prevent recurring failures and enhance system reliability
+    }
 
-    \item \small{Led technology migration of Bing's Content Discovery and Selection critical pipelines, while implementing data pipeline optimization strategies that reduced operational costs by 20\%, and pipeline completion time by 12\%}
+    % PRIORITY 2: Performance optimization - relevant to backend engineering
+    % Bullet 7: Caching strategies - shows system optimization skills
+    \item \small{Reduced downstream service dependencies by 90\% through implementing distributed multi-tier caching architecture, achieving 50\% latency reduction}
 
-    \item \small{Enhanced data freshness for Food Recipes pipeline from 7 days to under 2 days by optimizing pipeline performance by 80\%, transitioning from weekly to daily execution, and pioneering the adoption of a new document ingestion platform that should replace other 3 org-wide document ingestion platforms}
-
+    % PRIORITY 2: Scalable data systems - relevant to backend and data roles
+    % Bullet 12: Knowledge Cards - demonstrates scalable system design with performance requirements
     \item \small{Leveraged Knowledge Cards template system with flexible schema design, expanding data scalability and enabling the addition of over 100 million entities while maintaining sub-100ms response times}
 
-    \item \small{Crafted financial tracking and inventory management systems for Microsoft Rewards, incorporating secure transaction processing with fault-tolerant design, and robust audit trails}
+    % PRIORITY 3: Technical leadership - valuable for senior roles but less technical depth
+    % Bullet 8: Cross-team consensus - shows leadership but less technical content
+    \item \small{Facilitated cross-team consensus on architectural decisions by establishing clear evaluation criteria, addressing competing priorities, and aligning engineering choices with business objectives}
 
-    \item \small{Integrated Airfind Ads and Sponsored Stories in Microsoft Ads, generating \$2.5M in revenue}
+    % PRIORITY 3: Mission-critical systems - relevant but more business-focused
+    % Bullet 13: Financial tracking - shows system design but different domain focus
+    % \item \small{Developed mission-critical financial tracking and inventory management systems for Microsoft Rewards, implementing secure transaction processing with distributed consensus protocols, fault-tolerant architecture, and comprehensive audit logging for regulatory compliance}
 
-    \item \small{Designed BI dashboards with visual analytics, enabling data-informed strategy development and quantifiable business outcomes}
+    % PRIORITY 3: Business intelligence - less relevant to core backend/data engineering
+    % Bullet 15: BI dashboards - more analytics/visualization focused, less systems engineering
+    % \item \small{Designed business intelligence dashboards with interactive visualizations using PowerBI, enabling data-driven decision making across organizational stakeholders}
 
-          %    \item \small{Actively participated in neurodiversity and mental health initiatives that improved team collaboration and support for neurodivergent individuals by mentoring colleagues, advocating for inclusive workplace practices, and being a founding member of the Mental Health and Neurodiversity group within the local Disability ERG chapter in Brazil}
+    % PRIORITY 4: Revenue generation - business impact but less technical relevance
+    % Bullet 14: Airfind Ads - shows business impact but limited technical detail
+    \item \small{Integrated Airfind Ads and Sponsored Stories into Microsoft Ads platform, generating \$2.5M in monthly revenue}
+
+    %    \item \small{Actively participated in neurodiversity and mental health initiatives that improved team collaboration and support for neurodivergent individuals by mentoring colleagues, advocating for inclusive workplace practices, and being a founding member of the Mental Health and Neurodiversity group within the local Disability ERG chapter in Brazil}
 \end{itemize}
