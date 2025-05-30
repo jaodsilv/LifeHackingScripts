@@ -187,7 +187,7 @@ LaTeX/Cover Letter/*.pdf
 
 # Temporarily ignoring it.
 LaTeX/analysis/*
-LaTeX/Resume/Archive/*/*-Resume-JoaoMarco-*.pdf
+LaTeX/Resume/Archive/*/*-Resume-JoaoMarco*.pdf
 LaTeX/Cover Letter/Archive/2025/*-CoverLetter-JoaoMarco-*.pdf
 LaTeX/I539/I539-*-JoaoMarco-2025-05-02.pdf
 LaTeX/financial-means/financial-means-statement-JoaoMarco-2025-05-02.pdf
