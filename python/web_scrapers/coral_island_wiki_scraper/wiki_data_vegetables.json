@@ -1,0 +1,289 @@
+{
+  "Artichoke": {
+    "Base": 29,
+    "Bronze": 33,
+    "Silver": 38,
+    "Gold": 44,
+    "Osmium": 58
+  },
+  "Basil": {
+    "Base": 39,
+    "Bronze": 45,
+    "Silver": 51,
+    "Gold": 59,
+    "Osmium": 78
+  },
+  "Beet": {
+    "Base": 52,
+    "Bronze": 60,
+    "Silver": 68,
+    "Gold": 78,
+    "Osmium": 104
+  },
+  "Bell pepper": {
+    "Base": 47,
+    "Bronze": 54,
+    "Silver": 61,
+    "Gold": 71,
+    "Osmium": 94
+  },
+  "Bluecole": {
+    "Base": 420,
+    "Bronze": 483,
+    "Silver": 546,
+    "Gold": 630,
+    "Osmium": 840
+  },
+  "Bok choy": {
+    "Base": 126,
+    "Bronze": 145,
+    "Silver": 164,
+    "Gold": 189,
+    "Osmium": 252
+  },
+  "Brussel sprouts": {
+    "Base": 30,
+    "Bronze": 35,
+    "Silver": 39,
+    "Gold": 45,
+    "Osmium": 60
+  },
+  "Carrot": {
+    "Base": 78,
+    "Bronze": 90,
+    "Silver": 101,
+    "Gold": 117,
+    "Osmium": 156
+  },
+  "Cauliflower": {
+    "Base": 175,
+    "Bronze": 201,
+    "Silver": 228,
+    "Gold": 263,
+    "Osmium": 350
+  },
+  "Celery": {
+    "Base": 20,
+    "Bronze": 23,
+    "Silver": 26,
+    "Gold": 30,
+    "Osmium": 40
+  },
+  "Chard": {
+    "Base": 111,
+    "Bronze": 128,
+    "Silver": 144,
+    "Gold": 167,
+    "Osmium": 222
+  },
+  "Corn": {
+    "Base": 24,
+    "Bronze": 28,
+    "Silver": 31,
+    "Gold": 36,
+    "Osmium": 48
+  },
+  "Cucumber": {
+    "Base": 41,
+    "Bronze": 47,
+    "Silver": 53,
+    "Gold": 62,
+    "Osmium": 82
+  },
+  "Eggplant": {
+    "Base": 36,
+    "Bronze": 41,
+    "Silver": 47,
+    "Gold": 54,
+    "Osmium": 72
+  },
+  "Garlic": {
+    "Base": 110,
+    "Bronze": 127,
+    "Silver": 143,
+    "Gold": 165,
+    "Osmium": 220
+  },
+  "Goldglow": {
+    "Base": 70,
+    "Bronze": 81,
+    "Silver": 91,
+    "Gold": 105,
+    "Osmium": 140
+  },
+  "Hot pepper": {
+    "Base": 36,
+    "Bronze": 41,
+    "Silver": 47,
+    "Gold": 54,
+    "Osmium": 72
+  },
+  "Kale": {
+    "Base": 30,
+    "Bronze": 35,
+    "Silver": 39,
+    "Gold": 45,
+    "Osmium": 60
+  },
+  "Labu": {
+    "Base": 100,
+    "Bronze": 115,
+    "Silver": 130,
+    "Gold": 150,
+    "Osmium": 200
+  },
+  "Lettuce": {
+    "Base": 47,
+    "Bronze": 54,
+    "Silver": 61,
+    "Gold": 71,
+    "Osmium": 94
+  },
+  "Marinip": {
+    "Base": 50,
+    "Bronze": 58,
+    "Silver": 65,
+    "Gold": 75,
+    "Osmium": 100
+  },
+  "Okra": {
+    "Base": 59,
+    "Bronze": 68,
+    "Silver": 77,
+    "Gold": 89,
+    "Osmium": 118
+  },
+  "Peas": {
+    "Base": 59,
+    "Bronze": 68,
+    "Silver": 77,
+    "Gold": 89,
+    "Osmium": 118
+  },
+  "Pink coralcap": {
+    "Base": 65,
+    "Bronze": 75,
+    "Silver": 85,
+    "Gold": 98,
+    "Osmium": 130
+  },
+  "Potato": {
+    "Base": 75,
+    "Bronze": 86,
+    "Silver": 98,
+    "Gold": 113,
+    "Osmium": 150
+  },
+  "Radish": {
+    "Base": 119,
+    "Bronze": 137,
+    "Silver": 155,
+    "Gold": 179,
+    "Osmium": 238
+  },
+  "Red cabbage": {
+    "Base": 106,
+    "Bronze": 122,
+    "Silver": 138,
+    "Gold": 159,
+    "Osmium": 212
+  },
+  "Red reefbud": {
+    "Base": 41,
+    "Bronze": 47,
+    "Silver": 53,
+    "Gold": 62,
+    "Osmium": 82
+  },
+  "Sea spud": {
+    "Base": 154,
+    "Bronze": 177,
+    "Silver": 200,
+    "Gold": 231,
+    "Osmium": 308
+  },
+  "Shallot": {
+    "Base": 30,
+    "Bronze": 35,
+    "Silver": 39,
+    "Gold": 45,
+    "Osmium": 60
+  },
+  "Soka": {
+    "Base": 53,
+    "Bronze": 61,
+    "Silver": 69,
+    "Gold": 80,
+    "Osmium": 106
+  },
+  "Spring sealeaf": {
+    "Base": 140,
+    "Bronze": 161,
+    "Silver": 182,
+    "Gold": 210,
+    "Osmium": 280
+  },
+  "Sproutfruit": {
+    "Base": 83,
+    "Bronze": 95,
+    "Silver": 108,
+    "Gold": 125,
+    "Osmium": 166
+  },
+  "Sugarcane": {
+    "Base": 23,
+    "Bronze": 26,
+    "Silver": 30,
+    "Gold": 35,
+    "Osmium": 46
+  },
+  "Sweet potato": {
+    "Base": 30,
+    "Bronze": 35,
+    "Silver": 39,
+    "Gold": 45,
+    "Osmium": 60
+  },
+  "Taro root": {
+    "Base": 24,
+    "Bronze": 28,
+    "Silver": 31,
+    "Gold": 36,
+    "Osmium": 48
+  },
+  "Tomato": {
+    "Base": 34,
+    "Bronze": 39,
+    "Silver": 44,
+    "Gold": 51,
+    "Osmium": 68
+  },
+  "Turnip": {
+    "Base": 40,
+    "Bronze": 46,
+    "Silver": 52,
+    "Gold": 60,
+    "Osmium": 80
+  },
+  "Twinshade sealeaf": {
+    "Base": 157,
+    "Bronze": 181,
+    "Silver": 204,
+    "Gold": 236,
+    "Osmium": 314
+  },
+  "Wasabi": {
+    "Base": 55,
+    "Bronze": 63,
+    "Silver": 72,
+    "Gold": 83,
+    "Osmium": 110
+  },
+  "Watercress": {
+    "Base": 50,
+    "Bronze": 58,
+    "Silver": 65,
+    "Gold": 75,
+    "Osmium": 100
+  }
+}

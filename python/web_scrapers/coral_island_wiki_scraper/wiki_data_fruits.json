@@ -1,0 +1,261 @@
+{
+  "Almond": {
+    "Base": 144,
+    "Bronze": 166,
+    "Silver": 187,
+    "Gold": 216,
+    "Osmium": 288
+  },
+  "Apple": {
+    "Base": 136,
+    "Bronze": 156,
+    "Silver": 177,
+    "Gold": 204,
+    "Osmium": 272
+  },
+  "Avocado": {
+    "Base": 59,
+    "Bronze": 68,
+    "Silver": 77,
+    "Gold": 89,
+    "Osmium": 118
+  },
+  "Banana": {
+    "Base": 50,
+    "Bronze": 58,
+    "Silver": 65,
+    "Gold": 75,
+    "Osmium": 100
+  },
+  "Blackberry": {
+    "Base": 41,
+    "Bronze": 47,
+    "Silver": 53,
+    "Gold": 62,
+    "Osmium": 82
+  },
+  "Blueberry": {
+    "Base": 41,
+    "Bronze": 47,
+    "Silver": 53,
+    "Gold": 62,
+    "Osmium": 82
+  },
+  "Cherry": {
+    "Base": 75,
+    "Bronze": 86,
+    "Silver": 98,
+    "Gold": 113,
+    "Osmium": 150
+  },
+  "Chestnut": {
+    "Base": 45,
+    "Bronze": 52,
+    "Silver": 59,
+    "Gold": 68,
+    "Osmium": 90
+  },
+  "Coconut": {
+    "Base": 45,
+    "Bronze": 52,
+    "Silver": 59,
+    "Gold": 68,
+    "Osmium": 90
+  },
+  "Coconut de mer": {
+    "Base": 150,
+    "Bronze": 173,
+    "Silver": 195,
+    "Gold": 225,
+    "Osmium": 300
+  },
+  "Coral tall coconut": {
+    "Base": 35,
+    "Bronze": 40,
+    "Silver": 46,
+    "Gold": 53,
+    "Osmium": 70
+  },
+  "Cranberry": {
+    "Base": 18,
+    "Bronze": 21,
+    "Silver": 23,
+    "Gold": 27,
+    "Osmium": 36
+  },
+  "Dragonfruit": {
+    "Base": 68,
+    "Bronze": 78,
+    "Silver": 88,
+    "Gold": 102,
+    "Osmium": 136
+  },
+  "Durian": {
+    "Base": 155,
+    "Bronze": 178,
+    "Silver": 202,
+    "Gold": 233,
+    "Osmium": 310
+  },
+  "Fig": {
+    "Base": 45,
+    "Bronze": 52,
+    "Silver": 59,
+    "Gold": 68,
+    "Osmium": 90
+  },
+  "Grape": {
+    "Base": 73,
+    "Bronze": 84,
+    "Silver": 95,
+    "Gold": 110,
+    "Osmium": 146
+  },
+  "Jackfruit": {
+    "Base": 74,
+    "Bronze": 85,
+    "Silver": 96,
+    "Gold": 111,
+    "Osmium": 148
+  },
+  "Lemon": {
+    "Base": 61,
+    "Bronze": 70,
+    "Silver": 79,
+    "Gold": 92,
+    "Osmium": 122
+  },
+  "Lychee": {
+    "Base": 79,
+    "Bronze": 91,
+    "Silver": 103,
+    "Gold": 119,
+    "Osmium": 158
+  },
+  "Macapuno coconut": {
+    "Base": 75,
+    "Bronze": 86,
+    "Silver": 98,
+    "Gold": 113,
+    "Osmium": 150
+  },
+  "Mango": {
+    "Base": 136,
+    "Bronze": 156,
+    "Silver": 177,
+    "Gold": 204,
+    "Osmium": 272
+  },
+  "Mangosteen": {
+    "Base": 60,
+    "Bronze": 69,
+    "Silver": 78,
+    "Gold": 90,
+    "Osmium": 120
+  },
+  "Melon": {
+    "Base": 233,
+    "Bronze": 268,
+    "Silver": 303,
+    "Gold": 350,
+    "Osmium": 466
+  },
+  "Olive": {
+    "Base": 113,
+    "Bronze": 130,
+    "Silver": 147,
+    "Gold": 170,
+    "Osmium": 226
+  },
+  "Orange": {
+    "Base": 136,
+    "Bronze": 156,
+    "Silver": 177,
+    "Gold": 204,
+    "Osmium": 272
+  },
+  "Papaya": {
+    "Base": 68,
+    "Bronze": 78,
+    "Silver": 88,
+    "Gold": 102,
+    "Osmium": 136
+  },
+  "Peach": {
+    "Base": 153,
+    "Bronze": 176,
+    "Silver": 199,
+    "Gold": 230,
+    "Osmium": 306
+  },
+  "Pear": {
+    "Base": 68,
+    "Bronze": 78,
+    "Silver": 88,
+    "Gold": 102,
+    "Osmium": 136
+  },
+  "Pineapple": {
+    "Base": 201,
+    "Bronze": 231,
+    "Silver": 261,
+    "Gold": 302,
+    "Osmium": 402
+  },
+  "Plum": {
+    "Base": 68,
+    "Bronze": 78,
+    "Silver": 88,
+    "Gold": 102,
+    "Osmium": 136
+  },
+  "Pumpkin": {
+    "Base": 116,
+    "Bronze": 133,
+    "Silver": 151,
+    "Gold": 174,
+    "Osmium": 232
+  },
+  "Rambutan": {
+    "Base": 73,
+    "Bronze": 84,
+    "Silver": 95,
+    "Gold": 110,
+    "Osmium": 146
+  },
+  "Snake fruit": {
+    "Base": 67,
+    "Bronze": 77,
+    "Silver": 87,
+    "Gold": 101,
+    "Osmium": 134
+  },
+  "Starfruit": {
+    "Base": 108,
+    "Bronze": 124,
+    "Silver": 140,
+    "Gold": 162,
+    "Osmium": 216
+  },
+  "Strawberry": {
+    "Base": 102,
+    "Bronze": 117,
+    "Silver": 133,
+    "Gold": 153,
+    "Osmium": 204
+  },
+  "Tomato": {
+    "Base": 34,
+    "Bronze": 39,
+    "Silver": 44,
+    "Gold": 51,
+    "Osmium": 68
+  },
+  "Watermelon": {
+    "Base": 105,
+    "Bronze": 121,
+    "Silver": 137,
+    "Gold": 158,
+    "Osmium": 210
+  }
+}

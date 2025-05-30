@@ -1,0 +1,72 @@
+{
+    "Egg": {
+      "Base": 50,
+      "Bronze": 58,
+      "Silver": 65,
+      "Gold": 75,
+      "Osmium": 100
+    },
+    "Large egg": {
+      "Base": 75,
+      "Bronze": 86,
+      "Silver": 98,
+      "Gold": 113,
+      "Osmium": 150
+    },
+    "Duck egg": {
+      "Base": 100,
+      "Bronze": 115,
+      "Silver": 130,
+      "Gold": 150,
+      "Osmium": 200
+    },
+    "Large duck egg": {
+      "Base": 165,
+      "Bronze": 190,
+      "Silver": 215,
+      "Gold": 248,
+      "Osmium": 330
+    },
+    "Feather": {
+      "Base": 1,
+      "Bronze": 1,
+      "Silver": 1,
+      "Gold": 1,
+      "Osmium": 2
+    },
+    "Large feather": {
+      "Base": 1,
+      "Bronze": 1,
+      "Silver": 1,
+      "Gold": 2,
+      "Osmium": 2
+    },
+    "Quail egg": {
+      "Base": 245,
+      "Bronze": 282,
+      "Silver": 319,
+      "Gold": 368,
+      "Osmium": 490
+    },
+    "Large quail egg": {
+      "Base": 395,
+      "Bronze": 454,
+      "Silver": 514,
+      "Gold": 593,
+      "Osmium": 790
+    },
+    "Golden egg": {
+      "Base": 150,
+      "Bronze": 173,
+      "Silver": 195,
+      "Gold": 225,
+      "Osmium": 300
+    },
+    "Large golden egg": {
+      "Base": 225,
+      "Bronze": 259,
+      "Silver": 293,
+      "Gold": 338,
+      "Osmium": 450
+    }
+}

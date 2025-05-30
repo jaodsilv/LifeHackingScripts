@@ -1,0 +1,219 @@
+{
+  "Blue dahlia": {
+    "Base": 80,
+    "Bronze": 92,
+    "Silver": 104,
+    "Gold": 120,
+    "Osmium": 160
+  },
+  "Bluebell blossom": {
+    "Base": 135,
+    "Bronze": 155,
+    "Silver": 176,
+    "Gold": 203,
+    "Osmium": 270
+  },
+  "Cactus": {
+    "Base": 400,
+    "Bronze": 460,
+    "Silver": 520,
+    "Gold": 600,
+    "Osmium": 800
+  },
+  "Cotton": {
+    "Base": 105,
+    "Bronze": 121,
+    "Silver": 137,
+    "Gold": 158,
+    "Osmium": 210
+  },
+  "Daisy": {
+    "Base": 40,
+    "Bronze": 46,
+    "Silver": 52,
+    "Gold": 60,
+    "Osmium": 80
+  },
+  "Fairy rose": {
+    "Base": 171,
+    "Bronze": 197,
+    "Silver": 222,
+    "Gold": 257,
+    "Osmium": 342
+  },
+  "Gardenia": {
+    "Base": 45,
+    "Bronze": 52,
+    "Silver": 59,
+    "Gold": 68,
+    "Osmium": 90
+  },
+  "Helixpur blossom": {
+    "Base": 91,
+    "Bronze": 105,
+    "Silver": 118,
+    "Gold": 137,
+    "Osmium": 182
+  },
+  "Iris": {
+    "Base": 102,
+    "Bronze": 117,
+    "Silver": 133,
+    "Gold": 153,
+    "Osmium": 204
+  },
+  "Lily (flower)": {
+    "Base": 149,
+    "Bronze": 171,
+    "Silver": 194,
+    "Gold": 224,
+    "Osmium": 298
+  },
+  "Marinethorn blossom": {
+    "Base": 125,
+    "Bronze": 144,
+    "Silver": 163,
+    "Gold": 188,
+    "Osmium": 250
+  },
+  "Orchid": {
+    "Base": 130,
+    "Bronze": 150,
+    "Silver": 169,
+    "Gold": 195,
+    "Osmium": 260
+  },
+  "Peony": {
+    "Base": 42,
+    "Bronze": 48,
+    "Silver": 55,
+    "Gold": 63,
+    "Osmium": 84
+  },
+  "Petalia": {
+    "Base": 40,
+    "Bronze": 46,
+    "Silver": 52,
+    "Gold": 60,
+    "Osmium": 80
+  },
+  "Poppy": {
+    "Base": 82,
+    "Bronze": 94,
+    "Silver": 107,
+    "Gold": 123,
+    "Osmium": 164
+  },
+  "Rose": {
+    "Base": 51,
+    "Bronze": 59,
+    "Silver": 66,
+    "Gold": 77,
+    "Osmium": 102
+  },
+  "Snowdrop": {
+    "Base": 125,
+    "Bronze": 144,
+    "Silver": 163,
+    "Gold": 188,
+    "Osmium": 250
+  },
+  "Sunflower": {
+    "Base": 70,
+    "Bronze": 81,
+    "Silver": 91,
+    "Gold": 105,
+    "Osmium": 140
+  },
+  "Canola": {
+    "Base": 35,
+    "Bronze": 40,
+    "Silver": 46,
+    "Gold": 53,
+    "Osmium": 70
+  },
+  "Cosmo": {
+    "Base": 20,
+    "Bronze": 23,
+    "Silver": 26,
+    "Gold": 30,
+    "Osmium": 40
+  },
+  "Daffodil": {
+    "Base": 10,
+    "Bronze": 12,
+    "Silver": 13,
+    "Gold": 15,
+    "Osmium": 20
+  },
+  "Hibiscus": {
+    "Base": 25,
+    "Bronze": 29,
+    "Silver": 33,
+    "Gold": 38,
+    "Osmium": 50
+  },
+  "Jepun": {
+    "Base": 15,
+    "Bronze": 17,
+    "Silver": 20,
+    "Gold": 23,
+    "Osmium": 30
+  },
+  "Larkspur": {
+    "Base": 20,
+    "Bronze": 23,
+    "Silver": 26,
+    "Gold": 30,
+    "Osmium": 40
+  },
+  "Lotus": {
+    "Base": 30,
+    "Bronze": 35,
+    "Silver": 39,
+    "Gold": 45,
+    "Osmium": 60
+  },
+  "Pansy": {
+    "Base": 15,
+    "Bronze": 17,
+    "Silver": 20,
+    "Gold": 23,
+    "Osmium": 30
+  },
+  "Rafflesia": {
+    "Base": 420,
+    "Bronze": 483,
+    "Silver": 546,
+    "Gold": 630,
+    "Osmium": 840
+  },
+  "Titan arum": {
+    "Base": 420,
+    "Bronze": 483,
+    "Silver": 546,
+    "Gold": 630,
+    "Osmium": 840
+  },
+  "Tulip": {
+    "Base": 10,
+    "Bronze": 12,
+    "Silver": 13,
+    "Gold": 15,
+    "Osmium": 20
+  },
+  "Violet": {
+    "Base": 10,
+    "Bronze": 12,
+    "Silver": 13,
+    "Gold": 15,
+    "Osmium": 20
+  },
+  "White hibiscus": {
+    "Base": 40,
+    "Bronze": 46,
+    "Silver": 52,
+    "Gold": 60,
+    "Osmium": 80
+  }
+}

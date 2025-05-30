@@ -1,0 +1,170 @@
+{
+  "Egg": {
+    "Base": 50,
+    "Bronze": 58,
+    "Silver": 65,
+    "Gold": 75,
+    "Osmium": 100
+  },
+  "Large egg": {
+    "Base": 75,
+    "Bronze": 86,
+    "Silver": 98,
+    "Gold": 113,
+    "Osmium": 150
+  },
+  "Duck egg": {
+    "Base": 100,
+    "Bronze": 115,
+    "Silver": 130,
+    "Gold": 150,
+    "Osmium": 200
+  },
+  "Large duck egg": {
+    "Base": 165,
+    "Bronze": 190,
+    "Silver": 215,
+    "Gold": 248,
+    "Osmium": 330
+  },
+  "Milk": {
+    "Base": 80,
+    "Bronze": 92,
+    "Silver": 104,
+    "Gold": 120,
+    "Osmium": 160
+  },
+  "Large milk": {
+    "Base": 130,
+    "Bronze": 150,
+    "Silver": 169,
+    "Gold": 195,
+    "Osmium": 260
+  },
+  "Goat milk": {
+    "Base": 210,
+    "Bronze": 242,
+    "Silver": 273,
+    "Gold": 315,
+    "Osmium": 420
+  },
+  "Large goat milk": {
+    "Base": 350,
+    "Bronze": 403,
+    "Silver": 455,
+    "Gold": 525,
+    "Osmium": 700
+  },
+  "White truffle": {
+    "Base": 970,
+    "Bronze": 1,
+    "Silver": 1,
+    "Gold": 1,
+    "Osmium": 1
+  },
+  "Black truffle": {
+    "Base": 1,
+    "Bronze": 1,
+    "Silver": 1,
+    "Gold": 1,
+    "Osmium": 2
+  },
+  "Wool": {
+    "Base": 170,
+    "Bronze": 196,
+    "Silver": 221,
+    "Gold": 255,
+    "Osmium": 340
+  },
+  "Llama wool": {
+    "Base": 530,
+    "Bronze": 610,
+    "Silver": 689,
+    "Gold": 795,
+    "Osmium": 1
+  },
+  "Gesha coffee bean": {
+    "Base": 430,
+    "Bronze": 495,
+    "Silver": 559,
+    "Gold": 645,
+    "Osmium": 860
+  },
+  "Feather": {
+    "Base": 1,
+    "Bronze": 1,
+    "Silver": 1,
+    "Gold": 1,
+    "Osmium": 2
+  },
+  "Large wool": {
+    "Base": 285,
+    "Bronze": 328,
+    "Silver": 371,
+    "Gold": 428,
+    "Osmium": 570
+  },
+  "Large llama wool": {
+    "Base": 885,
+    "Bronze": 1,
+    "Silver": 1,
+    "Gold": 1,
+    "Osmium": 1
+  },
+  "Large gesha coffee bean": {
+    "Base": 715,
+    "Bronze": 822,
+    "Silver": 930,
+    "Gold": 1,
+    "Osmium": 1
+  },
+  "Large feather": {
+    "Base": 1,
+    "Bronze": 1,
+    "Silver": 1,
+    "Gold": 2,
+    "Osmium": 2
+  },
+  "Quail egg": {
+    "Base": 245,
+    "Bronze": 282,
+    "Silver": 319,
+    "Gold": 368,
+    "Osmium": 490
+  },
+  "Large quail egg": {
+    "Base": 395,
+    "Bronze": 454,
+    "Silver": 514,
+    "Gold": 593,
+    "Osmium": 790
+  },
+  "Golden egg": {
+    "Base": 150,
+    "Bronze": 173,
+    "Silver": 195,
+    "Gold": 225,
+    "Osmium": 300
+  },
+  "Golden milk": {
+    "Base": 240,
+    "Bronze": 276,
+    "Silver": 312,
+    "Gold": 360,
+    "Osmium": 480
+  },
+  "Large golden egg": {
+    "Base": 225,
+    "Bronze": 259,
+    "Silver": 293,
+    "Gold": 338,
+    "Osmium": 450
+  },
+  "Large golden milk": {
+    "Base": 390,
+    "Bronze": 449,
+    "Silver": 507,
+    "Gold": 585,
+    "Osmium": 780
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "Milk": {
+    "Base": 80,
+    "Bronze": 92,
+    "Silver": 104,
+    "Gold": 120,
+    "Osmium": 160
+  },
+  "Large milk": {
+    "Base": 130,
+    "Bronze": 150,
+    "Silver": 169,
+    "Gold": 195,
+    "Osmium": 260
+  },
+  "Goat milk": {
+    "Base": 210,
+    "Bronze": 242,
+    "Silver": 273,
+    "Gold": 315,
+    "Osmium": 420
+  },
+  "Large goat milk": {
+    "Base": 350,
+    "Bronze": 403,
+    "Silver": 455,
+    "Gold": 525,
+    "Osmium": 700
+  },
+  "White truffle": {
+    "Base": 970,
+    "Bronze": 1,
+    "Silver": 1,
+    "Gold": 1,
+    "Osmium": 1
+  },
+  "Black truffle": {
+    "Base": 1,
+    "Bronze": 1,
+    "Silver": 1,
+    "Gold": 1,
+    "Osmium": 2
+  },
+  "Wool": {
+    "Base": 170,
+    "Bronze": 196,
+    "Silver": 221,
+    "Gold": 255,
+    "Osmium": 340
+  },
+  "Llama wool": {
+    "Base": 530,
+    "Bronze": 610,
+    "Silver": 689,
+    "Gold": 795,
+    "Osmium": 1
+  },
+  "Gesha coffee bean": {
+    "Base": 430,
+    "Bronze": 495,
+    "Silver": 559,
+    "Gold": 645,
+    "Osmium": 860
+  },
+  "Large wool": {
+    "Base": 285,
+    "Bronze": 328,
+    "Silver": 371,
+    "Gold": 428,
+    "Osmium": 570
+  },
+  "Large llama wool": {
+    "Base": 885,
+    "Bronze": 1,
+    "Silver": 1,
+    "Gold": 1,
+    "Osmium": 1
+  },
+  "Large gesha coffee bean": {
+    "Base": 715,
+    "Bronze": 822,
+    "Silver": 930,
+    "Gold": 1,
+    "Osmium": 1
+  },
+  "Golden milk": {
+    "Base": 240,
+    "Bronze": 276,
+    "Silver": 312,
+    "Gold": 360,
+    "Osmium": 480
+  },
+  "Large golden milk": {
+    "Base": 390,
+    "Bronze": 449,
+    "Silver": 507,
+    "Gold": 585,
+    "Osmium": 780
+  }
+}
