@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coral Island NPC Gift Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #ffffff;
+            color: #2d3436;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #2d3436;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            color: #636e72;
+        }
+        
+        .universal-gifts {
+            background: #ffffff;
+            color: #2d3436;
+            padding: 20px 30px;
+            margin: 0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .universal-gifts h2 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #2d3436;
+        }
+        
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .gift-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .gift-item h3 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            color: #2d3436;
+        }
+        
+        .gift-item p {
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+        
+        .exception {
+            font-style: italic;
+            color: #ffff99;
+        }
+        
+        .table-container {
+            padding: 30px;
+            overflow-x: auto;
+        }
+        
+        .search-container {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .search-box {
+            padding: 12px 20px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            width: 300px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #74b9ff;
+            box-shadow: 0 0 15px rgba(116, 185, 255, 0.3);
+        }
+        
+        .filter-select {
+            padding: 12px 20px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: #74b9ff;
+        }
+        
+        .npc-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        .npc-table th {
+            background: linear-gradient(135deg, #6c5ce7 0%, #5f3dc4 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        .npc-table th:hover {
+            background: linear-gradient(135deg, #5f3dc4 0%, #4c63d2 100%);
+            transform: translateY(-2px);
+        }
+        
+        .npc-table th.sortable::after {
+            content: ' ↕️';
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+        
+        .npc-table th.sort-asc::after {
+            content: ' ↑';
+            color: #55efc4;
+        }
+        
+        .npc-table th.sort-desc::after {
+            content: ' ↓';
+            color: #fd79a8;
+        }
+        
+        .npc-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        
+        .npc-table tr:hover {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+        
+        .npc-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .npc-name {
+            font-weight: 600;
+            color: #2d3436;
+            font-size: 1.1rem;
+        }
+        
+        .birthday {
+            font-weight: 500;
+            color: #6c5ce7;
+            background: rgba(108, 92, 231, 0.1);
+            padding: 5px 10px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        
+        .gifts {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .gift-category {
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .easy {
+            background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);
+            color: white;
+        }
+        
+        .medium {
+            background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%);
+            color: white;
+        }
+        
+        .hard {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+        }
+        
+        .season-spring { border-left: 5px solid #00b894; }
+        .season-summer { border-left: 5px solid #fdcb6e; }
+        .season-fall { border-left: 5px solid #e17055; }
+        .season-winter { border-left: 5px solid #74b9ff; }
+        .season-unknown { border-left: 5px solid #636e72; }
+        
+        .species-townsfolk { border-right: 3px solid #6c5ce7; }
+        .species-merfolk { border-right: 3px solid #00cec9; }
+        .species-giant { border-right: 3px solid #e17055; }
+        
+        .species-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+        
+        .species-townsfolk-badge {
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            color: white;
+        }
+        
+        .species-merfolk-badge {
+            background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%);
+            color: white;
+        }
+        
+        .species-giant-badge {
+            background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%);
+            color: white;
+        }
+        
+        .hidden { display: none; }
+        
+        @media (max-width: 768px) {
+            .search-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .search-box {
+                width: 250px;
+            }
+            
+            .npc-table th,
+            .npc-table td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .npc-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏝️ Coral Island Gift Guide</h1>
+            <p>Complete NPC birthday and gift preference reference</p>
+        </div>
+        
+        <div class="universal-gifts">
+            <h2>🎁 Universal Gifts (Works for Almost Everyone)</h2>
+            <div class="gift-grid">
+                <div class="gift-item">
+                    <h3>💎 Pink Diamond</h3>
+                    <p>Loved by all <span class="exception">(except Jim)</span></p>
+                </div>
+                <div class="gift-item">
+                    <h3>🌹 Black Rose</h3>
+                    <p>Loved by all <span class="exception">(except Noah)</span></p>
+                </div>
+                <div class="gift-item">
+                    <h3>⚪ Golden Pearl</h3>
+                    <p>Universally loved by all species</p>
+                </div>
+                <div class="gift-item">
+                    <h3>🧶 Rainbow Wool</h3>
+                    <p>Universally loved by all species</p>
+                </div>
+            </div>
+            <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.9;">
+                <p><strong>🏘️ Townsfolk:</strong> Most flowers are universally liked (except Yuri and Charles hate all flowers)</p>
+                <p><strong>🧜‍♀️ Merfolk:</strong> Love marine items, shells, and gems. Some gift mechanics may be bugged - use Pink Diamond as safe option</p>
+                <p><strong>🏔️ Giants:</strong> Love gems, minerals, and natural items. No confirmed birthdays - focus on relationship building through gifts</p>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <div class="search-container">
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search NPCs...">
+                <select class="filter-select" id="seasonFilter">
+                    <option value="">All Seasons</option>
+                    <option value="spring">Spring</option>
+                    <option value="summer">Summer</option>
+                    <option value="fall">Fall</option>
+                    <option value="winter">Winter</option>
+                    <option value="unknown">No Birthday</option>
+                </select>
+                <select class="filter-select" id="speciesFilter">
+                    <option value="">All Species</option>
+                    <option value="townsfolk">Townsfolk</option>
+                    <option value="merfolk">Merfolk</option>
+                    <option value="giant">Giants</option>
+                </select>
+            </div>
+            
+            <table class="npc-table" id="npcTable">
+                <thead>
+                    <tr>
+                        <th>Icon</th>
+                        <th class="sortable" data-column="name">Name</th>
+                        <th class="sortable" data-column="birthday">Birthday</th>
+                        <th>Favorite Gifts (Easy → Hard)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Romanceable Townsfolk -->
+                    <tr class="season-spring species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/f/f0/Aaliyah_icon.png" alt="Aaliyah" /></div></td>
+                        <td><div class="npc-name">Aaliyah<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Spring 7</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Strawberry, White Hibiscus, Tomato</div>
+                            <div class="gift-category medium">Chocolate Chip Muffin, Eggplant</div>
+                            <div class="gift-category hard">Luwak Coffee, Eggplant Lasagna</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-winter species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/f/fc/Alice_icon.png" alt="Alice" /></div></td>
+                        <td><div class="npc-name">Alice<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Winter 27</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">White Hibiscus, Larkspur, Cosmos</div>
+                            <div class="gift-category medium">Green Smoothie, Jamu</div>
+                            <div class="gift-category hard">Almond Oil, Olive Oil, Minced Jackfruit Pie</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-spring species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/1/15/Ben_icon.png" alt="Ben" /></div></td>
+                        <td><div class="npc-name">Ben<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Spring 22</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Daffodil, Larkspur, Cosmos, Blueberries</div>
+                            <div class="gift-category medium">Hibiscus, Hot Peppers</div>
+                            <div class="gift-category hard">Coral Tall Coconuts</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/a/ab/Chaem_icon.png" alt="Chaem" /></div></td>
+                        <td><div class="npc-name">Chaem<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Fall 6</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, Hibiscus</div>
+                            <div class="gift-category medium">Hot Peppers</div>
+                            <div class="gift-category hard">Coral Tall Coconuts</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/d/d5/Leah_icon.png" alt="Leah" /></div></td>
+                        <td><div class="npc-name">Leah<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Summer 21</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, Hibiscus</div>
+                            <div class="gift-category medium">Hot Peppers, Bell Peppers</div>
+                            <div class="gift-category hard">Yoga poses (special event items)</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-spring species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/e/e0/Ling_icon.png" alt="Ling" /></div></td>
+                        <td><div class="npc-name">Ling<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Spring 17</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, Hibiscus</div>
+                            <div class="gift-category medium">Seaweed, Marine specimens</div>
+                            <div class="gift-category hard">Research equipment</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/f/fd/Luke_icon.png" alt="Luke" /></div></td>
+                        <td><div class="npc-name">Luke<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Fall 16</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Yellow Jenpu, Cosmos, Blueberries</div>
+                            <div class="gift-category medium">Wine ingredients</div>
+                            <div class="gift-category hard">Coral Tall Coconuts, Gourmet foods</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-spring species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/6/6b/Macy_icon.png" alt="Macy" /></div></td>
+                        <td><div class="npc-name">Macy<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Spring 25</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, White Hibiscus</div>
+                            <div class="gift-category medium">Jamu, Photography items</div>
+                            <div class="gift-category hard">Professional camera equipment</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-winter species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/b/b5/Millie_icon.png" alt="Millie" /></div></td>
+                        <td><div class="npc-name">Millie<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Winter 3</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Large Eggs, Cosmos, Tomatoes</div>
+                            <div class="gift-category medium">Hot Peppers, Books</div>
+                            <div class="gift-category hard">Coral Tall Coconuts, Rare books</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-winter species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/4/46/Nina_icon.png" alt="Nina" /></div></td>
+                        <td><div class="npc-name">Nina<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Winter 24</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Hibiscus, Larkspur, Cosmos</div>
+                            <div class="gift-category medium">White Hibiscus, Hot Peppers</div>
+                            <div class="gift-category hard">Luxury items, Expensive jewelry</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-winter species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/3/38/Noah_icon.png" alt="Noah" /></div></td>
+                        <td><div class="npc-name">Noah<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Winter 10</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Larkspur, Cosmos, Blueberries</div>
+                            <div class="gift-category medium">Hot Peppers, Tavern supplies</div>
+                            <div class="gift-category hard">Premium alcohol, Rare ingredients</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/a/ad/Pablo_icon.png" alt="Pablo" /></div></td>
+                        <td><div class="npc-name">Pablo<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Fall 4</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Pickled vegetables, Cosmos</div>
+                            <div class="gift-category medium">Blacksmith materials</div>
+                            <div class="gift-category hard">Rare metals, Premium tools</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/6/62/Rafael_icon.png" alt="Rafael" /></div></td>
+                        <td><div class="npc-name">Rafael<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Fall 4</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Corn, Bell Peppers, Lilies</div>
+                            <div class="gift-category medium">Sashimi, Blacksmith materials</div>
+                            <div class="gift-category hard">Onyx, Premium sashimi</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-spring species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/8/87/Scott_icon.png" alt="Scott" /></div></td>
+                        <td><div class="npc-name">Scott<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Spring 12</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, Tomatoes</div>
+                            <div class="gift-category medium">Geodes (loves them!)</div>
+                            <div class="gift-category hard">Coral Tall Coconuts, Rare minerals</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-winter species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/f/f8/Suki_icon.png" alt="Suki" /></div></td>
+                        <td><div class="npc-name">Suki<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Winter 27</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, Hot Peppers</div>
+                            <div class="gift-category medium">Puree, Healthy foods</div>
+                            <div class="gift-category hard">Premium health products</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/5/56/Surya_icon.png" alt="Surya" /></div></td>
+                        <td><div class="npc-name">Surya<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Fall 25</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Hibiscus, Tomatoes, Hot Peppers</div>
+                            <div class="gift-category medium">Marine biology equipment</div>
+                            <div class="gift-category hard">Laboratory supplies, Research tools</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/5/57/Theo_icon.png" alt="Theo" /></div></td>
+                        <td><div class="npc-name">Theo<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Summer 16</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Bamboo Shoot, Coconut</div>
+                            <div class="gift-category medium">Fish Taco, Fruit Juice</div>
+                            <div class="gift-category hard">King Red Arowana, Yellow Moray Eel</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/6/6f/Wakuu_icon.png" alt="Wakuu" /></div></td>
+                        <td><div class="npc-name">Wakuu<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Summer 8</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Mango, Chocolate Chip Muffin</div>
+                            <div class="gift-category medium">Salmon (loves fish!), Vegan Taco</div>
+                            <div class="gift-category hard">Cenil, Premium fish dishes</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/b/b6/Yuri_icon.png" alt="Yuri" /></div></td>
+                        <td><div class="npc-name">Yuri<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Summer 3</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Chocolate Chip Muffin</div>
+                            <div class="gift-category medium">Fish Sandwich, Green/Red Curry</div>
+                            <div class="gift-category hard">Frogfish, Lobster, Spicy Sauerkraut</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/4/48/Zarah_icon.png" alt="Zarah" /></div></td>
+                        <td><div class="npc-name">Zarah<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Summer 28</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Rambutan, Hummus</div>
+                            <div class="gift-category medium">Grilled Fish</div>
+                            <div class="gift-category hard">Azurite, Serpentine</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Non-Romanceable Townsfolk -->
+                    <tr class="season-winter species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/7/70/Betty_icon.png" alt="Betty" /></div></td>
+                        <td><div class="npc-name">Betty<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Winter 13</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, Hibiscus</div>
+                            <div class="gift-category medium">Educational materials</div>
+                            <div class="gift-category hard">Coral reef specimens</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/8/88/Bree_icon.png" alt="Bree" /></div></td>
+                        <td><div class="npc-name">Bree<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Fall 14</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, Grapes</div>
+                            <div class="gift-category medium">Wine ingredients, Household items</div>
+                            <div class="gift-category hard">Premium vineyard supplies</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/a/ad/Eleanor_icon.png" alt="Eleanor" /></div></td>
+                        <td><div class="npc-name">Eleanor<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Summer 5</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Green Tea, Lychee</div>
+                            <div class="gift-category medium">Firefly, Birdwing Butterfly</div>
+                            <div class="gift-category hard">Pipevine Swallowtail, Spicebush Swallowtail</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/e/ea/Emily_icon.png" alt="Emily" /></div></td>
+                        <td><div class="npc-name">Emily<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Summer 10</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Sautéed Chard</div>
+                            <div class="gift-category medium">Assorted Grilled Platter</div>
+                            <div class="gift-category hard">Almond Oil, Olive Oil</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/7/7b/Emma_icon.png" alt="Emma" /></div></td>
+                        <td><div class="npc-name">Emma<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Summer 13</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Coffee, Green Tea, Hot Cocoa, Pineapple</div>
+                            <div class="gift-category medium">Fish Taco, Vegan Taco, Shells</div>
+                            <div class="gift-category hard">Cotton Cloth, Upside-Down Cake</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/8/87/Erika_icon.png" alt="Erika" /></div></td>
+                        <td><div class="npc-name">Erika<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Fall 5</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Iris, Cane Nectar</div>
+                            <div class="gift-category medium">Jam, Red Curry</div>
+                            <div class="gift-category hard">Pepper and Mushroom Flatbread</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/2/2f/Frank_icon.png" alt="Frank" /></div></td>
+                        <td><div class="npc-name">Frank<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Summer 15</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Avocado, Bell Pepper, Hot Pepper</div>
+                            <div class="gift-category medium">Fruit Juice, Pancakes, Sunny-Side Up Eggs</div>
+                            <div class="gift-category hard">Roasted Almond</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-spring species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/5/5f/Kenny_icon.png" alt="Kenny" /></div></td>
+                        <td><div class="npc-name">Kenny<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Spring 9</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, Hibiscus</div>
+                            <div class="gift-category medium">Animal care items</div>
+                            <div class="gift-category hard">Veterinary supplies</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-spring species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/0/04/Mark_icon.png" alt="Mark" /></div></td>
+                        <td><div class="npc-name">Mark<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Spring 18</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Jamu, White Hibiscus, Cosmos</div>
+                            <div class="gift-category medium">Hot Cocoa (loves it!), Tomato Soup</div>
+                            <div class="gift-category hard">Animal shelter supplies</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-spring species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/1/13/Walter_icon.png" alt="Walter" /></div></td>
+                        <td><div class="npc-name">Walter<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Spring 20</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, Hibiscus</div>
+                            <div class="gift-category medium">Teaching materials</div>
+                            <div class="gift-category hard">Educational equipment</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-winter species-townsfolk">
+                        <td><div class="npc-icon"><img src="https://coralisland.wiki/w/images/0/07/Zoe_icon.png" alt="Zoe" /></div></td>
+                        <td><div class="npc-name">Zoe<span class="species-badge species-townsfolk-badge">Townsfolk</span></div></td>
+                        <td><div class="birthday">Winter 8</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Cosmos, Sports equipment</div>
+                            <div class="gift-category medium">Volleyball items</div>
+                            <div class="gift-category hard">Professional sports gear</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Merfolk Characters -->
+                    <tr class="season-summer species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/6/6c/Agung_icon.png" alt="Agung" /></div></td>
+                        <td><div class="npc-name">Agung<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Summer 8</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed, Fish</div>
+                            <div class="gift-category medium">Marine artifacts</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/4/42/Cho_Oyu_icon.png" alt="Cho Oyu" /></div></td>
+                        <td><div class="npc-name">Cho Oyu<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Fall 5</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed, Fish</div>
+                            <div class="gift-category medium">Marine artifacts</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/6/65/Denali_icon.png" alt="Denali" /></div></td>
+                        <td><div class="npc-name">Denali<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Summer 10</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed, Fish</div>
+                            <div class="gift-category medium">Wine, Beer, Gems</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/d/df/Etna_icon.png" alt="Etna" /></div></td>
+                        <td><div class="npc-name">Etna<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Summer 15</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed, Fish</div>
+                            <div class="gift-category medium">Marine artifacts</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-summer species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/4/4d/King_Krakatoa_icon.png" alt="King Krakatoa" /></div></td>
+                        <td><div class="npc-name">King Krakatoa<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Summer 11</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed, Fish</div>
+                            <div class="gift-category medium">Royal gifts, Marine treasures</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-winter species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/0/0a/Olan_icon.png" alt="Olan" /></div></td>
+                        <td><div class="npc-name">Olan<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Winter 18</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed, Fish</div>
+                            <div class="gift-category medium">Marine artifacts</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/d/d7/Princess_Miranjani_icon.png" alt="Princess Miranjani" /></div></td>
+                        <td><div class="npc-name">Princess Miranjani<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Fall 10</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed</div>
+                            <div class="gift-category medium">Flame Scallop, Marine curiosities</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/8/8b/Queen_Nanda_Devi_icon.png" alt="Queen Nanda Devi" /></div></td>
+                        <td><div class="npc-name">Queen Nanda Devi<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Fall 10</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed, Fish</div>
+                            <div class="gift-category medium">Royal gifts, Marine treasures</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-fall species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/d/da/Rysy_icon.png" alt="Rysy" /></div></td>
+                        <td><div class="npc-name">Rysy<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Fall 20</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed, Fish</div>
+                            <div class="gift-category medium">Marine artifacts</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-spring species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/a/a9/Semeru_icon.png" alt="Semeru" /></div></td>
+                        <td><div class="npc-name">Semeru<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Spring 5</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Fish, Seaweed</div>
+                            <div class="gift-category medium">Beer, Barley Beer (Wine bugged)</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-winter species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/8/84/Slamet_icon.png" alt="Slamet" /></div></td>
+                        <td><div class="npc-name">Slamet<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Winter 12</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed, Fish</div>
+                            <div class="gift-category medium">Marine artifacts</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-spring species-merfolk">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #00cec9 0%, #55efc4 100%)"><img src="https://coralisland.wiki/w/images/3/3c/Tahat_icon.png" alt="Tahat" /></div></td>
+                        <td><div class="npc-name">Tahat<span class="species-badge species-merfolk-badge">Merfolk</span></div></td>
+                        <td><div class="birthday">Spring 23</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Shells, Seaweed, Fish</div>
+                            <div class="gift-category medium">Marine artifacts</div>
+                            <div class="gift-category hard">Pink Diamond, Golden Pearl</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Giant Characters -->
+                    <tr class="season-unknown species-giant">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%)"><img src="https://coralisland.wiki/w/images/6/6c/Chieftain_icon.png" alt="Chieftain" /></div></td>
+                        <td><div class="npc-name">Chieftain<span class="species-badge species-giant-badge">Giant</span></div></td>
+                        <td><div class="birthday">No Birthday</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Rambutan, Durian</div>
+                            <div class="gift-category medium">Gems (Jade, Jasper, Garnet)</div>
+                            <div class="gift-category hard">Pink Diamond, Ruby, Emerald, Black Opal</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-unknown species-giant">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%)"><img src="https://coralisland.wiki/w/images/1/1f/Grog_icon.png" alt="Grog" /></div></td>
+                        <td><div class="npc-name">Grog (Earth Giant)<span class="species-badge species-giant-badge">Giant</span></div></td>
+                        <td><div class="birthday">No Birthday</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Minerals, Stones, Gems</div>
+                            <div class="gift-category medium">Earth element items</div>
+                            <div class="gift-category hard">Rare earth materials, Pink Diamond</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-unknown species-giant">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%)"><img src="https://coralisland.wiki/w/images/f/f5/Giu_icon.png" alt="Giu" /></div></td>
+                        <td><div class="npc-name">Giu (Fire Giant)<span class="species-badge species-giant-badge">Giant</span></div></td>
+                        <td><div class="birthday">No Birthday</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Spicy foods, Hot Peppers</div>
+                            <div class="gift-category medium">Fire element items</div>
+                            <div class="gift-category hard">Rare fire materials, Pink Diamond</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-unknown species-giant">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%)"><img src="https://coralisland.wiki/w/images/b/b0/Gong_icon.png" alt="Gong" /></div></td>
+                        <td><div class="npc-name">Gong (Water Giant)<span class="species-badge species-giant-badge">Giant</span></div></td>
+                        <td><div class="birthday">No Birthday</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Fish, Water plants, Seaweed</div>
+                            <div class="gift-category medium">Water element items</div>
+                            <div class="gift-category hard">Rare water materials, Pink Diamond</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-unknown species-giant">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%)"><img src="https://coralisland.wiki/w/images/d/d8/Groo_icon.png" alt="Groo" /></div></td>
+                        <td><div class="npc-name">Groo (Wind Giant)<span class="species-badge species-giant-badge">Giant</span></div></td>
+                        <td><div class="birthday">No Birthday</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Flowers, Light items</div>
+                            <div class="gift-category medium">Wind element items</div>
+                            <div class="gift-category hard">Rare wind materials, Pink Diamond</div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="season-unknown species-giant">
+                        <td><div class="npc-icon" style="background: linear-gradient(135deg, #e17055 0%, #fab1a0 100%)"><img src="https://coralisland.wiki/w/images/b/bd/Gort_icon.png" alt="Gort" /></div></td>
+                        <td><div class="npc-name">Gort (Fire Giant)<span class="species-badge species-giant-badge">Giant</span></div></td>
+                        <td><div class="birthday">No Birthday</div></td>
+                        <td class="gifts">
+                            <div class="gift-category easy">Spicy foods, Hot Peppers</div>
+                            <div class="gift-category medium">Fire element items</div>
+                            <div class="gift-category hard">Rare fire materials, Pink Diamond</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Search functionality
+        const searchBox = document.getElementById('searchBox');
+        const seasonFilter = document.getElementById('seasonFilter');
+        const speciesFilter = document.getElementById('speciesFilter');
+        const table = document.getElementById('npcTable');
+        const rows = table.getElementsByTagName('tr');
+
+        function filterTable() {
+            const searchTerm = searchBox.value.toLowerCase();
+            const selectedSeason = seasonFilter.value.toLowerCase();
+            const selectedSpecies = speciesFilter.value.toLowerCase();
+
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const name = row.cells[1].textContent.toLowerCase();
+                
+                // Extract season and species from class attributes
+                const classList = row.classList;
+                let season = '';
+                let species = '';
+                
+                // Find season class
+                for (let j = 0; j < classList.length; j++) {
+                    const className = classList[j];
+                    if (className.startsWith('season-')) {
+                        season = className.replace('season-', '');
+                    }
+                    if (className.startsWith('species-')) {
+                        species = className.replace('species-', '');
+                    }
+                }
+
+                const matchesSearch = name.includes(searchTerm);
+                const matchesSeason = selectedSeason === '' || season === selectedSeason;
+                const matchesSpecies = selectedSpecies === '' || species === selectedSpecies;
+
+                if (matchesSearch && matchesSeason && matchesSpecies) {
+                    row.style.display = '';
+                    row.classList.remove('hidden');
+                } else {
+                    row.style.display = 'none';
+                    row.classList.add('hidden');
+                }
+            }
+        }
+
+        searchBox.addEventListener('input', filterTable);
+        seasonFilter.addEventListener('change', filterTable);
+        speciesFilter.addEventListener('change', filterTable);
+
+        // Sorting functionality
+        let currentSort = { column: null, direction: 'asc' };
+        
+        // Season order for sorting
+        const seasonOrder = { 'spring': 1, 'summer': 2, 'fall': 3, 'winter': 4, 'unknown': 5 };
+        
+        function getSortValue(row, column) {
+            if (column === 'name') {
+                return row.cells[1].textContent.trim().toLowerCase();
+            } else if (column === 'birthday') {
+                const birthdayText = row.cells[2].textContent.trim();
+                
+                // Handle "No Birthday" case
+                if (birthdayText === 'No Birthday') {
+                    return 999; // Put at end
+                }
+                
+                const parts = birthdayText.split(' ');
+                if (parts.length >= 2) {
+                    const season = parts[0].toLowerCase();
+                    const day = parseInt(parts[1]) || 0;
+                    // Create sortable value: season number * 100 + day
+                    return (seasonOrder[season] || 5) * 100 + day;
+                }
+                return 999; // Default for unknown format
+            }
+            return '';
+        }
+        
+        function sortTable(column) {
+            const tbody = table.querySelector('tbody');
+            const rowsArray = Array.from(tbody.querySelectorAll('tr'));
+            
+            // Determine sort direction
+            if (currentSort.column === column) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.direction = 'asc';
+            }
+            currentSort.column = column;
+            
+            // Update header styles
+            document.querySelectorAll('.npc-table th').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+            });
+            
+            const clickedHeader = document.querySelector(`th[data-column="${column}"]`);
+            clickedHeader.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+            
+            // Sort rows
+            rowsArray.sort((a, b) => {
+                const aValue = getSortValue(a, column);
+                const bValue = getSortValue(b, column);
+                
+                let comparison = 0;
+                if (typeof aValue === 'string') {
+                    comparison = aValue.localeCompare(bValue);
+                } else {
+                    comparison = aValue - bValue;
+                }
+                
+                return currentSort.direction === 'asc' ? comparison : -comparison;
+            });
+            
+            // Reorder rows in DOM
+            rowsArray.forEach(row => tbody.appendChild(row));
+            
+            // Reapply current filters
+            filterTable();
+        }
+        
+        // Add click listeners to sortable headers
+        document.querySelectorAll('.sortable').forEach(header => {
+            header.addEventListener('click', function() {
+                const column = this.getAttribute('data-column');
+                sortTable(column);
+            });
+        });
+
+        // Add some visual feedback for interactions
+        const giftItems = document.querySelectorAll('.gift-item');
+        giftItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
