@@ -5,7 +5,7 @@ This module provides functions to analyze company names and extract patterns,
 common words, and other metrics that can be used to improve company name matching.
 """
 
-from collections import defaultdict
+from collections import defaultdict, Counter
 import re
 from typing import Dict, List, Set
 from company_name_normalizer import normalize_company_name
@@ -243,24 +243,29 @@ def save_analysis_results(metrics: Dict, output_file: str):
 
 def main():
     """Main function to run the analysis."""
-    import sys
+
+    print("abc".__hash__())
+    print(["a", "b", "c"].__hash__())
+
+
+    # import sys
     
-    if len(sys.argv) != 3:
-        print("Usage: python company_name_analyzer.py <input_file> <output_file>")
-        sys.exit(1)
+    # if len(sys.argv) != 3:
+    #     print("Usage: python company_name_analyzer.py <input_file> <output_file>")
+    #     sys.exit(1)
     
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
+    # input_file = sys.argv[1]
+    # output_file = sys.argv[2]
     
-    print(f"Analyzing company names from {input_file}...")
-    metrics = analyze_company_name_patterns(input_file)
+    # print(f"Analyzing company names from {input_file}...")
+    # metrics = analyze_company_name_patterns(input_file)
     
-    print("\nAnalysis complete. Printing results...")
-    print_company_name_analysis(metrics)
+    # print("\nAnalysis complete. Printing results...")
+    # print_company_name_analysis(metrics)
     
-    print(f"\nSaving results to {output_file}...")
-    save_analysis_results(metrics, output_file)
-    print("Done!")
+    # print(f"\nSaving results to {output_file}...")
+    # save_analysis_results(metrics, output_file)
+    # print("Done!")
 
 if __name__ == "__main__":
     main() 
